@@ -1,10 +1,14 @@
-from spider import html_parser
-from spider import output_html
-from spider import url_manager
-from spider import html_downloader
+# -*- coding:utf-8
+# __author__ : funny
+# __create_time__ : 16/11/6 10:41
+
+import html_parser
+import output_html
+import url_manager
+import html_downloader
 
 
-class Spidermain(object):
+class SpiderMain(object):
     def __init__(self):
         self.urls = url_manager.UrlManager()
         self.downloader = html_downloader.HtmlDownloader()
@@ -27,10 +31,10 @@ class Spidermain(object):
                 count = count + 1
             except:
                 print 'craw failed'
-        self.out.output_html()
+        self.out.output()
 
 
 if __name__ == "__main__":
     root_url = "http://bang.tx3.163.com/bang/ranks?role_id=40_13014"
-    obj_spider = Spidermain()
+    obj_spider = SpiderMain()
     obj_spider.craw(root_url)
