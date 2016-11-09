@@ -2,18 +2,17 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-import server_parser
-import server_out
 import server_url_manager
 import server_downloader
-
+import server_parser
+import add_role
 
 class ServerSpider(object):
     def __init__(self):
         self.urls = server_url_manager.UrlManager()
         self.downloader = server_downloader.HtmlDownloader()
         self.parser = server_parser.HtmlParser()
-        self.out = server_out.HtmlOutputer()
+        self.store = add_role.Role()
 
     def craw(self):
         while self.urls.has_new_url():
@@ -22,11 +21,9 @@ class ServerSpider(object):
                 print 'craw :' + new_url
                 html_cont = self.downloader.download(new_url)
                 new_data = self.parser.parse(html_cont)
-                self.out.collect(new_data)
+                self.store.addRoles(new_data)
             except Exception as e:
                 print e
-        self.out.output()
-
 
 servers = ['东方明珠',
            '紫禁之巅',
@@ -68,11 +65,9 @@ servers = ['东方明珠',
            '烽火关东',
            '盛世长安']
 
-server_tmp = ['东方明珠']
-
 if __name__ == "__main__":
     obj_spider = ServerSpider()
-    for server_name in server_tmp:
+    for server_name in servers:
         url = "http://bang.tx3.163.com/bang/ranks?server=" + server_name
         obj_spider.urls.add_new_url(url)
 

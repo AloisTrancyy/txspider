@@ -11,7 +11,12 @@ class UrlManager(object):
 
     def add_new_url(self, url):
         if url not in self.new_url and url not in self.old_url:
-            self.new_url.add(url)
+            page_number = 1
+            while page_number <= 25:
+                page_url = url+'&page=' + str(page_number)
+                print page_url
+                self.new_url.add(page_url)
+                page_number += 1
 
     def has_new_url(self):
         return len(self.new_url) != 0
