@@ -24,6 +24,11 @@ class HtmlParser(object):
         role_json = json.loads(role, 'utf-8')
         # 基础信息
         res_data['lv'] = role_json['lv']
+        res_data['sch'] = role_json['sch']
+        res_data['fly_soul_phase'] = role_json['fly_soul_phase']
+        res_data['fly_soul_lv'] = role_json['fly_soul_lv']
+        res_data['xiuwei'] = role_json['xiuwei']
+        res_data['equ_xiuwei'] = role_json['equ_xiuwei']
         res_data['pattack_max'] = role_json['pattack_max']
         res_data['mattack_max'] = role_json['mattack_max']
         res_data['pattack_min'] = role_json['pattack_min']
@@ -56,10 +61,7 @@ class HtmlParser(object):
         res_data['dog'] = role_json['dog']
         res_data['int'] = role_json['int']
         res_data['mind'] = role_json['mind']
-        res_data['sch'] = role_json['sch']
-        res_data['fly_soul_phase'] = role_json['fly_soul_phase']
-        res_data['fly_soul_lv'] = role_json['fly_soul_lv']
-        res_data['xiuwei'] = role_json['equ_xiuwei']
+
         res_data['cash'] = role_json['cash']
         # 轻功
         lingskills = role_json['lightSkills']

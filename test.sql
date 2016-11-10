@@ -1,230 +1,125 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost
-Source Server Version : 50520
-Source Host           : localhost:3306
-Source Database       : test
-
-Target Server Type    : MYSQL
-Target Server Version : 50520
-File Encoding         : 65001
-
-Date: 2016-11-09 22:55:06
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for role_atk
--- ----------------------------
-DROP TABLE IF EXISTS `role_atk`;
-CREATE TABLE `role_atk` (
-  `id` bigint(20) NOT NULL,
-  `role_id` varchar(10) NOT NULL,
-  `maxad` int(5) NOT NULL DEFAULT '0',
-  `minad` int(5) NOT NULL DEFAULT '0',
-  `maxma` int(5) NOT NULL DEFAULT '0',
-  `minma` int(5) NOT NULL DEFAULT '0',
-  `minzhong` int(5) NOT NULL DEFAULT '0',
-  `zhongji` int(5) NOT NULL DEFAULT '0',
-  `huixin` int(5) NOT NULL DEFAULT '0',
-  `fushang` int(5) NOT NULL DEFAULT '0',
-  `renhuo` int(2) NOT NULL DEFAULT '0',
-  `wanjun` int(3) NOT NULL DEFAULT '0',
-  `tiebi` int(3) NOT NULL DEFAULT '0',
-  `zhuxin` int(2) NOT NULL DEFAULT '0',
-  `yuxin` int(2) NOT NULL DEFAULT '0',
-  `zhuidian` int(2) NOT NULL DEFAULT '0',
-  `jiyu` int(2) NOT NULL DEFAULT '0',
-  `shenfa` int(2) NOT NULL DEFAULT '0',
-  `jianren` int(2) NOT NULL DEFAULT '0',
-  `dingli` int(2) NOT NULL DEFAULT '0',
-  `fangyu` int(2) NOT NULL DEFAULT '0',
-  `huibi` int(2) NOT NULL DEFAULT '0',
-  `fafang` int(2) NOT NULL DEFAULT '0',
-  `shenming` int(2) NOT NULL DEFAULT '0',
-  `huajie` int(2) NOT NULL DEFAULT '0',
-  `zhibi` int(2) NOT NULL DEFAULT '0',
-  `pozhen` int(3) NOT NULL DEFAULT '0',
-  `panshi` int(3) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_basic
--- ----------------------------
 DROP TABLE IF EXISTS `role_basic`;
 CREATE TABLE `role_basic` (
   `id` bigint(20) NOT NULL,
-  `role_id` varchar(10) NOT NULL,
-  `jiahu` int(3) NOT NULL DEFAULT '0',
-  `lianhu` int(3) NOT NULL DEFAULT '0',
-  `rmb` int(6) NOT NULL DEFAULT '80',
-  `name` varchar(30) DEFAULT NULL,
-  `level` varchar(20) DEFAULT NULL,
-  `school` varchar(10) DEFAULT NULL,
-  `server` varchar(10) DEFAULT NULL,
-  `family` varchar(50) DEFAULT NULL,
-  `hp` int(5) NOT NULL DEFAULT '0',
-  `mp` int(5) NOT NULL DEFAULT '0',
-  `li` int(4) NOT NULL DEFAULT '0',
-  `ti` int(4) NOT NULL DEFAULT '0',
-  `min` int(4) NOT NULL DEFAULT '0',
-  `ji` int(4) NOT NULL DEFAULT '0',
-  `hun` int(4) NOT NULL DEFAULT '0',
-  `nian` int(4) NOT NULL DEFAULT '0',
+  `role_id` varchar(10) NOT NULL COMMENT '编号',
+  `name` varchar(20) NOT NULL COMMENT '名称',
+  `price` int(6) NOT NULL DEFAULT '0' COMMENT '价格',
+  `lv` tinyint(2) NOT NULL DEFAULT '0' COMMENT '等级',
+  `fly_soul_phase` tinyint(1) NOT NULL DEFAULT '0' COMMENT '神启境界',
+  `fly_soul_lv` varchar(20) DEFAULT NULL COMMENT '神启等级',
+  `xiuwei` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '修为',
+  `equ_xiuwei` int(6) NOT NULL DEFAULT '0' COMMENT '装备评价',
+  `sch` tinyint(2) NOT NULL DEFAULT '0' COMMENT '门派',
+  `pattack_max` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '最大物攻',
+  `mattack_max` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '最大法攻',
+  `pattack_min` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '最小物攻',
+  `mattack_min` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '最小法攻',
+  `hit` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '命中',
+  `modadd` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '重击',
+  `attadd` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '附伤',
+  `cri_add_p` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '诛心',
+  `cri_sub_p` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '御心',
+  `mdef` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '法防',
+  `pdef` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '物防',
+  `absolutely_attack` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '破阵',
+  `absolutely_defence` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '磐石',
+  `inprotect` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '神明',
+  `avoid` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '回避',
+  `attdef` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT '化解',
+  `defhuman` tinyint(2) NOT NULL DEFAULT '0' COMMENT '知彼',
+  `attackhuman` tinyint(2) NOT NULL DEFAULT '0' COMMENT '人祸',
+  `sract` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '身份',
+  `srbody` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '坚韧',
+  `srmind` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '定力',
+  `movespeed` SMALLINT(3) NOT NULL DEFAULT '0' COMMENT '追电',
+  `castspeed` tinyint(2) NOT NULL DEFAULT '0' COMMENT '疾语',
+  `attackspeed` tinyint(2) NOT NULL DEFAULT '0' COMMENT '骤雨',
+  `thump_add_p` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '万钧',
+  `thump_sub_p` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '铁壁',
+  `str` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '力',
+  `con` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '体',
+  `dex` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '敏',
+  `dog` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '疾',
+  `int` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '魂',
+  `mind` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '念',
   PRIMARY KEY (`id`),
   KEY `idx_role_id` (`role_id`),
-  KEY `idx_rmb` (`rmb`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_def
--- ----------------------------
-DROP TABLE IF EXISTS `role_def`;
-CREATE TABLE `role_def` (
-  `id` bigint(20) NOT NULL,
-  `role_id` varchar(10) NOT NULL,
-  `zhanchang` int(2) NOT NULL DEFAULT '0',
-  `dayu` int(3) NOT NULL DEFAULT '0',
-  `junzi` int(2) NOT NULL DEFAULT '0',
-  `tianyu` int(2) NOT NULL DEFAULT '0',
-  `jjc` int(2) NOT NULL DEFAULT '0',
-  `liuyao` int(2) NOT NULL DEFAULT '0',
-  `yuanbao` int(2) NOT NULL DEFAULT '0',
-  `jinbi` int(2) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
+  KEY `idx_price` (`price`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for role_haizi
 -- ----------------------------
-DROP TABLE IF EXISTS `role_haizi`;
-CREATE TABLE `role_haizi` (
+DROP TABLE IF EXISTS `role_calc`;
+CREATE TABLE `role_calc` (
   `id` bigint(20) NOT NULL,
   `role_id`  varchar(10) NOT NULL,
-  `level` int(2) NOT NULL DEFAULT '0',
-  `school` varchar(30) NOT NULL,
-  `wuxue` int(2) NOT NULL DEFAULT '0',
-  `zizhi` int(4) NOT NULL DEFAULT '0',
-  `xueshi` int(2) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_jineng
--- ----------------------------
-DROP TABLE IF EXISTS `role_jineng`;
-CREATE TABLE `role_jineng` (
-  `id` bigint(20) NOT NULL,
-  `role_id`  varchar(10) NOT NULL,
-  `fujin` tinyint(1) NOT NULL DEFAULT '0',
-  `yanzi` tinyint(1) NOT NULL DEFAULT '0',
-  `qingting` tinyint(1) NOT NULL DEFAULT '0',
-  `taxue` tinyint(1) NOT NULL DEFAULT '0',
-  `feiyan` tinyint(1) NOT NULL DEFAULT '0',
-  `xueji` tinyint(1) NOT NULL DEFAULT '0',
-  `paoxiao` tinyint(1) NOT NULL DEFAULT '0',
-  `shalu`  tinyint(1) NOT NULL DEFAULT '0',
-  `menpai` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_juexing
--- ----------------------------
-DROP TABLE IF EXISTS `role_juexing`;
-CREATE TABLE `role_juexing` (
-  `id` bigint(20) NOT NULL,
-  `role_id`  varchar(10) NOT NULL,
-  `level` tinyint(1) NOT NULL DEFAULT '0',
-  `fengjinzhili` tinyint(2) NOT NULL DEFAULT '0',
-  `juexingdu` int(2) NOT NULL DEFAULT '0',
-  `liandao` int(4) NOT NULL DEFAULT '0',
-  `lianhu` int(3) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_shizhuang
--- ----------------------------
-DROP TABLE IF EXISTS `role_shizhuang`;
-CREATE TABLE `role_shizhuang` (
-  `id` bigint(20) NOT NULL,
-  `role_id`  varchar(10) NOT NULL,
-  `dairanqinghua` tinyint(1) NOT NULL DEFAULT '0',
-  `xuansutiancheng` tinyint(1) NOT NULL DEFAULT '0',
-  `guhongyueying` tinyint(1) NOT NULL DEFAULT '0',
-  `xiangyunsinuan` tinyint(1) NOT NULL DEFAULT '0',
-  `anchitinglan` tinyint(1) NOT NULL DEFAULT '0',
-  `haitangweiyu` tinyint(1) NOT NULL DEFAULT '0',
-  `feihuhuaqiu` tinyint(1) NOT NULL DEFAULT '0',
-  `tianhulishang` tinyint(1) NOT NULL DEFAULT '0',
-  `xianhucaijue` tinyint(1) NOT NULL DEFAULT '0',
-  `dashengjinjia` tinyint(1) NOT NULL DEFAULT '0',
-  `canghaisangtian` tinyint(1) NOT NULL DEFAULT '0',
-  `yeyujiangnan` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_teji
--- ----------------------------
-DROP TABLE IF EXISTS `role_teji`;
-CREATE TABLE `role_teji` (
-  `id` bigint(20) NOT NULL,
-  `role_id`  varchar(10) NOT NULL,
-  `huikanjingtong` tinyint(1) NOT NULL DEFAULT '0',
-  `chuancijingtong` tinyint(1) NOT NULL DEFAULT '0',
-  `dunjijingtong` tinyint(1) NOT NULL DEFAULT '0',
-  `huikanfanghu` tinyint(1) NOT NULL DEFAULT '0',
-  `duncifanghu` tinyint(1) NOT NULL DEFAULT '0',
-  `huoyuanfanghu` tinyint(1) NOT NULL DEFAULT '0',
-  `shuifengdufanghu` tinyint(1) NOT NULL DEFAULT '0',
-  `wanfeng` tinyint(1) NOT NULL DEFAULT '0',
-  `huxin` tinyint(1) NOT NULL DEFAULT '0',
-  `dayushenyou` tinyint(1) NOT NULL DEFAULT '0',
-  `dayulongfei` tinyint(1) NOT NULL DEFAULT '0',
-  `dayutianfei` tinyint(1) NOT NULL DEFAULT '0',
-  `douzhuanbian` tinyint(1) NOT NULL DEFAULT '0',
-  `yixinghuanying` tinyint(1) NOT NULL DEFAULT '0',
-  `menpaiteji` tinyint(1) NOT NULL DEFAULT '0',
-  `taichu` tinyint(1) NOT NULL DEFAULT '0',
-  `shilifushou` tinyint(1) NOT NULL DEFAULT '0',
-  `menpaifushou` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for role_zhuzi
--- ----------------------------
-DROP TABLE IF EXISTS `role_zhuzi`;
-CREATE TABLE `role_zhuzi` (
-  `id` bigint(20) NOT NULL,
-  `role_id`  varchar(10) NOT NULL,
-  `shibing` tinyint(1) NOT NULL DEFAULT '0',
-  `shenqi` tinyint(1) NOT NULL DEFAULT '0',
-  `zhumu` tinyint(1) NOT NULL DEFAULT '0',
-  `xianhu` tinyint(1) NOT NULL DEFAULT '0',
-  `shuisheng` tinyint(1) NOT NULL DEFAULT '0',
-  `youxiong` tinyint(1) NOT NULL DEFAULT '0',
-  `linghou` tinyint(1) NOT NULL DEFAULT '0',
-  `qiangdao` tinyint(1) NOT NULL DEFAULT '0',
-  `menghu` tinyint(1) NOT NULL DEFAULT '0',
-  `huacao` tinyint(1) NOT NULL DEFAULT '0',
-  `ligui` tinyint(1) NOT NULL DEFAULT '0',
-  `xiyangyang` tinyint(1) NOT NULL DEFAULT '0',
-  `mawangye` tinyint(1) NOT NULL DEFAULT '0',
-  `wangshengtianzun` tinyint(1) NOT NULL DEFAULT '0',
-  `yehuo` tinyint(1) NOT NULL DEFAULT '0',
+  `jiahu` SMALLINT(3) NOT NULL DEFAULT '0' COMMENT '加护',
+  `lianhu` SMALLINT(3) NOT NULL DEFAULT '0' COMMENT '炼护',
+  `haizi_jiahu` SMALLINT(3) NOT NULL DEFAULT '0' COMMENT '孩子装备最大加护数',
+  `haizi_lv` tinyint(2) NOT NULL DEFAULT '0' COMMENT '孩子最大等级',
+  `haizi_zizhi` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '孩子最大资质',
+  `haizi_wuxue` tinyint(2) NOT NULL DEFAULT '0' COMMENT '孩子最大武学',
+  `haizi_tianyu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '孩子是否天域武器',
+  `haizi_dayu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '孩子是否有大禹项链',
+  `skill_shalu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '杀戮等级',
+  `skill_paoxiao` tinyint(1) NOT NULL DEFAULT '0' COMMENT '猛烈咆哮等级',
+  `skill_xueji` tinyint(1) NOT NULL DEFAULT '0' COMMENT '血祭术等级',
+  `skill_menpai` tinyint(1) NOT NULL DEFAULT '0' COMMENT '门派江湖等级',
+  `lignt_yanzi` tinyint(1) NOT NULL DEFAULT '0' COMMENT '燕子钻云等级',
+  `lignt_qingting` tinyint(1) NOT NULL DEFAULT '0' COMMENT '蜻蜓点水等级',
+  `lignt_taxue` tinyint(1) NOT NULL DEFAULT '0' COMMENT '踏雪无痕等级',
+  `lignt_feiyan` tinyint(1) NOT NULL DEFAULT '0' COMMENT '飞檐走壁等级',
+  `lignt_menpai` tinyint(1) NOT NULL DEFAULT '0' COMMENT '御风行等级',
+  `awake_lv` tinyint(2) NOT NULL DEFAULT '0' COMMENT '觉醒等级',
+  `release_lv` tinyint(2) NOT NULL DEFAULT '0' COMMENT '封禁之力等级',
+  `awake_value` tinyint(2) NOT NULL DEFAULT '0' COMMENT '觉醒度',
+  `minglian` SMALLINT(4) NOT NULL DEFAULT '0' COMMENT '溟炼值',
+  `qinghua` tinyint(1) NOT NULL DEFAULT '0' COMMENT '黛染青花',
+  `xuansu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '玄素天成',
+  `guhong` tinyint(1) NOT NULL DEFAULT '0' COMMENT '孤鸿月影',
+  `xiangyun` tinyint(1) NOT NULL DEFAULT '0' COMMENT '祥云思暖',
+  `tinglan` tinyint(1) NOT NULL DEFAULT '0' COMMENT '岸芷厅兰',
+  `haitang` tinyint(1) NOT NULL DEFAULT '0' COMMENT '海棠未雨',
+  `feihuhuaqiu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '飞天华裘',
+  `tianhulishang` tinyint(1) NOT NULL DEFAULT '0' COMMENT '天狐霓裳',
+  `xianhucaijue` tinyint(1) NOT NULL DEFAULT '0' COMMENT '仙狐彩诀',
+  `dashengjinjia` tinyint(1) NOT NULL DEFAULT '0' COMMENT '大圣金甲',
+  `canghaisangtian` tinyint(1) NOT NULL DEFAULT '0' COMMENT '沧海桑田',
+  `yeyujiangnan` tinyint(1) NOT NULL DEFAULT '0' COMMENT '夜雨江南',
+  `huikanjingtong` tinyint(1) NOT NULL DEFAULT '0' COMMENT '挥砍精通',
+  `chuancijingtong` tinyint(1) NOT NULL DEFAULT '0' COMMENT '穿刺精通',
+  `dunjijingtong` tinyint(1) NOT NULL DEFAULT '0' COMMENT '盾击精通',
+  `huikanfanghu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '挥砍防护',
+  `duncifanghu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '盾刺防护',
+  `huoyuanfanghu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '火元防护',
+  `shuifengdufanghu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '水风毒防护',
+  `wanfeng` tinyint(1) NOT NULL DEFAULT '0' COMMENT '完封',
+  `huxin` tinyint(1) NOT NULL DEFAULT '0' COMMENT '护心',
+  `dayushenyou` tinyint(1) NOT NULL DEFAULT '0' COMMENT '大禹神佑',
+  `dayulongfei` tinyint(1) NOT NULL DEFAULT '0' COMMENT '大禹龙飞',
+  `dayutianwei` tinyint(1) NOT NULL DEFAULT '0' COMMENT '大禹天威',
+  `douzhuanbian` tinyint(1) NOT NULL DEFAULT '0' COMMENT '斗转变',
+  `yixinghuanying` tinyint(1) NOT NULL DEFAULT '0' COMMENT '移形换影',
+  `menpaiteji` tinyint(1) NOT NULL DEFAULT '0' COMMENT '门派武器18钻特技',
+  `taichu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否有太初',
+  `shilifushou` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否有势力副手',
+  `menpaifushou` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否有门派副手',
+  `shibing` tinyint(1) NOT NULL DEFAULT '0' COMMENT '尸兵系',
+  `shenqi` tinyint(1) NOT NULL DEFAULT '0' COMMENT '蜃气',
+  `zhumu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '竹木',
+  `xianhu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '仙狐',
+  `shuisheng` tinyint(1) NOT NULL DEFAULT '0' COMMENT '水生',
+  `youxiong` tinyint(1) NOT NULL DEFAULT '0' COMMENT '有熊',
+  `linghou` tinyint(1) NOT NULL DEFAULT '0' COMMENT '灵猴',
+  `qiangdao` tinyint(1) NOT NULL DEFAULT '0' COMMENT '强盗',
+  `menghu` tinyint(1) NOT NULL DEFAULT '0' COMMENT '猛虎',
+  `huacao` tinyint(1) NOT NULL DEFAULT '0' COMMENT '花草',
+  `ligui` tinyint(1) NOT NULL DEFAULT '0' COMMENT '厉鬼',
+  `xiyangyang` tinyint(1) NOT NULL DEFAULT '0' COMMENT '喜洋洋',
+  `mawangye` tinyint(1) NOT NULL DEFAULT '0' COMMENT '马王爷',
+  `wangshengtianzun` tinyint(1) NOT NULL DEFAULT '0' COMMENT '万胜天尊',
+  `yehuo` tinyint(1) NOT NULL DEFAULT '0' COMMENT '业火',
   PRIMARY KEY (`id`),
   KEY `idx_role_id` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
