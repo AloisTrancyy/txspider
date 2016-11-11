@@ -24,7 +24,7 @@ class HtmlOutputer(object):
                     f.write('<td>%s</td>' % data['summary'].encode('utf-8'))
                     f.write('</tr>')
             except Exception as e:
-                print e
+                print(e)
             finally:
                 f.write('</table>')
                 f.write('</body>')

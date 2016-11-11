@@ -1,14 +1,8 @@
 # -*- coding:utf-8
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
-import logging
 import json
 from bs4 import BeautifulSoup
-
-# 设置logger
-logger = logging.getLogger('test')
-fHandler = logging.FileHandler('test.log')
-logger.addHandler(fHandler)
 
 
 class HtmlParser(object):
@@ -22,13 +16,17 @@ class HtmlParser(object):
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
         role_json = json.loads(role, 'utf-8')
+        # 价钱 编号
+        res_data['role_id'] = '392061'
+        res_data['name'] = '乀熊霸'
+        res_data['price'] = '106900'
         # 基础信息
         res_data['lv'] = role_json['lv']
-        res_data['sch'] = role_json['sch']
         res_data['fly_soul_phase'] = role_json['fly_soul_phase']
         res_data['fly_soul_lv'] = role_json['fly_soul_lv']
         res_data['xiuwei'] = role_json['xiuwei']
         res_data['equ_xiuwei'] = role_json['equ_xiuwei']
+        res_data['sch'] = role_json['sch']
         res_data['pattack_max'] = role_json['pattack_max']
         res_data['mattack_max'] = role_json['mattack_max']
         res_data['pattack_min'] = role_json['pattack_min']
@@ -55,14 +53,14 @@ class HtmlParser(object):
         res_data['attackspeed'] = role_json['attackspeed']
         res_data['thump_add_p'] = role_json['thump_add_p']
         res_data['thump_sub_p'] = role_json['thump_sub_p']
-        res_data['str'] = role_json['str']
-        res_data['con'] = role_json['con']
-        res_data['dex'] = role_json['dex']
-        res_data['dog'] = role_json['dog']
-        res_data['int'] = role_json['int']
-        res_data['mind'] = role_json['mind']
 
-        res_data['cash'] = role_json['cash']
+        attr = role_json['attr']
+        res_data['strong'] = attr['str']
+        res_data['body'] = attr['con']
+        res_data['quick'] = attr['dex']
+        res_data['dodge'] = attr['dog']
+        res_data['soul'] = attr['int']
+        res_data['mind'] = attr['mind']
         # 轻功
         lingskills = role_json['lightSkills']
 
@@ -104,28 +102,28 @@ class HtmlParser(object):
                 continue
             for key, value in equs.items():
                 # 武器
-                if key == 0 :
-                    print value
+                if key == 0:
+                    print(value)
                 # 帽子
-                elif key == 1 :
-                    print value
+                elif key == 1:
+                    print(value)
                 # 衣服
                 elif key == 2:
-                    print value
+                    print(value)
                 # 裤子
                 elif key == 3:
-                    print value
+                    print(value)
                 # 鞋子
                 elif key == 4:
-                    print value
+                    print(value)
                 # 项链
                 elif key == 5:
-                    print value
+                    print(value)
 
         # 时装
         formated_role_desc = soup.find('textarea', id="formated_role_desc")
         format_role = formated_role_desc.get_text()
         format_role_json = json.loads(format_role, 'utf-8')
         for key, value in format_role_json['clothes_info'].items():
-            print key, value['name']
+            print(key, value['name'])
         return res_data

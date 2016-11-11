@@ -13,4 +13,5 @@ class HtmlDownloader(object):
         response = requests.get(url, )
         if response.status_code != 200:
             return None
+        response.encoding = 'utf-8'  # 显式地指定网页编码，一般情况可以不用
         return response.content
