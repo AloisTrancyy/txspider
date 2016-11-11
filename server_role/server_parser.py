@@ -2,62 +2,25 @@
 # -*- coding: utf-8 -*-
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
-
-from bs4 import BeautifulSoup
-
+import json
 
 class HtmlParser(object):
     def parse(self, html_cont):
         if html_cont is None:
             return
         data = []
-        try:
-            soup = BeautifulSoup(html_cont, "html.parser", from_encoding="utf-8")
-            tr1s = soup.find_all('tr', class_="tr1")
-            for tr in tr1s:
+        json_data = json.loads(html_cont)
+        if json_data['status'] == 0:
+            for role in json_data['msg']:
                 res_data = {}
-                tds = tr.children
-                for index, td in enumerate(tds):
-                    if index == 3:
-                        a = td.find('a')
-                        if a is not None and a != -1:
-                            res_data['url'] = a.get('href')
-                            res_data['name'] = td.string
-                    elif index == 9:
-                        res_data['level'] = td.string
-                    elif index == 11:
-                        res_data['school'] = td.string
-                    elif index == 13:
-                        res_data['family'] = td.string
-                    elif index == 15:
-                        res_data['xiuwei'] = td.string
-                    elif index == 17:
-                        res_data['eq'] = td.string
-
+                res_data['equip_id'] = role['equipid']
+                res_data['server_id'] = role['serverid']
+                res_data['price'] = role['price']
+                res_data['jiahu'] = role['jiahu']
+                res_data['name'] = str(role['seller_nickname'].encode('utf-8').decode("utf-8"))
+                res_data['url'] = "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail" \
+                                  "&equip_id="+str(role['equipid'])+"&serverid="+str(role['serverid'])
                 data.append(res_data)
-
-            tr2s = soup.find_all('tr', class_="tr2")
-            for tr in tr2s:
-                tds = tr.children
-                res_data = {}
-                for index, td in enumerate(tds):
-                    if index == 3:
-                        a = td.find('a')
-                        if a is not None and a != -1:
-                            res_data['url'] = a.get('href')
-                            res_data['name'] = td.string
-                    elif index == 9:
-                        res_data['level'] = td.string
-                    elif index == 11:
-                        res_data['school'] = td.string
-                    elif index == 13:
-                        res_data['family'] = td.string
-                    elif index == 15:
-                        res_data['xiuwei'] = td.string
-                    elif index == 17:
-                        res_data['eq'] = td.string
-
-                data.append(res_data)
-        except Exception as e:
-            print 'parser error', e
+        else:
+            print('parse error' + json_data['status'])
         return data
