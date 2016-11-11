@@ -7,7 +7,6 @@ import server_downloader
 import server_parser
 import add_role
 import traceback
-from threading import Timer
 
 class ServerSpider(object):
     def __init__(self):
@@ -29,7 +28,7 @@ class ServerSpider(object):
 
 if __name__ == "__main__":
     obj_spider = ServerSpider()
-    for sch in range(10):
+    for sch in range(11):
         for page in range(10):
             url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
                   "&level_max=80&price_min=100000&price_max=30000000&" \

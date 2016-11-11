@@ -6,7 +6,7 @@ CREATE TABLE `role` (
   `name` varchar(20) DEFAULT NULL COMMENT '角色名',
   `server_id` varchar(20) DEFAULT NULL COMMENT '服务器',
   `price` int(6) DEFAULT '0' COMMENT '价钱',
-  `url` varchar(200) DEFAULT NULL COMMENT 'cbg链接',
+  `url` varchar(255) DEFAULT NULL COMMENT 'cbg链接',
    PRIMARY KEY (`id`),
    KEY `idx_price` (`price`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
