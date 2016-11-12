@@ -1,0 +1,216 @@
+[
+  '4': {
+            'equ_lv': 96,
+            'name': 'HH二代门派副手',
+            'latch_cipher': 1,
+            'rpr': 0,
+            '_ntr_date': 1431864024,
+            'imprint': 1,
+            'star': 4,
+            'cwrap': 1,
+            'inlay_lv': 96,
+            'mhp': 717,
+            'latch_time': 1,
+            'pmax': 19,
+            'can_inlay': 1,
+            'assess2': 86,
+            'ma5': 35,
+            'nodis': 1,
+            'esid': 63,
+            'equ_xchange_num': 27,
+            'max_hidden_prop_num': 2,
+            'ep2_slot': 16,
+            'menh': 20,
+            'ep2_enh_props': {
+                'con': 16,
+                'pmax': 16,
+                'aa2': 16
+            },
+            'inlay_hidden_prop': [
+                1,
+                2,
+                4
+            ],
+            'ntr': 10,
+            'cdur': 229,
+            'hidden_prop_act': {
+                '6': {
+                    'con': 39
+                },
+                '7': {
+                    'cri': 25
+                }
+            },
+            'aa2': 19,
+            'addition_state': [
+
+            ],
+            'uutime': 1368960800,
+            'kechongzhu': 1,
+            'hidden_equ_xiuwei': 108,
+            'use_rand_rule': 4294,
+            'sch': [
+                1
+            ],
+            '_latchOfCipher': 1431604826,
+            'ep2_enh': 16,
+            'bargain_visible': 1,
+            'amvspd': 1.74,
+            'con': 37,
+            'mdur': 229,
+            'reqlv': 78,
+            'hidden_prop_rand_rule': {
+                '6': 4298,
+                '7': 4303
+            },
+            'cenh': 18,
+            'aa0': 34,
+            'id': 22390,
+            'inlay_props': {
+                'amvspd': 1.74,
+                'con': 37,
+                'pmax': 19,
+                'aa2': 19
+            },
+            'hidden_prop_num': 2,
+            'str': 45
+        },
+  '4': {
+            'name': '羽毛势力副手',
+            'inosculate_state': 4,
+            'use_rand_rule': 6693,
+            'id': 22376,
+
+            'ep2_enh_props': {
+                'str': 13,
+                'pmin': 26
+            },
+            'uutime': 1436364788,
+            'bargain_visible': 1,
+            'ntr': 10,
+            'latch_time': 1,
+            'kechongzhu': 1,
+            'addition_state': [
+
+            ],
+            'inlay_props': {
+                'str': 38,
+                'amvspd': 2.15,
+                'pmin': 18
+            },
+            'max_hidden_prop_num': 1,
+            'inlay_lv': 99,
+            'ep2_enh': 13,
+            'menh': 20,
+            'imprint': 1,
+            'hidden_prop_rand_rule': {
+                '11': 6727
+            },
+            'mdur': 233,
+            'hidden_prop_num': 1,
+            'ep2_slot': 13,
+            'str': 38,
+            'reqlv': 78,
+            'equ_xchange_num': 28,
+            '_latchOfCipher': 1452928380,
+            'amvspd': 4.15,
+            'aa3': 35,
+            'pmin': 39,
+            'latch_cipher': 1,
+
+            'rpr': 0,
+            'hit': 121,
+            'hidden_prop_act': {
+                '11': {
+                    'thump_add_p': 0.8
+                }
+            },
+            '_ntr_date': 1436624659,
+            'equ_lv': 99,
+            'cdur': 233,
+            'ma7': 37,
+            'assess2': 69,
+            'can_inlay': 1,
+            'hidden_equ_xiuwei': 321,
+            'aa4': 37,
+            'esid': 109,
+            'cwrap': 1,
+            'cenh': 18,
+            'star': 4
+        },
+  '4': {
+            'name': '法师势力副手',
+            'aa0': 48,
+            'cwrap': 1,
+            'ep2_slot': 18,
+            'rpr': 0,
+            'esid': 112,
+            'cenh': 19,
+            'hidden_prop_num': 1,
+            'int': 37,
+            'id': 22379,
+            'use_rand_rule': 6700,
+            'identify_props': {
+                'cri': 9
+            },
+            'hidden_prop_act': {
+                '11': {
+
+                }
+            },
+            'assess2': 51,
+            'imprint': 1,
+            'ep2_enh_props': {
+                'ma0': 18,
+                'mmax': 18,
+                'dex': 18
+            },
+            'skspd': 4.85,
+            'cdur': 211,
+            'hidden_equ_xiuwei': 0,
+            'bargain_visible': 1,
+            'uutime': 1449157948,
+            'cri': 49,
+            'mmax': 19,
+            'addition_state': [
+
+            ],
+            'ep2_enh': 18,
+            '_latchOfCipher': 1473175772,
+            'can_identify_by_set': 1,
+            'max_hidden_prop_num': 1,
+            'star': 4,
+            'ntr': 10,
+            'latch_cipher': 1,
+            'latch_time': 1,
+            'can_inlay': 1,
+            'mdur': 233,
+            'kechongzhu': 1,
+            'inosculate_state': 1,
+            'reqlv': 78,
+            'menh': 20,
+            'hidden_state_prop': {
+                '11': [
+                    [
+                        4639,
+                        11
+                    ]
+                ]
+            },
+            'ma0': 20,
+            'hidden_prop_rand_rule': {
+                '11': 6741
+            },
+            'dex': 74,
+            'inlay_props': {
+                'ma0': 20,
+                'mmax': 19,
+                'skspd': 2.85,
+                'dex': 37
+            },
+            'equ_lv': 99,
+            'inlay_lv': 99,
+            'equ_xchange_num': 28,
+            '_ntr_date': 1449495476
+        },
+]

@@ -8,11 +8,11 @@ import pymysql.cursors
 import traceback
 
 config = {
-    'host': '10.168.66.173',
+    'host': 'localhost',
     'port': 3306,
-    'user': 'sellmall',
-    'password': 'sellmall1234',
-    'db': 'test',
+    'user': 'root',
+    'password': 'root',
+    'db': 'spider',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,
 }
@@ -53,11 +53,8 @@ class SpiderMain(object):
         finally:
             connection.close()
 
-urls = [
-    "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=2&equip_id=150591",
-    "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=15&equip_id=406192"
-]
+
 if __name__ == "__main__":
-    root_url = "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=15&equip_id=392061"
+    root_url = "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=18&equip_id=179311"
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)

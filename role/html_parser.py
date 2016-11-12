@@ -16,6 +16,7 @@ class HtmlParser(object):
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
         role_json = json.loads(role, 'utf-8')
+        print(role_json)
         # 价钱 编号
         res_data['role_id'] = '392061'
         res_data['name'] = '乀熊霸'

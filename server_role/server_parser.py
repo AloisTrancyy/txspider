@@ -10,11 +10,7 @@ class HtmlParser(object):
             return
         data = []
         json_data = json.loads(html_cont)
-        if json_data['status'] != 0:
-            return data
         msg = json_data['msg']
-        if msg is not None or len(msg) == 0:
-            return data
         for role in msg:
             res_data = {}
             res_data['equip_id'] = role['equipid']

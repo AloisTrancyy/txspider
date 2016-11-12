@@ -1,0 +1,5979 @@
+{
+    'equ': {
+        '7': {
+            'hidden_prop_rand_rule': {
+                '1': 7130
+            },
+            'assess2': 89,
+            'cwrap': 1,
+            'ep2_slot': 13,
+            'star': 4,
+            'ws_min_enh': 15,
+            'ntr': 10,
+            'rand_way': 68,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1468413471,
+            'skspd': 3.9900000000000007,
+            'ws6': 8,
+            '_ntr_date': 1466843894,
+            'cenh': 15,
+            'id': 92633,
+            'nodis': 1,
+            'cri': 99,
+            'use_rand_rule': 7108,
+            'mhp': 2062,
+            'inlay_props': {
+                'mind': 27,
+                'mmax': 12,
+                'pdef': 28,
+                'skspd': 1.73
+            },
+            'hidden_prop_num': 1,
+            'identify_props': {
+                'mhp': 23
+            },
+            'menh': 20,
+            'inlay_is_special': 1,
+            'mind': 27,
+            'hidden_prop_act': {
+                '1': {
+                    'md7': 57
+                }
+            },
+            'reqlv': 79,
+            'uutime': 1465296232,
+            'ep2_enh_props': {
+                'mind': 13,
+                'mmax': 13,
+                'pdef': 26
+            },
+            'rpr': 500,
+            'mdur': 378,
+            'max_hidden_prop_num': 3,
+            'equ_lv': 110,
+            'mmax': 12,
+            'pdef': 28,
+            'cdur': 375,
+            'hidden_equ_xiuwei': 45,
+            'nosell': 1,
+            'md7': 0,
+            'ws240': 10,
+            'can_inlay': 1,
+            'no_regen': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'hit': 93,
+            'latch_time': 1,
+            'ws_min_enh_name': 'ws240',
+            'inosculate_state': 1,
+            'ep2_enh': 13
+        },
+        '11': {
+            'look_id': 2602,
+            'skprt': 36,
+            'hidden_prop_rand_rule': {
+                '1': 4194,
+                '2': 4200
+            },
+            'mind': 46,
+            'assess2': 71,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 43
+                },
+                '2': {
+                    'mhp': 258
+                }
+            },
+            'reqlv': 80,
+            'identify_props': {
+                'mdef': 18
+            },
+            'uutime': 1377406939,
+            'changeback_flag': 1,
+            'skspd': 2.0,
+            'rpr': 298,
+            'mdur': 324,
+            'max_hidden_prop_num': 2,
+            'kechongzhu': 1,
+            'mdef': 371,
+            'imprint': 1,
+            'look_cdur': 138,
+            'hidden_prop_num': 2,
+            'equ_team': 2,
+            'hidden_equ_xiuwei': 58,
+            'cenh': 16,
+            'suit': 137,
+            'sch': [
+                5,
+                6,
+                7,
+                8
+            ],
+            'id': 33274,
+            'nodis': 1,
+            'latch_cipher': 1,
+            'use_rand_rule': 4190,
+            'bargain_visible': 1,
+            'con': 39,
+            'equ_xchange_num': 16,
+            '_latchOfCipher': 1469861025,
+            'latch_time': 1,
+            'star': 4,
+            'equ_lv': 96,
+            'cdur': 324,
+            'cwrap': 1,
+            'menh': 20,
+            'ntr': 10
+        },
+        '6': {
+            'assess2': 52,
+            'int': 46,
+            'cwrap': 1,
+            'equ_lv': 110,
+            'ws_min_enh': 15,
+            'ep2_slot': 13,
+            'rand_way': 68,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1466585869,
+            'skspd': 1.28,
+            '_ntr_date': 1466845066,
+            'cenh': 16,
+            'id': 3977,
+            'use_rand_rule': 6602,
+            'mhp': 1676,
+            'inlay_props': {
+                'md6': 32,
+                'mind': 32,
+                'pdef': 33,
+                'skspd': 1.28
+            },
+            'ws_min_inlay_enh': 15,
+            'pdef': 33,
+            'identify_props': {
+                'msp': 9
+            },
+            'cdur': 356,
+            'avoid': 123,
+            'menh': 20,
+            'uutime': 1450943338,
+            'mind': 82,
+            'reqlv': 78,
+            'ws127': 10,
+            'ws_min_enh_name': 'ws127',
+            'ep2_enh_props': {
+                'md6': 26,
+                'mind': 13,
+                'pdef': 26
+            },
+            'rpr': 378,
+            'mdur': 356,
+            'ws147': 10,
+            'msp': 293,
+            'ws_min_lnlay_enh_name': 'ws147',
+            'nosell': 1,
+            'ws133': 5,
+            'inosculate_state': 1,
+            'can_inlay': 1,
+            'no_regen': 1,
+            'dex': 65,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'latch_time': 1,
+            'star': 4,
+            'ep2_enh': 13,
+            'md6': 32,
+            'ntr': 10
+        },
+        '17': {
+            'cwrap': 1,
+            'skprt': 10,
+            'uutime': 1376811233,
+            'mind': 88,
+            'assess2': 50,
+            'int': 31,
+            'reqlv': 75,
+            'identify_props': {
+                'mind': 6
+            },
+            'ep2_slot': 13,
+            '_ntr_date': 1440387871,
+            'ep2_enh_props': {
+                'mdef': 26,
+                'mind': 13,
+                'int': 13
+            },
+            'equ_lv': 89,
+            'rpr': 191,
+            'ep2_enh': 13,
+            'mdur': 304,
+            'kechongzhu': 1,
+            'mdef': 30,
+            'imprint': 1,
+            '_latchOfCipher': 1471189839,
+            'skspd': 2.06,
+            'msp': 163,
+            'cenh': 16,
+            'id': 3906,
+            'can_inlay': 1,
+            'latch_cipher': 1,
+            'use_rand_rule': 2690,
+            'mhp': 185,
+            'bargain_visible': 1,
+            'con': 42,
+            'inlay_props': {
+                'mdef': 30,
+                'mind': 31,
+                'int': 31,
+                'skspd': 2.06
+            },
+            'esid': 62,
+            'latch_time': 1,
+            'star': 3,
+            'cdur': 304,
+            'avoid': 86,
+            'menh': 20,
+            'ntr': 10
+        },
+        '15': {
+            'assess2': 94,
+            'int': 38,
+            'cwrap': 1,
+            'ep2_slot': 13,
+            'star': 4,
+            'ws_min_enh': 15,
+            'ntr': 10,
+            'rand_way': 68,
+            'kechongzhu': 1,
+            'cri_add_p': 1.51,
+            'imprint': 1,
+            '_latchOfCipher': 1470231928,
+            'skspd': 3.27,
+            'ws8': 5,
+            'cenh': 16,
+            'id': 3969,
+            'nodis': 0,
+            'cri': 140,
+            'use_rand_rule': 5080,
+            'mhp': 772,
+            'inlay_props': {
+                'mind': 34,
+                'mmax': 16,
+                'pdef': 37,
+                'skspd': 1.43
+            },
+            'identify_props': {
+                'mhp': 33
+            },
+            'menh': 20,
+            'inlay_is_special': 1,
+            'mind': 85,
+            'reqlv': 78,
+            'ws127': 5,
+            'uutime': 1449239190,
+            'ep2_enh_props': {
+                'mind': 13,
+                'mmax': 13,
+                'pdef': 26
+            },
+            'rpr': 250,
+            'mdur': 331,
+            'equ_lv': 108,
+            'mmax': 16,
+            'pdef': 37,
+            'cdur': 331,
+            'nosell': 1,
+            'can_inlay': 1,
+            'no_regen': 1,
+            'dex': 51,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'latch_time': 1,
+            'ws_min_enh_name': 'ws127',
+            'inosculate_state': 1,
+            'ep2_enh': 13
+        },
+        '9': {
+            'ma3': 18,
+            'hidden_prop_rand_rule': {
+                '1': 4206
+            },
+            'assess2': 37,
+            'identify_props': {
+                'mind': 10
+            },
+            'ep2_slot': 13,
+            'equ_lv': 96,
+            'ntr': 10,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1467020328,
+            'changeback_flag': 1,
+            'cenh': 16,
+            'look_cdur': 128,
+            'id': 33272,
+            'nodis': 1,
+            'cri': 60,
+            'use_rand_rule': 4202,
+            'inlay_props': {
+                'ma3': 18,
+                'mind': 34,
+                'pdef': 35,
+                'skspd': 1.5
+            },
+            'hidden_prop_num': 1,
+            'cwrap': 1,
+            'skspd': 3.5,
+            'dog': 0,
+            'menh': 20,
+            'con': 35,
+            'look_id': 33899,
+            'mind': 79,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 40
+                }
+            },
+            'reqlv': 80,
+            'uutime': 1431489902,
+            'ep2_enh_props': {
+                'ma3': 13,
+                'mind': 13,
+                'pdef': 26
+            },
+            'rpr': 238,
+            'mdur': 314,
+            'max_hidden_prop_num': 2,
+            'equ_xchange_num': 14,
+            'pdef': 35,
+            'cdur': 314,
+            'hidden_equ_xiuwei': 68,
+            'suit': 137,
+            'equ_team': 2,
+            'can_inlay': 1,
+            'hit': 74,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'skprt': 25,
+            'latch_time': 1,
+            'star': 4,
+            'inosculate_state': 1,
+            'ep2_enh': 13
+        },
+        '25': {
+            'skprt': 5,
+            'magic_no': 0,
+            'reqlv': 30,
+            'cwrap': 1,
+            'latch_cipher': 1,
+            'uutime': 1467553438,
+            'aatspd': 0.0,
+            'equ_lv': 80,
+            'rpr': 270,
+            'magic_lv': 1,
+            'ntr': 10,
+            'mdur': 300,
+            'magic_id': 170007,
+            'hit_mod': 0.0,
+            'mdef': 500,
+            'scsp': 5.0,
+            'add_mag': 0.0,
+            'pdef': 500,
+            'skspd': 5.0,
+            'magic_type': 3,
+            'msp': 800,
+            'magic_name': '弗诛·明',
+            'player_lv': 80,
+            'id': 170007,
+            'nodis': 1,
+            'add_phy': 0.0,
+            'mdef_mod': 5.0,
+            'skbrk': 0,
+            'avoid_mod': 5.0,
+            'mhp': 10000,
+            'msp_mod': 5.0,
+            'pdef_mod': 5.0,
+            'star': 4,
+            'amvspd': 0.0,
+            'cdur': 300,
+            'mhp_mod': 5.0
+        },
+        '19': {
+            'bargain_visible': 1,
+            'name': '孤鸿月影',
+            'mind': 1,
+            'latch_time': 1,
+            'int': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1321879748,
+            'dex': 1,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'con': 1,
+            'id': 21323,
+            'mdur': 100,
+            'cheapfix': 1,
+            'star': 2,
+            'str': 1,
+            'cdur': 100,
+            'dog': 1,
+            'nosell': 1,
+            '_latchOfCipher': 1385875291,
+            'ntr': 10
+        },
+        '5': {
+            'hgt': 3,
+            'assess2': 126,
+            'keep_look_enh': 18,
+            'ws_min_enh_name': 'ws102',
+            'identify_props': {
+                'mind': 11
+            },
+            'twohand': 1,
+            'equ_lv': 108,
+            'ws_min_enh': 18,
+            'keep_looking': True,
+            'ntr': 10,
+            'kechongzhu': 1,
+            'imprint': 1,
+            'look_cdur': 76,
+            '_latchOfCipher': 1467270447,
+            'skspd': 2.5999999999999996,
+            'cenh': 18,
+            'int': 72,
+            'id': 1613,
+            'enh_ws': [
+                [
+                    16,
+                    10
+                ],
+                [
+                    17,
+                    15
+                ],
+                [
+                    18,
+                    20
+                ]
+            ],
+            'cri': 193,
+            'use_rand_rule': 2515,
+            'pmin': 228,
+            'inlay_props': {
+                'skspd': 1.45,
+                'mind': 30,
+                'mmax': 15,
+                'con': 31
+            },
+            'keep_look_item_id': 1623,
+            'cwrap': 1,
+            'ep2_slot': 13,
+            'mmin': 372,
+            'menh': 20,
+            'con': 31,
+            'look_id': 1434,
+            'xchange_sch': 7,
+            'inlay_is_special': 1,
+            'range': 3.5,
+            'mind': 116,
+            'reqlv': 75,
+            'atspd': 40,
+            'uutime': 1328618448,
+            'ws102': 10,
+            'ep2_enh_props': {
+                'mind': 13,
+                'mmax': 13,
+                'con': 13
+            },
+            'rpr': 932,
+            'mdur': 307,
+            'equ_xchange_num': 25,
+            'mmax': 638,
+            'esid': 58,
+            'cdur': 305,
+            'exfix': 7,
+            'can_inlay': 1,
+            'hit': 316,
+            'dex': 61,
+            'ma7': 43,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'pmax': 414,
+            'latch_time': 1,
+            'star': 4,
+            'atype': 7,
+            'keep_look': 1,
+            'ep2_enh': 13
+        },
+        '4': {
+            'uutime': 1339133903,
+            'mind': 88,
+            'assess2': 63,
+            'int': 33,
+            'reqlv': 75,
+            'pdef': 35,
+            'cwrap': 1,
+            'ep2_slot': 13,
+            'ep2_enh_props': {
+                'md4': 26,
+                'mind': 13,
+                'pdef': 26
+            },
+            'equ_lv': 91,
+            'rpr': 0,
+            'mdur': 221,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1467006755,
+            'cdur': 221,
+            'bargain_visible': 1,
+            'cenh': 16,
+            'sch': [
+                7
+            ],
+            'id': 22291,
+            'nodis': 1,
+            'can_inlay': 1,
+            'inlay_lv': 91,
+            'inlay_props': {
+                'md4': 33,
+                'mind': 35,
+                'skprt': 35,
+                'pdef': 35
+            },
+            'use_rand_rule': 660,
+            'mhp': 141,
+            'ntr': 10,
+            'con': 33,
+            'equ_xchange_num': 26,
+            'esid': 35,
+            'latch_time': 1,
+            'star': 4,
+            'latch_cipher': 1,
+            'md4': 33,
+            'skprt': 80,
+            'menh': 20,
+            'addition_state': [
+
+            ],
+            'ep2_enh': 13
+        },
+        '18': {
+            'cwrap': 1,
+            'skprt': 10,
+            'uutime': 1376818884,
+            'mind': 73,
+            'assess2': 54,
+            'int': 33,
+            'reqlv': 75,
+            'identify_props': {
+                'avoid': 11
+            },
+            'ep2_slot': 13,
+            '_ntr_date': 1440387851,
+            'ep2_enh_props': {
+                'mdef': 20,
+                'mind': 10,
+                'int': 10
+            },
+            'equ_lv': 89,
+            'rpr': 191,
+            'ep2_enh': 10,
+            'mdur': 304,
+            'kechongzhu': 1,
+            'mdef': 34,
+            'imprint': 1,
+            '_latchOfCipher': 1471174135,
+            'skspd': 2.28,
+            'msp': 163,
+            'cenh': 16,
+            'id': 3906,
+            'can_inlay': 1,
+            'latch_cipher': 1,
+            'use_rand_rule': 2690,
+            'mhp': 285,
+            'bargain_visible': 1,
+            'con': 43,
+            'inlay_props': {
+                'mdef': 34,
+                'mind': 33,
+                'int': 33,
+                'skspd': 2.28
+            },
+            'esid': 62,
+            'latch_time': 1,
+            'star': 3,
+            'cdur': 304,
+            'avoid': 97,
+            'menh': 20,
+            'ntr': 10
+        },
+        '0': {
+            'hidden_prop_rand_rule': {
+                '1': 3034,
+                '2': 3038
+            },
+            'assess2': 60,
+            'int': 35,
+            'identify_props': {
+                'dog': 6
+            },
+            'ep2_slot': 13,
+            'equ_lv': 96,
+            'ntr': 10,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1467351883,
+            'changeback_flag': 1,
+            'cenh': 16,
+            'look_cdur': 37,
+            'id': 33267,
+            'nodis': 1,
+            'use_rand_rule': 3030,
+            'inlay_props': {
+                'mind': 33,
+                'scsp': 2.54,
+                'int': 35,
+                'skspd': 2.25
+            },
+            'hidden_prop_num': 2,
+            'cwrap': 1,
+            'skspd': 4.25,
+            'dog': 6,
+            'menh': 20,
+            'con': 48,
+            'look_id': 2966,
+            'mind': 74,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 46
+                },
+                '2': {
+                    'msp': 57
+                }
+            },
+            'reqlv': 80,
+            'uutime': 1386515047,
+            'ep2_enh_props': {
+                'mind': 13,
+                'int': 13
+            },
+            'rpr': 350,
+            'mdur': 333,
+            'max_hidden_prop_num': 2,
+            'mdef': 424,
+            'equ_xchange_num': 9,
+            'scsp': 2.54,
+            'pdef': 256,
+            'cdur': 327,
+            'hidden_equ_xiuwei': 97,
+            'suit': 137,
+            'equ_team': 2,
+            'can_inlay': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'skprt': 39,
+            'latch_time': 1,
+            'star': 4,
+            'ep2_enh': 13
+        },
+        '14': {
+            'is_mb_inlay': 1,
+            'hidden_prop_rand_rule': {
+                '9': 4878,
+                '8': 4874
+            },
+            'assess2': 121,
+            'cwrap': 1,
+            'ep2_slot': 10,
+            'aa0': 6,
+            'mb_inlay_props': {
+                'sad_record_val': 8864,
+                'to_inlay_prop_mainvs': {
+                    'aa0': 109,
+                    'mdef': 0,
+                    'dex': 1,
+                    'skspd': 4655
+                },
+                'inlay_times': 32,
+                'mainv': 5145,
+                'transform_times': 0,
+                'sad_val': 7935,
+                'yl_cost': 2048
+            },
+            'equ_lv': 93,
+            'condition_hidden_shot': 1,
+            'rand_way': 73,
+            'kechongzhu': 1,
+            'mdef': 9,
+            '_latchOfCipher': 1465137088,
+            'skspd': 2.49,
+            '_ntr_date': 1440387815,
+            'imprint': 1,
+            'id': 3947,
+            'inlay_hidden_prop': [
+
+            ],
+            'use_rand_rule': 4871,
+            'mhp': 1116,
+            'inlay_props': {
+                'aa0': 6,
+                'mdef': 9,
+                'dex': 10,
+                'skspd': 2.49
+            },
+            'trans_lv': 93,
+            'identify_props': {
+                'avoid': 8
+            },
+            'condition_hidden_rule': 1,
+            'avoid': 8,
+            'menh': 20,
+            'inlay_lv': 93,
+            'hidden_prop_act': {
+                '9': {
+                    'skprt': 39
+                },
+                '8': {
+                    'avoid': 110
+                }
+            },
+            'reqlv': 80,
+            'sdmd': 55,
+            'uutime': 1385205328,
+            'ep2_enh_props': {
+                'aa0': 10,
+                'mdef': 20,
+                'dex': 10
+            },
+            'rpr': 237,
+            'cenh': 16,
+            'mdur': 319,
+            'max_hidden_prop_num': 3,
+            'mmax': 63,
+            'hidden_prop_num': 3,
+            'cdur': 310,
+            'hidden_equ_xiuwei': 51,
+            'condition_hidden_num': 10,
+            'nosell': 1,
+            'can_inlay': 1,
+            'no_regen': 1,
+            'dex': 10,
+            'latch_cipher': 1,
+            'ws34': 1,
+            'bargain_visible': 1,
+            'latch_time': 1,
+            'star': 3,
+            'ep2_enh': 10,
+            'ntr': 10
+        },
+        '13': {
+            'hidden_prop_rand_rule': {
+                '9': 4877,
+                '8': 4874
+            },
+            'assess2': 100,
+            'int': 36,
+            'cwrap': 1,
+            'equ_lv': 93,
+            'ep2_slot': 10,
+            'rand_way': 73,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1465137086,
+            'skspd': 2.94,
+            '_ntr_date': 1440387865,
+            'cenh': 16,
+            'id': 3947,
+            'use_rand_rule': 4871,
+            'mhp': 1116,
+            'inlay_props': {
+                'mind': 35,
+                'scsp': 2.07,
+                'int': 36,
+                'skspd': 2.94
+            },
+            'identify_props': {
+                'avoid': 13
+            },
+            'condition_hidden_rule': 1,
+            'avoid': 13,
+            'menh': 20,
+            'mind': 35,
+            'hidden_prop_act': {
+                '9': {
+                    'sthitadd': 44
+                },
+                '8': {
+                    'avoid': 108
+                }
+            },
+            'reqlv': 80,
+            'sdmd': 49,
+            'uutime': 1373447746,
+            'ep2_enh_props': {
+                'mind': 10,
+                'int': 10
+            },
+            'rpr': 234,
+            'mdur': 319,
+            'max_hidden_prop_num': 3,
+            'condition_hidden_shot': 1,
+            'scsp': 2.07,
+            'mmax': 62,
+            'hidden_prop_num': 3,
+            'cdur': 306,
+            'hidden_equ_xiuwei': 50,
+            'condition_hidden_num': 10,
+            'nosell': 1,
+            'can_inlay': 1,
+            'no_regen': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'latch_time': 1,
+            'star': 3,
+            'ep2_enh': 10,
+            'ntr': 10
+        },
+        '2': {
+            'md0': 0,
+            'hidden_prop_rand_rule': {
+                '1': 3047,
+                '2': 3052
+            },
+            'mind': 34,
+            'assess2': 57,
+            'hidden_prop_act': {
+                '1': {
+                    'amvspd': 1.01
+                },
+                '2': {
+                    'mhp': 353
+                }
+            },
+            'reqlv': 80,
+            'pdef': 175,
+            'identify_props': {
+                'con': 7
+            },
+            'uutime': 1380355530,
+            'changeback_flag': 1,
+            'skprt': 32,
+            'skspd': 2.0,
+            'rpr': 228,
+            'mdur': 314,
+            'max_hidden_prop_num': 2,
+            'kechongzhu': 1,
+            'imprint': 1,
+            'hidden_prop_num': 2,
+            'equ_team': 2,
+            'hidden_equ_xiuwei': 106,
+            'cenh': 16,
+            'suit': 137,
+            'sch': [
+                5,
+                6,
+                7,
+                8
+            ],
+            'id': 33273,
+            'md7': 0,
+            'nodis': 1,
+            'latch_cipher': 1,
+            'use_rand_rule': 3042,
+            'mhp': 926,
+            'bargain_visible': 1,
+            'con': 45,
+            'equ_xchange_num': 15,
+            '_latchOfCipher': 1469022478,
+            'latch_time': 1,
+            'star': 4,
+            'equ_lv': 96,
+            'cdur': 302,
+            'cwrap': 1,
+            'menh': 20,
+            'ntr': 10
+        },
+        '23': {
+            'voice_id': [
+                ''
+            ],
+            'migrate_server': '',
+            'create_money': 100000,
+            'marker': '',
+            'cwrap': 1,
+            'uutime': 1329531668,
+            'init_dur': 100,
+            'create_skp': 1000000,
+            'rpr': 0,
+            'skill_bg': '邪术，需要牺牲自身的生命值来获得额外的技力。相传创造本招数的乃是一翼人天才，后被黄帝时代的太虚五杰之一的凌空子习得，得以流传于江湖。',
+            'used_jhbook': True,
+            'jhskill_lv': 1,
+            'xiuwei_limit': 14000,
+            'cheat_rate': 3.0,
+            'cdur': 73,
+            'ccd_arg': 1.0,
+            'wuxing_need': 2000,
+            'attack_arg': 1.0,
+            'range_arg': 1.0,
+            'sp_arg': 1.0,
+            'active_prop': '',
+            '_vendorip_consign': 1568632177,
+            'id': 50005,
+            'cooldown_arg': 1.0,
+            'need_target': 1,
+            'bargain_visible': 1,
+            'world_notify_content': '',
+            'need_skp': 5000000,
+            'star': 3,
+            'creator': '凌空子',
+            'ban_space': [
+                0,
+                0
+            ],
+            'jhskill': 3002,
+            'ntr': 10
+        },
+        '8': {
+            'hidden_prop_rand_rule': {
+                '1': 5380,
+                '2': 5384
+            },
+            'assess2': 47,
+            'identify_props': {
+                'pdef': 16
+            },
+            'ep2_slot': 13,
+            'equ_lv': 96,
+            'skspd': 4.09,
+            'ntr': 10,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1467351881,
+            'changeback_flag': 1,
+            'cenh': 16,
+            'look_cdur': 157,
+            'id': 33268,
+            'nodis': 1,
+            'use_rand_rule': 5376,
+            'inlay_props': {
+                'mind': 35,
+                'mmax': 16,
+                'pdef': 34,
+                'skspd': 2.09
+            },
+            'hidden_prop_num': 2,
+            'cwrap': 1,
+            'cdur': 343,
+            'menh': 20,
+            'con': 43,
+            'look_id': 33903,
+            'mind': 81,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 51
+                },
+                '2': {
+                    'msp': 53
+                }
+            },
+            'reqlv': 80,
+            'uutime': 1386103073,
+            'ep2_enh_props': {
+                'mind': 13,
+                'mmax': 13,
+                'pdef': 26
+            },
+            'rpr': 417,
+            'mdur': 343,
+            'max_hidden_prop_num': 2,
+            'mdef': 493,
+            'equ_xchange_num': 10,
+            'mmax': 16,
+            'pdef': 341,
+            'equ_team': 2,
+            'hidden_equ_xiuwei': 73,
+            'suit': 137,
+            'can_inlay': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'skprt': 46,
+            'latch_time': 1,
+            'star': 4,
+            'ep2_enh': 13
+        },
+        '16': {
+            'assess2': 68,
+            'int': 53,
+            'ws_min_enh_name': 'ws127',
+            'cwrap': 1,
+            'ep2_slot': 13,
+            'equ_lv': 108,
+            'ws_min_enh': 15,
+            'ntr': 10,
+            'kechongzhu': 1,
+            'rand_way': 68,
+            'imprint': 1,
+            'ws5': 3,
+            'skspd': 1.76,
+            'cenh': 16,
+            'id': 3969,
+            'nodis': 0,
+            'cri': 140,
+            'use_rand_rule': 5085,
+            'mhp': 983,
+            'inlay_props': {
+                'md6': 30,
+                'mind': 31,
+                'pdef': 31,
+                'skspd': 1.76
+            },
+            '_latchOfCipher': 1471174125,
+            'identify_props': {
+                'int': 8
+            },
+            'dog': 54,
+            'menh': 20,
+            'mind': 77,
+            'reqlv': 78,
+            'ws127': 5,
+            'uutime': 1446363592,
+            'ep2_enh_props': {
+                'md6': 26,
+                'mind': 13,
+                'pdef': 26
+            },
+            'rpr': 250,
+            'mdur': 331,
+            'pdef': 31,
+            'cdur': 331,
+            'nosell': 1,
+            'inosculate_state': 1,
+            'can_inlay': 1,
+            'no_regen': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'skprt': 50,
+            'latch_time': 1,
+            'star': 4,
+            'md6': 30,
+            'ep2_enh': 13
+        },
+        '1': {
+            'hidden_prop_rand_rule': {
+                '1': 5392
+            },
+            'assess2': 52,
+            'identify_props': {
+                'avoid': 20
+            },
+            'ep2_slot': 13,
+            'equ_lv': 96,
+            'ntr': 10,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1471189661,
+            'changeback_flag': 1,
+            'cenh': 16,
+            'look_cdur': 0,
+            'id': 33269,
+            'nodis': 1,
+            'use_rand_rule': 5388,
+            'inlay_props': {
+                'mdef': 32,
+                'mind': 33,
+                'ma6': 17,
+                'skspd': 2.3
+            },
+            'hidden_prop_num': 1,
+            'cwrap': 1,
+            'skspd': 4.3,
+            'avoid': 337,
+            'menh': 20,
+            'con': 54,
+            'look_id': 33261,
+            'mind': 95,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 53
+                }
+            },
+            'reqlv': 80,
+            'uutime': 1388578955,
+            'ep2_enh_props': {
+                'mdef': 26,
+                'mind': 13,
+                'ma6': 13
+            },
+            'rpr': 522,
+            'mdur': 362,
+            'max_hidden_prop_num': 2,
+            'mdef': 656,
+            'equ_xchange_num': 11,
+            'pdef': 372,
+            'cdur': 353,
+            'hidden_equ_xiuwei': 31,
+            'suit': 137,
+            'equ_team': 2,
+            'can_inlay': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'skprt': 33,
+            'latch_time': 1,
+            'star': 4,
+            'ep2_enh': 13,
+            'ma6': 17
+        },
+        '3': {
+            'hidden_prop_rand_rule': {
+                '1': 4709,
+                '2': 4713
+            },
+            'assess2': 78,
+            'sch': [
+                5,
+                6,
+                7,
+                8
+            ],
+            'identify_props': {
+                'pdef': 14
+            },
+            'equ_lv': 96,
+            'ep2_slot': 13,
+            'kechongzhu': 1,
+            'imprint': 1,
+            '_latchOfCipher': 1469861106,
+            'changeback_flag': 1,
+            'int': 32,
+            'cenh': 16,
+            'look_cdur': 0,
+            'id': 33270,
+            'nodis': 1,
+            'use_rand_rule': 4705,
+            'inlay_props': {
+                'mdef': 33,
+                'mind': 33,
+                'int': 32,
+                'skspd': 2.14
+            },
+            'hidden_prop_num': 2,
+            'cwrap': 1,
+            'skspd': 4.140000000000001,
+            'avoid': 189,
+            'menh': 20,
+            'con': 43,
+            'look_id': 2046,
+            'mind': 82,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 46
+                },
+                '2': {
+                    'msp': 50
+                }
+            },
+            'reqlv': 80,
+            'uutime': 1377268365,
+            'ep2_enh_props': {
+                'mdef': 26,
+                'mind': 13,
+                'int': 13
+            },
+            'rpr': 293,
+            'mdur': 324,
+            'max_hidden_prop_num': 2,
+            'mdef': 33,
+            'equ_xchange_num': 12,
+            'pdef': 225,
+            'cdur': 319,
+            'hidden_equ_xiuwei': 99,
+            'suit': 137,
+            'equ_team': 2,
+            'can_inlay': 1,
+            'latch_cipher': 1,
+            'bargain_visible': 1,
+            'skprt': 32,
+            'latch_time': 1,
+            'star': 4,
+            'ep2_enh': 13,
+            'ntr': 10
+        },
+        '20': {
+            'bargain_visible': 1,
+            'mind': 1,
+            'latch_time': 1,
+            'int': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1321879748,
+            'dex': 1,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'con': 1,
+            'id': 21324,
+            'mdur': 100,
+            'cheapfix': 1,
+            'star': 2,
+            'str': 1,
+            'cdur': 100,
+            'dog': 1,
+            'nosell': 1,
+            '_latchOfCipher': 1345284192,
+            'ntr': 10
+        },
+        '10': {
+            'cwrap': 1,
+            'skprt': 38,
+            'hidden_prop_rand_rule': {
+                '1': 4721,
+                '2': 4727
+            },
+            'mind': 54,
+            'assess2': 61,
+            'hidden_prop_act': {
+                '1': {
+                    'dog': 45
+                },
+                '2': {
+                    'mhp': 287
+                }
+            },
+            'reqlv': 80,
+            'identify_props': {
+                'mind': 9
+            },
+            'uutime': 1385820143,
+            'changeback_flag': 1,
+            'skspd': 2.0,
+            'rpr': 357,
+            'mdur': 333,
+            'max_hidden_prop_num': 2,
+            'kechongzhu': 1,
+            'mdef': 424,
+            'imprint': 1,
+            'hidden_prop_num': 2,
+            'equ_team': 2,
+            'hidden_equ_xiuwei': 48,
+            'cenh': 16,
+            'suit': 137,
+            'id': 33271,
+            'nodis': 1,
+            'latch_cipher': 1,
+            'use_rand_rule': 4717,
+            'mhp': 0,
+            'bargain_visible': 1,
+            'con': 41,
+            'equ_xchange_num': 13,
+            '_latchOfCipher': 1463735702,
+            'latch_time': 1,
+            'star': 4,
+            'equ_lv': 96,
+            'cdur': 333,
+            'avoid': 217,
+            'menh': 20,
+            'ntr': 10
+        }
+    },
+    'petName': '',
+    'ride_skill': 5,
+    'srmind': 1324,
+    'jhsks': [
+        [
+            3017,
+            2,
+            '如沐春风'
+        ],
+        [
+            3002,
+            1,
+            '血祭术'
+        ]
+    ],
+    'sch': 7,
+    'mattack_max': 1679,
+    'attackhuman': 5,
+    'inprotect': 2171,
+    'pattack_max': 591,
+    'famousWing': None,
+    'xiuwei': 54776,
+    'attr': {
+        'str': 29,
+        'mind': 2383,
+        'con': 727,
+        'int': 585,
+        'dex': 263,
+        'dog': 808
+    },
+    'saddle': [
+        1593875947,
+        [
+            21632,
+            21635,
+            21894,
+            21895,
+            21896,
+            21975,
+            21903,
+            21648,
+            21907,
+            21652,
+            21909,
+            21912,
+            21914,
+            21743,
+            21661,
+            21861,
+            21663,
+            21664,
+            21629,
+            21922,
+            21851,
+            21924,
+            21541,
+            21866,
+            21545,
+            21547,
+            21935,
+            21552,
+            21681,
+            21882,
+            21686,
+            21559,
+            21688,
+            21817,
+            21820,
+            215114,
+            215102,
+            215105,
+            21827,
+            215109,
+            215110,
+            21831,
+            21576,
+            21834,
+            215115,
+            215116,
+            21631,
+            21966,
+            21967,
+            215121,
+            215123,
+            21845,
+            21974,
+            21885,
+            215107,
+            21595,
+            21852,
+            21853,
+            21854,
+            24159,
+            21856,
+            21601,
+            21858,
+            21859,
+            21860,
+            21989,
+            21862,
+            21863,
+            21738,
+            215112,
+            21979,
+            21613,
+            21999,
+            21920,
+            34045,
+            24161,
+            21575,
+            21883,
+            21884,
+            21757,
+            21758,
+            21605
+        ]
+    ],
+    'double_wing_abs_attr': 0,
+    'coinB': 0,
+    'fly_soul_phase': 2,
+    'mattack_min': 943,
+    'flySoulSkills': {
+        '2219': [
+            9,
+            1470330049.913565
+        ],
+        '2321': [
+            9,
+            1471265895.783165
+        ]
+    },
+    'coinA': 62,
+    'cri_add_p': 25,
+    'commode': {
+        '32': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1467343478,
+            'nosell': 1,
+            'reqlv': 10,
+            '_kaputOfDateP': 1385524235,
+            'uutime': 1385524235,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 121516,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'recycle_flag': 1,
+            'cdur': 100,
+            'cwrap': 1,
+            '_latchOfCipher': 1430788466,
+            'mdur': 100
+        },
+        '18': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1474102766,
+            'nosell': 1,
+            'reqlv': 10,
+            '_kaputOfDateP': 1465459317,
+            'uutime': 1465459317,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 210038,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'recycle_flag': 1,
+            'cdur': 100,
+            'cwrap': 1,
+            '_latchOfCipher': 1466866057,
+            'mdur': 100
+        },
+        '0': {
+            'bargain_visible': 1,
+            'mind': 1,
+            'latch_time': 1,
+            'int': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1466652148,
+            'dex': 1,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'con': 1,
+            'id': 121661,
+            'mdur': 100,
+            'cheapfix': 1,
+            'star': 2,
+            'str': 1,
+            'cdur': 100,
+            'dog': 1,
+            'nosell': 1,
+            'ntr': 10
+        },
+        '31': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1469597511,
+            'nosell': 1,
+            'reqlv': 10,
+            'sex': 1,
+            '_kaputOfDateP': 1432990289,
+            'uutime': 1432990289,
+            'max_rcl_num': 2,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 121553,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'cdur': 100,
+            'cwrap': 1,
+            'recycle_flag': 1,
+            'mdur': 100
+        },
+        '47': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1368276682,
+            'nosell': 1,
+            'sch': [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            'reqlv': 10,
+            '_kaputOfDateP': 1360500682,
+            'uutime': 1360500682,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 21413,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'cdur': 98,
+            'cwrap': 1,
+            'recycle_flag': 1,
+            'mdur': 100
+        },
+        '41': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1368276682,
+            'nosell': 1,
+            'sch': [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            'reqlv': 10,
+            '_kaputOfDateP': 1360500682,
+            'uutime': 1360500682,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 21412,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'cdur': 98,
+            'cwrap': 1,
+            'recycle_flag': 1,
+            'mdur': 100
+        },
+        '2': {
+            'bargain_visible': 1,
+            'mind': 1,
+            'latch_time': 1,
+            'int': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1450244540,
+            'dex': 1,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'con': 1,
+            'id': 210146,
+            'mdur': 100,
+            'cheapfix': 1,
+            'star': 2,
+            'str': 1,
+            'cdur': 98,
+            'dog': 1,
+            'nosell': 1,
+            'ntr': 10
+        },
+        '27': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1471018761,
+            'nosell': 1,
+            'reqlv': 10,
+            '_kaputOfDateP': 1465459317,
+            'uutime': 1465459317,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 210037,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'cdur': 100,
+            'cwrap': 1,
+            'recycle_flag': 1,
+            'mdur': 100
+        },
+        '30': {
+            'bargain_visible': 1,
+            '_kaputOfDateC': 1469597588,
+            'nosell': 1,
+            'reqlv': 10,
+            'sex': 1,
+            '_kaputOfDateP': 1432990289,
+            'uutime': 1432990289,
+            'max_rcl_num': 2,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 121552,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'cdur': 100,
+            'cwrap': 1,
+            'recycle_flag': 1,
+            'mdur': 100
+        },
+        '1': {
+            'bargain_visible': 1,
+            'mind': 1,
+            'latch_time': 1,
+            'int': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1466652148,
+            'dex': 1,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'con': 1,
+            'id': 121662,
+            'mdur': 100,
+            'cheapfix': 1,
+            'star': 2,
+            'str': 1,
+            'cdur': 100,
+            'dog': 1,
+            'nosell': 1,
+            'ntr': 10
+        },
+        '3': {
+            'bargain_visible': 1,
+            'mind': 1,
+            'latch_time': 1,
+            'int': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1450244540,
+            'dex': 1,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'con': 1,
+            'id': 210147,
+            'mdur': 100,
+            'cheapfix': 1,
+            'star': 2,
+            'str': 1,
+            'cdur': 98,
+            'dog': 1,
+            'nosell': 1,
+            'ntr': 10
+        },
+        '5': {
+            'bargain_visible': 1,
+            'nosell': 1,
+            'reqlv': 10,
+            'cwrap': 1,
+            'uutime': 1438587857,
+            'latch_cipher': 1,
+            'rpr': 0,
+            'id': 88511,
+            'ntr': 10,
+            'latch_time': 1,
+            'star': 2,
+            'cdur': 100,
+            'mdur': 100
+        }
+    },
+    'wuxing': 13348,
+    'castspeed': 52,
+    'absolutely_attack': 10,
+    'equ_xiuwei': 86499,
+    'fly_soul_lv': '壹天捌境界',
+    'lv': 80,
+    'critical': 812,
+    'mhp': 33696,
+    'lightSkills': {
+        '103': 3,
+        '104': 3,
+        '101': 3,
+        '102': 3,
+        '105': 3
+    },
+    'talent_point': 33,
+    'hit': 826,
+    'pdef': 3552,
+    'double_wing_lv': 2,
+    'thump_sub_p': 0,
+    'formulas': [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        27,
+        37,
+        39,
+        40,
+        41,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        76,
+        78,
+        130,
+        131,
+        132,
+        136,
+        137,
+        138,
+        145,
+        146,
+        147,
+        148,
+        150,
+        151,
+        152,
+        155,
+        156,
+        195,
+        196,
+        198,
+        199,
+        200,
+        201,
+        215,
+        216,
+        221,
+        222,
+        245,
+        249,
+        250,
+        251,
+        253,
+        307,
+        308,
+        309,
+        310,
+        311,
+        327,
+        330,
+        331,
+        332,
+        333,
+        386,
+        1231,
+        1239,
+        1247,
+        1255,
+        1263,
+        1271,
+        1279,
+        1287,
+        1642
+    ],
+    'saddle_tips': {
+        '21860': '#cBB44BB#r#W#Y春风拂面草绿，雪云初霁湖清。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21688': '#cBB44BB#r#W暮云收尽溢清寒，银汉无声转玉盘。#r#G双人飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21661': '#cBB44BB#r#W火焰包围，行动间有风雷之声，瞬息可行十万八千里的法宝。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特有珍兽，使用自己的独立过期时间。#r#W必要等级：20#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21862': '#cFFFF00#r#W#Y浮云游子，夕阳紫霞，山色湖光。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21920': '#cFFFF00#r#W#Y玄兵通灵，奇迹天成。#W#r太初玄兵纳六道精华，灵慧充盈，化为奇兽。飞天入海，无所不能。#r#G水陆空珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r#G普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21652': '#cBB44BB#r#W桃之夭夭，灼灼其华。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21989': '#cBB44BB#r#W银烛秋光冷画屏,
+        轻罗小扇扑流萤。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21663': '#cBB44BB#r#W有个小村神秘村长孤寒随身携带的玉笛。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21894': '#cBB44BB#r#W十洲三岛，辟浪迤游。#r#G水陆空珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215121': '#cBB44BB#r#W#Y国色天香，水墨铅华#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21895': '#cBB44BB#r#W#Y高山流水，仙音缥缈。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21635': '#cBB44BB#r#W菡萏晴好，伞面为玄素当年渡世之笔闲趣偶得，其上荷花可感应天地之气，持此伞者，可步步生莲，凭虚御风而行。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21999': '#cFFFF00#r#W#Y斯须九重真龙出，一洗万古凡马空。#W#r#R双人变身水陆空珍兽，#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：720#r#G飞行速度：830#r',
+        '21576': '#cBB44BB#r#W可以像天使一样飞行的白色拓拓，“#cFFC125神马都是浮云#W”——它是那样的淡定而飘逸。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21743': '#cBB44BB#r#W谁家玉笛暗飞声，散入春风满洛城。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21896': '#cFFFF00#r#W#Y秋水盈盈，浣灵之光。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '34045': '#cBB44BB#r#W载尔于肩，死生共进退，以证兄弟之盟。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r',
+        '21559': '#cBB44BB#r#W记录昔日承云乐谱的妙笔，如今吸收天地灵气，可载人遨游于天地。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r',
+        '215109': '#cFFFF00#r#W#Y小时候，我有个别名叫亚古#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#Y通灵技能开启#r#G陆行速度：712#r#G飞行速度：816#r#cffa500【高】兽诀·眩晕（30）: #r#W【高】兽诀·眩晕（30）: 法术。被激怒的珍兽发出惊人的怒吼，有几率（状态命中力1230）使敌人进入眩晕状态，持续0.1秒。#r#cffa500必带属性: #r#W#c00AAEE生命值+11#r#r#W#c00AAEE回避+56#r#r#W物理防御力: +142#r#r#W#cFF8800定力：催眠、暴怒、恐惧、混乱抗性上升69#r#r',
+        '21629': '#cBB44BB#r#W九黎深山中的孔雀王子，性情善良温和，被小人恶意中伤，遭孔雀家族驱逐，心灰意冷流落至大荒，成为大荒勇士的佳友良伴。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215102': '#cFFFF00#r#W羊，温顺谦和者也。性行谦和可萌万物者，为咩咩。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：80#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21979': '#cBB44BB#r#W#Y黄昏盛开，翌朝凋谢，悄然含英，阒然零落！#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215112': '#cFFFF00#r#W#cff99ff踏南天，碎凌霄。大圣来也！#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21541': '#cBB44BB#r#W记录经年乐谱的妙笔，如今吸收天地灵气，可载人遨游于天地。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21632': '#cBB44BB#r#W火焰包围，行动间有风雷之声，瞬息可行十万八千里的法宝。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21861': '#cBB44BB#r#W飞翔的梦想，天空的絮语。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特殊珍兽，使用独立的过期时间。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21909': '#cFFFF00#r#W#Y凤雏初啼，于彼幻境。云霏承宇，天下太平。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21967': '#cFFFF00#r#W#Y试问卷帘人,
+        却道海棠依旧。#r知否?知否?#r应是绿肥红瘦#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21856': '#cBB44BB#r#W黑云压城城欲摧，甲光向日金鳞开。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r体验珍兽，有效期为24小时，不可续费。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21863': '#cFFFF00#r#W#Y云从龙去，虎啸风来。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21922': '#cBB44BB#r#W#Y穿雪原动如风气冲宵汉，惟我雪地三雄！#W#r#G双人飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21907': '#cBB44BB#r#W#Y云鬓花颜金步摇，芙蓉帐暖度春宵。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215123': '#cFFFF00#r#W#Y剑啸苍穹，战惊天下。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：700#r#G飞行速度：800#r',
+        '21681': '#cBB44BB#r#W深海中的巨鳌，独占鳌头，乘风破浪，何等快意！#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特殊珍兽，使用独立的过期时间。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21853': '#cBB44BB#r#W右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r体验珍兽，有效期为24小时，不可续费。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21686': '#cBB44BB#r#W翠盖相扶两不欹,
+        多情独许见阳龟。#r#G水陆空珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21575': '#cBB44BB#r#W碧海蛟龙，蛰居南溟，可翻云覆雨，倾山倒海。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。乘骑之时，可以在水中自由潜游。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r',
+        '21613': '#cBB44BB#r#W#Y悠然自得势，浮云天地间。#r\u3000#r融天地灵气于一身的飞天珍兽，腾云驾雾，无拘无束。#G右键装备后可乘骑，图标显示在“装备”界面，可拖入快捷栏中。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21859': '#cBB44BB#r#W彩云南现，旭日初升凝瑞泽#r紫气东来，鸿运君临涵沧海。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r体验珍兽，有效期为24小时，不可续费。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21914': '#cBB44BB#r#W蜿蜿双龙翔，翩翩云珠绕。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特殊珍兽，使用自己的独立过期时间。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215105': '#cFFFF00#r#W#Y兴尽晚回舟，误入藕花深处。#r争渡，争渡，#r惊起一滩鸥鹭。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21827': '#cFFFF00#r#W#Y金铃锦领，平原千骑，星流电转。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21912': '#cFFFF00#r#W#Y踏歌而来，啸风何在？！#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21605': '#cBB44BB#r#W冰极巨兽，吼声震天，产于从极渊的冰熊巨兽，双肩皆可载人。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。乘骑后可以选择其他玩家邀请同骑，共游天下。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r',
+        '21851': '#cBB44BB#r#W影之主荆茗通过古老的驯养方法驯养出的鬼蝠，它们具有令人惊诧的神奇力量，身型可大可小，可现可隐，有如鬼魅，日行千里。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r体验珍兽，有效期为24小时，不可续费。#r#W必要等级：1#r#W贵重等级：60#r#G陆行速度：690#r',
+        '21845': '#cBB44BB#r#W舞狮贺新春，富贵千万年。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21631': '#cBB44BB#r#W凌云用机关之术制造出能够驭风而行的木质飞鸟，鲛人们从合虚山的废墟中找到，修缮后，可飞行一段时间。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r稀有珍兽，使用自己的独立过期时间。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21601': '#cBB44BB#r#W月宫玉兔团团在大荒游历时遇到的趣味相投的伙伴。圆圆和团团一样喜爱美食难以自制，因此也拥有了和团团一样憨态可掬的身形。#r#r飞行时会进入充气状态，非常可爱。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21738': '#cBB44BB#r#W承载着凛冬暖意的猫儿。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '24161': '#cBB44BB#r#W玉兔，大荒传说中的坐骑#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r',
+        '21966': '#cFFFF00#r#W#Y雪谷有铃兮，见之不忘，念念不忘兮，亘古回响。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21648': '#cBB44BB#r#W檐下双飞燕，相依啄绿泥。#r#G双人飞行珍兽，可邀好友一同遨游天地。右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21595': '#cBB44BB#r#W墨影飞篁，伞面为玄素当年渡世之笔闲趣偶得，其上墨篁可感应天地之气，持此伞者，可乘风而行，尽享一夏清凉。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21757': '#cBB44BB#r#W骄阳流金，火红六月。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特殊珍兽，使用自己的独立过期时间。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21552': '#cBB44BB#r#W云中游龙，与庚宝同生，乃飘渺峰一缕紫烟所化。可日行千里，纵横寰宇。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑，遨游天际。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：840#r',
+        '21883': '#cBB44BB#r#W金络青骢白玉鞍，长鞭紫陌野游盘。#r#G双人飞行互动珍兽，可邀好友一同策马扬鞭，共览大荒风物。右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21903': '#cBB44BB#r#W#Y桂子月中落，天香云外飘！#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21820': '#cBB44BB#r#W海上生明月，天涯共此时。#r#G水陆空飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：1#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21854': '#cBB44BB#r#W嫦娥应悔偷灵药，碧海青天夜夜心。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r体验珍兽，有效期为24小时，不可续费。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21935': '#cFFFF00#r#W#Y朋友，听说过平行世界吗？！#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215114': '#cBB44BB#r#W#Y桂子月中落，天香云外飘！#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特殊珍兽，使用独立的过期时间。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21831': '#cBB44BB#r#W承载着凛冬捣蛋王的猫儿。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21924': '#cFFFF00#r#W#Y我是木蹄儿，请看我的脸。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215115': '#cBB44BB#r#W嫦娥应悔偷灵药，碧海青天夜夜心。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21975': '#cBB44BB#r#W自是徘徊不忍去，音容一遇便如故。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21974': '#cBB44BB#r#W和风煦煦，春桃又生。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21884': '#cBB44BB#r#W相传有奇熊，树居叶食，耳大无尾，亦有“大无畏”之义。骑此熊者，无畏之英雄。#r#G双人飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21758': '#cBB44BB#r#W斑斓之梦，快乐童年。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21664': '#cBB44BB#r#W砌下梨花一堆雪，明年谁此凭栏杆？#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21885': '#cFFFF00#r#W#Y晶莹若雪，曼妙似花。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '24159': '#cBB44BB#r#W云马，大荒传说中的坐骑#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r',
+        '21866': '#cBB44BB#r#W#Y踏风而行，彩云儿归。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21858': '#cBB44BB#r#W闲情妙趣，幼蚁小舟。#r#G水陆空珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r体验珍兽，有效期为24小时，不可续费。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21545': '#cBB44BB#r#W橙色拓拓，欢快而豁达，霜清纸帐来新梦，圃冷斜阳忆旧游。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r',
+        '215116': '#cBB44BB#r#W郎骑竹马来，绕床弄青梅。邻家小儿女折成的纸飞机，与纯真的心愿一同穿柳分花。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21817': '#cBB44BB#r#W南海神界神祗座驾，驭之无所不能达也。#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r特殊珍兽，目前只可在#R南海地图#G内使用，使用自己的独立过期时间。#r#W必要等级：1#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21852': '#cBB44BB#r#W开天辟地之时天地清浊二气所化灵兽之一，遨游寰宇，速度超群，后被广成子收服在烈炎珠内，赠与黄帝，并言，后代君王，如非到万分危急之时，决不可轻易开启敕符封印。时值幽都乱世之际，九黎王族再度祭拜黄帝圣祖，竟发现敕符脱落，遂知天意已至，决定将双麒麟封印解除，赐予王室的亲卫军---天机营。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#体验珍兽，有效期为24小时，不可续费。#r#W必要等级：1#r#W贵重等级：60#r#G陆行速度：690#r',
+        '215107': '#cFFFF00#r#W#Y朋友，听说过平行世界吗？！#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：695#r#G飞行速度：800#r',
+        '21882': '#cBB44BB#r#W宝珠惹斑斓，凌空逐飞虹。#r#G水陆空珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21834': '#cBB44BB#r#W#Y锦水东北流，波荡琥珀光。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '21547': '#cBB44BB#r#W青云虽远，平步可得。#r#G右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#r普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：30#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r',
+        '215110': '#cFFFF00#r#W#Y江湖如局，人皆棋子，正如这池中方圆。#W#r#G飞行珍兽，右键点击使用直接获得此珍兽，图标显示在“珍兽”界面中，可拖入快捷栏使用。#W普通珍兽，公共过期时间前可以任意乘骑。#r#W必要等级：10#r#W贵重等级：60#r#G陆行速度：690#r#G飞行速度：800#r'
+    },
+    'ap': 0,
+    'holybeast': 2,
+    'pp': 90,
+    'pattack_min': 410,
+    'ssks': {
+        '11': 78,
+        '25': 1,
+        '13': 72
+    },
+    'inbreak': 0,
+    'movespeed': 333,
+    'coupleName': '',
+    'thump_add_p': 0,
+    'fly_soul_skill': {
+        '2219': [
+            9,
+            1470330049.913565
+        ],
+        '2321': [
+            9,
+            1471265895.783165
+        ]
+    },
+    'multiMS': [
+        {
+            'skills': {
+                '1098': 1,
+                '1096': 1,
+                '1066': 1,
+                '1099': 1,
+                '1097': 1,
+                '1067': 1,
+                '1094': 1,
+                '1065': 1,
+                '1093': 1,
+                '1064': 1,
+                '1069': 1,
+                '1063': 1,
+                '1103': 1,
+                '1095': 1,
+                '1062': 4,
+                '1068': 1,
+                '1057': 1
+            },
+            'exp': 110000,
+            'lv': 28,
+            'stunt': None,
+            'attribs': [
+                {
+                    'attr_point': 0,
+                    'attr': {
+                        'str': 30,
+                        'mind': 25,
+                        'con': 209,
+                        'int': 23,
+                        'dex': 24,
+                        'dog': 30
+                    },
+                    'apt': {
+                        'str': 743,
+                        'mind': 536,
+                        'con': 1347,
+                        'int': 484,
+                        'dex': 511,
+                        'dog': 719
+                    },
+                    'apt_point': 0
+                }
+            ],
+            'pos': 0,
+            'name': '太乙神兵',
+            'skill_books': [
+
+            ],
+            'equs': {
+
+            },
+            'index': 4,
+            'activate_equ_stunt': ''
+        },
+        {
+            'skills': {
+                '1080': 3,
+                '1119': 1,
+                '1105': 1,
+                '1107': 1,
+                '1081': 1,
+                '1124': 1,
+                '1117': 1,
+                '1082': 1,
+                '1109': 1,
+                '1123': 1,
+                '1110': 1,
+                '1087': 1,
+                '1127': 1,
+                '1111': 1,
+                '1084': 1,
+                '1085': 1,
+                '1126': 1,
+                '1118': 1,
+                '1108': 1,
+                '1113': 1,
+                '1086': 1,
+                '1112': 1,
+                '1075': 1,
+                '1122': 1,
+                '1106': 1,
+                '1120': 1,
+                '1125': 1,
+                '1104': 1,
+                '1083': 1,
+                '1116': 1,
+                '1121': 1,
+                '1115': 1
+            },
+            'exp': 25000,
+            'lv': 11,
+            'stunt': None,
+            'attribs': [
+                {
+                    'attr_point': 0,
+                    'attr': {
+                        'str': 19,
+                        'mind': 16,
+                        'con': 15,
+                        'int': 16,
+                        'dex': 20,
+                        'dog': 77
+                    },
+                    'apt': {
+                        'str': 845,
+                        'mind': 634,
+                        'con': 489,
+                        'int': 573,
+                        'dex': 915,
+                        'dog': 692
+                    },
+                    'apt_point': 0
+                }
+            ],
+            'pos': 1,
+            'name': '百御仙灵',
+            'skill_books': [
+
+            ],
+            'equs': {
+
+            },
+            'index': 2,
+            'activate_equ_stunt': ''
+        },
+        {
+            'skills': {
+                '1007': 1,
+                '1021': 1,
+                '1003': 1,
+                '1001': 1,
+                '1033': 1,
+                '1004': 1,
+                '1027': 1,
+                '1010': 1,
+                '1030': 1,
+                '1032': 1,
+                '1028': 1,
+                '1031': 1,
+                '1029': 1,
+                '1002': 1,
+                '1005': 1,
+                '1006': 1,
+                '1026': 9
+            },
+            'exp': 0,
+            'lv': 40,
+            'stunt': None,
+            'attribs': [
+                {
+                    'attr_point': 0,
+                    'attr': {
+                        'str': 58,
+                        'mind': 57,
+                        'con': 312,
+                        'int': 39,
+                        'dex': 70,
+                        'dog': 39
+                    },
+                    'apt': {
+                        'str': 1220,
+                        'mind': 1194,
+                        'con': 1621,
+                        'int': 735,
+                        'dex': 1509,
+                        'dog': 639
+                    },
+                    'apt_point': 0
+                }
+            ],
+            'pos': 2,
+            'name': '肥猫猫',
+            'skill_books': [
+
+            ],
+            'equs': {
+                '1': {
+                    'lv': 1,
+                    'stunt': {
+
+                    },
+                    'props': {
+                        'amvspd': 0.51,
+                        'aa4': 2.06,
+                        'con': 4.42,
+                        'ma2': 4.14
+                    },
+                    'exp': 0,
+                    'name': '功夫帽'
+                },
+                '3': {
+                    'lv': 1,
+                    'stunt': {
+
+                    },
+                    'props': {
+                        'cri_add_p': 0.59,
+                        'aa4': 2.92,
+                        'avoid': 7.68,
+                        'ma0': 5.28
+                    },
+                    'exp': 0,
+                    'name': '庇荫伞'
+                },
+                '2': {
+                    'lv': 1,
+                    'stunt': {
+
+                    },
+                    'props': {
+                        'dog': 4.28,
+                        'scsp': 0.85,
+                        'ma5': 5.86,
+                        'pdef': 21.75
+                    },
+                    'exp': 0,
+                    'name': '酿酒壶'
+                }
+            },
+            'index': 1,
+            'activate_equ_stunt': ''
+        }
+    ],
+    'clanName': '',
+    'school_qinggong': None,
+    'hbs': {
+        '0': {
+            'hb_equ': [
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                }
+            ],
+            'mind': 0,
+            'a_int': 118,
+            'int': 333,
+            'attr_total': 615,
+            'a_str': 120,
+            'a_con': 86,
+            'flash': 3,
+            'a_dex': 101,
+            'skills': {
+                '131': 1
+            },
+            'linguang_lv': 0,
+            'fly_lv': 0,
+            'potential': 0,
+            'linguang_time': 0,
+            'random_attr_num': 0,
+            'exp': 42674377,
+            'name': '炒',
+            'lv': 76,
+            'dex': 0,
+            'a_mind': 97,
+            'random_attrs': [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            'str': 0,
+            'a_dog': 93,
+            'pullulate': 3890,
+            'con': 0,
+            'hb_type': 13,
+            'dog': 0,
+            'fly_phase': 0,
+            'random_attr_year': 0
+        },
+        '1': {
+            'hb_equ': [
+                {
+                    'hb_totolcount': {
+                        '1': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 60,
+                    'hb_activeColor': [
+                        1,
+                        2,
+                        2
+                    ],
+                    'uutime': 1376073164,
+                    'hb_equ_result': {
+                        '1': {
+                            'dog': [
+                                29
+                            ],
+                            'mind': [
+                                40
+                            ],
+                            'mhp': [
+                                272
+                            ]
+                        },
+                        'innerColor': 2,
+                        'activeColor': [
+                            3,
+                            4,
+                            3
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 2
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 2,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    9,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 713
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 1,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    9,
+                                    3
+                                ],
+                                40,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    9,
+                                    3
+                                ],
+                                29,
+                                'dog'
+                            ],
+                            [
+                                [
+                                    9,
+                                    3
+                                ],
+                                272,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 2
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 2
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            3,
+                            2
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 61,
+                    'hb_activeColor': [
+                        1,
+                        2,
+                        2
+                    ],
+                    'uutime': 1376073369,
+                    'hb_equ_result': {
+                        '1': {
+                            'dog': [
+                                18
+                            ],
+                            'mind': [
+                                37,
+                                26
+                            ],
+                            'int': [
+                                30
+                            ],
+                            'mhp': [
+                                292,
+                                201
+                            ]
+                        },
+                        'innerColor': 1,
+                        'activeColor': [
+                            1,
+                            0,
+                            2
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 1
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 1,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    7,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            },
+                            {
+                                'correctKey': [
+                                    9,
+                                    2
+                                ],
+                                'correctAttr': [
+                                    [
+                                        3,
+                                        2
+                                    ],
+                                    [
+                                        7,
+                                        2
+                                    ],
+                                    [
+                                        10,
+                                        2
+                                    ],
+                                    [
+                                        8,
+                                        2
+                                    ],
+                                    [
+                                        12,
+                                        2
+                                    ],
+                                    [
+                                        2,
+                                        2
+                                    ],
+                                    [
+                                        9,
+                                        2
+                                    ],
+                                    [
+                                        6,
+                                        2
+                                    ],
+                                    [
+                                        4,
+                                        2
+                                    ],
+                                    [
+                                        11,
+                                        2
+                                    ],
+                                    [
+                                        1,
+                                        2
+                                    ],
+                                    [
+                                        5,
+                                        2
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 790
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 1,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    7,
+                                    3
+                                ],
+                                30,
+                                'int'
+                            ],
+                            [
+                                [
+                                    7,
+                                    3
+                                ],
+                                37,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    7,
+                                    3
+                                ],
+                                292,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    9,
+                                    2
+                                ],
+                                26,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    9,
+                                    2
+                                ],
+                                18,
+                                'dog'
+                            ],
+                            [
+                                [
+                                    9,
+                                    2
+                                ],
+                                201,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 1
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 2
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            1,
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 63,
+                    'hb_activeColor': [
+                        3,
+                        2,
+                        4
+                    ],
+                    'uutime': 1376107066,
+                    'hb_equ_result': {
+                        '1': {
+                            'msp': [
+                                21
+                            ],
+                            'mind': [
+                                35
+                            ],
+                            'con': [
+                                40
+                            ],
+                            'mhp': [
+                                91,
+                                325
+                            ]
+                        },
+                        'innerColor': 2,
+                        'activeColor': [
+                            0,
+                            0,
+                            1
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 4
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 4,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    12,
+                                    1
+                                ],
+                                'correctAttr': [
+                                    [
+                                        1,
+                                        1
+                                    ],
+                                    [
+                                        2,
+                                        1
+                                    ],
+                                    [
+                                        7,
+                                        1
+                                    ],
+                                    [
+                                        6,
+                                        1
+                                    ],
+                                    [
+                                        8,
+                                        1
+                                    ],
+                                    [
+                                        11,
+                                        1
+                                    ],
+                                    [
+                                        12,
+                                        1
+                                    ],
+                                    [
+                                        3,
+                                        1
+                                    ],
+                                    [
+                                        4,
+                                        1
+                                    ],
+                                    [
+                                        9,
+                                        1
+                                    ],
+                                    [
+                                        5,
+                                        1
+                                    ],
+                                    [
+                                        10,
+                                        1
+                                    ]
+                                ]
+                            },
+                            {
+                                'correctKey': [
+                                    10,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 772
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 1,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    12,
+                                    1
+                                ],
+                                91,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    12,
+                                    1
+                                ],
+                                21,
+                                'msp'
+                            ],
+                            [
+                                [
+                                    10,
+                                    3
+                                ],
+                                35,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    10,
+                                    3
+                                ],
+                                325,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    10,
+                                    3
+                                ],
+                                40,
+                                'con'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 2
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 68,
+                    'hb_activeColor': [
+                        3,
+                        4,
+                        2
+                    ],
+                    'uutime': 1376149720,
+                    'hb_equ_result': {
+                        '1': {
+                            'mind': [
+                                31
+                            ],
+                            'int': [
+                                32
+                            ],
+                            'mhp': [
+                                323
+                            ]
+                        },
+                        'innerColor': 1,
+                        'activeColor': [
+                            2,
+                            1,
+                            0
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 1
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 1,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    7,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 815
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 1,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    7,
+                                    3
+                                ],
+                                32,
+                                'int'
+                            ],
+                            [
+                                [
+                                    7,
+                                    3
+                                ],
+                                31,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    7,
+                                    3
+                                ],
+                                323,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 1
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1,
+                        '2': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            1
+                        ],
+                        '2': [
+                            1
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 49,
+                    'hb_activeColor': [
+                        1,
+                        2,
+                        1
+                    ],
+                    'uutime': 1420984601,
+                    'hb_equ_result': {
+                        '1': {
+                            'mind': [
+                                10
+                            ],
+                            'dog': [
+                                12
+                            ],
+                            'avoid': [
+                                12
+                            ],
+                            'mhp': [
+                                105,
+                                99
+                            ]
+                        },
+                        'innerColor': 3,
+                        'activeColor': [
+                            0,
+                            3,
+                            0
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 4
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 4,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    9,
+                                    1
+                                ],
+                                'correctAttr': [
+                                    [
+                                        1,
+                                        1
+                                    ],
+                                    [
+                                        2,
+                                        1
+                                    ],
+                                    [
+                                        7,
+                                        1
+                                    ],
+                                    [
+                                        6,
+                                        1
+                                    ],
+                                    [
+                                        8,
+                                        1
+                                    ],
+                                    [
+                                        11,
+                                        1
+                                    ],
+                                    [
+                                        12,
+                                        1
+                                    ],
+                                    [
+                                        3,
+                                        1
+                                    ],
+                                    [
+                                        4,
+                                        1
+                                    ],
+                                    [
+                                        9,
+                                        1
+                                    ],
+                                    [
+                                        5,
+                                        1
+                                    ],
+                                    [
+                                        10,
+                                        1
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 655,
+                        '2': [
+                            {
+                                'correctKey': [
+                                    23,
+                                    1
+                                ],
+                                'correctAttr': [
+                                    [
+                                        23,
+                                        1
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 2,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    9,
+                                    1
+                                ],
+                                10,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    9,
+                                    1
+                                ],
+                                12,
+                                'dog'
+                            ],
+                            [
+                                [
+                                    9,
+                                    1
+                                ],
+                                105,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    23,
+                                    1
+                                ],
+                                12,
+                                'avoid'
+                            ],
+                            [
+                                [
+                                    23,
+                                    1
+                                ],
+                                99,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 3
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 63,
+                    'hb_activeColor': [
+                        2,
+                        2,
+                        1
+                    ],
+                    'uutime': 1421029390,
+                    'hb_equ_result': {
+                        '1': {
+                            'dog': [
+                                29
+                            ],
+                            'mind': [
+                                33
+                            ],
+                            'mhp': [
+                                273
+                            ]
+                        },
+                        'innerColor': 4,
+                        'activeColor': [
+                            0,
+                            3,
+                            4
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 0
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 0,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    9,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 744
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 1,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    9,
+                                    3
+                                ],
+                                33,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    9,
+                                    3
+                                ],
+                                29,
+                                'dog'
+                            ],
+                            [
+                                [
+                                    9,
+                                    3
+                                ],
+                                273,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 4
+                },
+                {
+
+                }
+            ],
+            'mind': 463,
+            'a_int': 119,
+            'int': 0,
+            'attr_total': 678,
+            'a_str': 113,
+            'a_con': 97,
+            'flash': 14,
+            'a_dex': 117,
+            'skills': {
+                '133': 2
+            },
+            'linguang_lv': 0,
+            'fly_lv': 23,
+            'potential': 0,
+            'linguang_time': 0,
+            'random_attr_num': 0,
+            'exp': 283133275,
+            'name': '菜',
+            'lv': 80,
+            'dex': 0,
+            'a_mind': 120,
+            'random_attrs': [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            'str': 0,
+            'a_dog': 112,
+            'pullulate': 7484,
+            'con': 0,
+            'hb_type': 5,
+            'dog': 0,
+            'fly_phase': 1,
+            'random_attr_year': 0
+        },
+        '3': {
+            'hb_equ': [
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                }
+            ],
+            'mind': 0,
+            'a_int': 96,
+            'int': 0,
+            'attr_total': 643,
+            'a_str': 93,
+            'a_con': 111,
+            'flash': 8,
+            'a_dex': 116,
+            'skills': {
+                '131': 1
+            },
+            'linguang_lv': 0,
+            'fly_lv': 0,
+            'potential': 0,
+            'linguang_time': 0,
+            'random_attr_num': 0,
+            'exp': 22715067,
+            'name': '放',
+            'lv': 73,
+            'dex': 0,
+            'a_mind': 109,
+            'random_attrs': [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            'str': 0,
+            'a_dog': 118,
+            'pullulate': 5859,
+            'con': 0,
+            'hb_type': 15,
+            'dog': 315,
+            'fly_phase': 0,
+            'random_attr_year': 0
+        },
+        '2': {
+            'hb_equ': [
+                {
+                    'hb_totolcount': {
+                        '1': 1,
+                        '2': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            3
+                        ],
+                        '2': [
+                            2
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 75,
+                    'hb_activeColor': [
+                        2,
+                        0,
+                        4
+                    ],
+                    'uutime': 1432528762,
+                    'hb_equ_result': {
+                        '1': {
+                            'avoid': [
+                                37
+                            ],
+                            'dex': [
+                                34
+                            ],
+                            'int': [
+                                45
+                            ],
+                            'mhp': [
+                                379,
+                                216
+                            ]
+                        },
+                        'innerColor': 2,
+                        'activeColor': [
+                            2,
+                            0,
+                            4
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 3
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 3,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    6,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 1115,
+                        '2': [
+                            {
+                                'correctKey': [
+                                    23,
+                                    2
+                                ],
+                                'correctAttr': [
+                                    [
+                                        23,
+                                        2
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 2,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    6,
+                                    3
+                                ],
+                                34,
+                                'dex'
+                            ],
+                            [
+                                [
+                                    6,
+                                    3
+                                ],
+                                45,
+                                'int'
+                            ],
+                            [
+                                [
+                                    6,
+                                    3
+                                ],
+                                379,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    23,
+                                    2
+                                ],
+                                37,
+                                'avoid'
+                            ],
+                            [
+                                [
+                                    23,
+                                    2
+                                ],
+                                216,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 2
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1,
+                        '2': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            3
+                        ],
+                        '2': [
+                            2
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 76,
+                    'hb_activeColor': [
+                        1,
+                        1,
+                        2
+                    ],
+                    'uutime': 1432204639,
+                    'hb_equ_result': {
+                        '1': {
+                            'mind': [
+                                38
+                            ],
+                            'avoid': [
+                                26
+                            ],
+                            'con': [
+                                43
+                            ],
+                            'mhp': [
+                                400,
+                                170
+                            ]
+                        },
+                        'innerColor': 2,
+                        'activeColor': [
+                            1,
+                            3,
+                            4
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 3
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 3,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    10,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        7,
+                                        3
+                                    ],
+                                    [
+                                        9,
+                                        3
+                                    ],
+                                    [
+                                        10,
+                                        3
+                                    ],
+                                    [
+                                        8,
+                                        3
+                                    ],
+                                    [
+                                        11,
+                                        3
+                                    ],
+                                    [
+                                        1,
+                                        3
+                                    ],
+                                    [
+                                        12,
+                                        3
+                                    ],
+                                    [
+                                        2,
+                                        3
+                                    ],
+                                    [
+                                        5,
+                                        3
+                                    ],
+                                    [
+                                        3,
+                                        3
+                                    ],
+                                    [
+                                        6,
+                                        3
+                                    ],
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 1120,
+                        '2': [
+                            {
+                                'correctKey': [
+                                    23,
+                                    2
+                                ],
+                                'correctAttr': [
+                                    [
+                                        23,
+                                        2
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 2,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    10,
+                                    3
+                                ],
+                                38,
+                                'mind'
+                            ],
+                            [
+                                [
+                                    10,
+                                    3
+                                ],
+                                400,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    10,
+                                    3
+                                ],
+                                43,
+                                'con'
+                            ],
+                            [
+                                [
+                                    23,
+                                    2
+                                ],
+                                26,
+                                'avoid'
+                            ],
+                            [
+                                [
+                                    23,
+                                    2
+                                ],
+                                170,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 2
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1,
+                        '2': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            2
+                        ],
+                        '2': [
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 74,
+                    'hb_activeColor': [
+                        2,
+                        2,
+                        1
+                    ],
+                    'uutime': 1434790977,
+                    'hb_equ_result': {
+                        '1': {
+                            'avoid': [
+                                48
+                            ],
+                            'dog': [
+                                30
+                            ],
+                            'dex': [
+                                20
+                            ],
+                            'mhp': [
+                                234,
+                                355
+                            ]
+                        },
+                        'innerColor': 1,
+                        'activeColor': [
+                            2,
+                            2,
+                            1
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 0
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 0,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    4,
+                                    2
+                                ],
+                                'correctAttr': [
+                                    [
+                                        3,
+                                        2
+                                    ],
+                                    [
+                                        7,
+                                        2
+                                    ],
+                                    [
+                                        10,
+                                        2
+                                    ],
+                                    [
+                                        8,
+                                        2
+                                    ],
+                                    [
+                                        12,
+                                        2
+                                    ],
+                                    [
+                                        2,
+                                        2
+                                    ],
+                                    [
+                                        9,
+                                        2
+                                    ],
+                                    [
+                                        6,
+                                        2
+                                    ],
+                                    [
+                                        4,
+                                        2
+                                    ],
+                                    [
+                                        11,
+                                        2
+                                    ],
+                                    [
+                                        1,
+                                        2
+                                    ],
+                                    [
+                                        5,
+                                        2
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 1078,
+                        '2': [
+                            {
+                                'correctKey': [
+                                    23,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        23,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 2,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    4,
+                                    2
+                                ],
+                                20,
+                                'dex'
+                            ],
+                            [
+                                [
+                                    4,
+                                    2
+                                ],
+                                30,
+                                'dog'
+                            ],
+                            [
+                                [
+                                    4,
+                                    2
+                                ],
+                                234,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    23,
+                                    3
+                                ],
+                                48,
+                                'avoid'
+                            ],
+                            [
+                                [
+                                    23,
+                                    3
+                                ],
+                                355,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 1
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1,
+                        '2': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            4
+                        ],
+                        '2': [
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 76,
+                    'hb_activeColor': [
+                        3,
+                        3,
+                        3
+                    ],
+                    'uutime': 1432212652,
+                    'hb_equ_result': {
+                        '1': {
+                            'str': [
+                                62
+                            ],
+                            'avoid': [
+                                56
+                            ],
+                            'con': [
+                                68
+                            ],
+                            'mhp': [
+                                566,
+                                307
+                            ]
+                        },
+                        'innerColor': 0,
+                        'activeColor': [
+                            4,
+                            0,
+                            3
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 3
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 3,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    1,
+                                    4
+                                ],
+                                'correctAttr': [
+                                    [
+                                        5,
+                                        4
+                                    ],
+                                    [
+                                        11,
+                                        4
+                                    ],
+                                    [
+                                        2,
+                                        4
+                                    ],
+                                    [
+                                        3,
+                                        4
+                                    ],
+                                    [
+                                        7,
+                                        4
+                                    ],
+                                    [
+                                        9,
+                                        4
+                                    ],
+                                    [
+                                        6,
+                                        4
+                                    ],
+                                    [
+                                        12,
+                                        4
+                                    ],
+                                    [
+                                        1,
+                                        4
+                                    ],
+                                    [
+                                        8,
+                                        4
+                                    ],
+                                    [
+                                        10,
+                                        4
+                                    ],
+                                    [
+                                        4,
+                                        4
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 1219,
+                        '2': [
+                            {
+                                'correctKey': [
+                                    23,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        23,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 2,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    1,
+                                    4
+                                ],
+                                62,
+                                'str'
+                            ],
+                            [
+                                [
+                                    1,
+                                    4
+                                ],
+                                566,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    1,
+                                    4
+                                ],
+                                68,
+                                'con'
+                            ],
+                            [
+                                [
+                                    23,
+                                    3
+                                ],
+                                56,
+                                'avoid'
+                            ],
+                            [
+                                [
+                                    23,
+                                    3
+                                ],
+                                307,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 0
+                },
+                {
+                    'hb_totolcount': {
+                        '1': 1,
+                        '2': 1
+                    },
+                    'hb_totolattr': {
+                        '1': [
+                            2
+                        ],
+                        '2': [
+                            3
+                        ]
+                    },
+                    'id': 25528,
+                    'consign_name': '',
+                    'cwrap': 1,
+                    'hb_equ_item_lv': 76,
+                    'hb_activeColor': [
+                        4,
+                        4,
+                        4
+                    ],
+                    'uutime': 1431149152,
+                    'hb_equ_result': {
+                        '1': {
+                            'dog': [
+                                24
+                            ],
+                            'avoid': [
+                                43
+                            ],
+                            'con': [
+                                27
+                            ],
+                            'mhp': [
+                                230,
+                                285
+                            ]
+                        },
+                        'innerColor': 1,
+                        'activeColor': [
+                            4,
+                            0,
+                            3
+                        ],
+                        '2': {
+
+                        },
+                        'outerColor': 3
+                    },
+                    'rpr': 0,
+                    'hb_outerColor': 3,
+                    'debugmessage': {
+                        '1': [
+                            {
+                                'correctKey': [
+                                    5,
+                                    2
+                                ],
+                                'correctAttr': [
+                                    [
+                                        3,
+                                        2
+                                    ],
+                                    [
+                                        7,
+                                        2
+                                    ],
+                                    [
+                                        10,
+                                        2
+                                    ],
+                                    [
+                                        8,
+                                        2
+                                    ],
+                                    [
+                                        12,
+                                        2
+                                    ],
+                                    [
+                                        2,
+                                        2
+                                    ],
+                                    [
+                                        9,
+                                        2
+                                    ],
+                                    [
+                                        6,
+                                        2
+                                    ],
+                                    [
+                                        4,
+                                        2
+                                    ],
+                                    [
+                                        11,
+                                        2
+                                    ],
+                                    [
+                                        1,
+                                        2
+                                    ],
+                                    [
+                                        5,
+                                        2
+                                    ]
+                                ]
+                            }
+                        ],
+                        'itemxiuwei': 1096,
+                        '2': [
+                            {
+                                'correctKey': [
+                                    23,
+                                    3
+                                ],
+                                'correctAttr': [
+                                    [
+                                        23,
+                                        3
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    'ntr': 0,
+                    'hb_equ_star': 2,
+                    'cheat_msg': '道具#Y%s#W的当前交易单价为#R%d金#W#r为避免#R受骗#W，请务必再次确认您是否真的要购买？',
+                    'hb_equ_info_desc': {
+                        '1': [
+                            [
+                                [
+                                    5,
+                                    2
+                                ],
+                                24,
+                                'dog'
+                            ],
+                            [
+                                [
+                                    5,
+                                    2
+                                ],
+                                230,
+                                'mhp'
+                            ],
+                            [
+                                [
+                                    5,
+                                    2
+                                ],
+                                27,
+                                'con'
+                            ],
+                            [
+                                [
+                                    23,
+                                    3
+                                ],
+                                43,
+                                'avoid'
+                            ],
+                            [
+                                [
+                                    23,
+                                    3
+                                ],
+                                285,
+                                'mhp'
+                            ]
+                        ],
+                        '2': [
+
+                        ]
+                    },
+                    'cheat_rate': 3.0,
+                    'hb_innerColor': 1
+                },
+                {
+
+                },
+                {
+
+                }
+            ],
+            'mind': 0,
+            'a_int': 117,
+            'int': 0,
+            'attr_total': 661,
+            'a_str': 94,
+            'a_con': 115,
+            'flash': 11,
+            'a_dex': 112,
+            'skills': {
+                '131': 1
+            },
+            'linguang_lv': 0,
+            'fly_lv': 0,
+            'potential': 0,
+            'linguang_time': 0,
+            'random_attr_num': 0,
+            'exp': 400000000,
+            'name': '不',
+            'lv': 79,
+            'dex': 0,
+            'a_mind': 113,
+            'random_attrs': [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            'str': 0,
+            'a_dog': 110,
+            'pullulate': 31406,
+            'con': 0,
+            'hb_type': 10,
+            'dog': 350,
+            'fly_phase': 0,
+            'random_attr_year': 0
+        },
+        '4': {
+            'hb_equ': [
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                }
+            ],
+            'mind': 0,
+            'a_int': 100,
+            'int': 0,
+            'attr_total': 600,
+            'a_str': 100,
+            'a_con': 100,
+            'flash': 1,
+            'a_dex': 100,
+            'skills': {
+                '133': 1
+            },
+            'linguang_lv': 0,
+            'fly_lv': 0,
+            'potential': 139,
+            'linguang_time': 0,
+            'random_attr_num': 20,
+            'exp': 9263326,
+            'name': '油',
+            'lv': 38,
+            'dex': 0,
+            'a_mind': 100,
+            'random_attrs': [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            'str': 0,
+            'a_dog': 100,
+            'pullulate': 177,
+            'con': 0,
+            'hb_type': 11,
+            'dog': 0,
+            'fly_phase': 0,
+            'random_attr_year': 1483200000
+        }
+    },
+    'mdef': 5954,
+    'rsks': [
+        [
+            209,
+            17
+        ],
+        [
+            210,
+            15
+        ],
+        [
+            211,
+            13
+        ],
+        [
+            212,
+            12
+        ],
+        [
+            213,
+            9
+        ],
+        [
+            214,
+            6
+        ],
+        [
+            215,
+            15
+        ],
+        [
+            216,
+            14
+        ],
+        [
+            217,
+            14
+        ],
+        [
+            218,
+            12
+        ],
+        [
+            219,
+            9
+        ],
+        [
+            220,
+            6
+        ],
+        [
+            221,
+            15
+        ],
+        [
+            222,
+            14
+        ],
+        [
+            223,
+            13
+        ],
+        [
+            224,
+            11
+        ],
+        [
+            225,
+            10
+        ],
+        [
+            226,
+            6
+        ]
+    ],
+    'flySoulLv': 8,
+    'final_skill': {
+        'useItemNum': 0,
+        'exp': 25552000,
+        'apt': {
+            'intApt': 114,
+            'conApt': 112,
+            'strApt': 120,
+            'dexApt': 101,
+            'mindApt': 108,
+            'dogApt': 108
+        },
+        'nextTime': 1476267580,
+        'subSkills': [
+            {
+                'coolTime': 0,
+                'bless': 2,
+                'libLv': 1,
+                'valid': True,
+                'lv': 5,
+                'libId': 168
+            },
+            {
+                'coolTime': 0,
+                'bless': 2,
+                'libLv': 2,
+                'valid': True,
+                'lv': 4,
+                'libId': 181
+            },
+            {
+                'coolTime': 0,
+                'bless': 0,
+                'libLv': 3,
+                'valid': True,
+                'lv': 4,
+                'libId': 188
+            },
+            {
+                'coolTime': 0,
+                'bless': 0,
+                'libLv': 4,
+                'valid': True,
+                'lv': 1,
+                'libId': 254
+            },
+            {
+                'coolTime': 0,
+                'bless': 0,
+                'libLv': 5,
+                'valid': True,
+                'lv': 1,
+                'libId': 362
+            },
+            {
+                'coolTime': 0,
+                'bless': 0,
+                'libLv': 6,
+                'valid': True,
+                'lv': 1,
+                'libId': 366
+            },
+            {
+                'coolTime': 0,
+                'bless': 0,
+                'libLv': 7,
+                'valid': False,
+                'lv': 5,
+                'libId': 376
+            },
+            {
+                'coolTime': 0,
+                'bless': 0,
+                'libLv': 8,
+                'valid': False,
+                'lv': 1,
+                'libId': 552
+            }
+        ],
+        'baseCache': {
+            'str': 0,
+            'mind': 63,
+            'con': 95,
+            'int': 0,
+            'dex': 0,
+            'dog': 319
+        },
+        'useLv': 60,
+        'lv': 86,
+        'releaseScale': 18,
+        'fixApt': 0,
+        'tempAttrId': 0,
+        'awakeValue': 10,
+        'fsId': 7,
+        'releaseExp': 106,
+        'attrId': 11,
+        'minglian': {
+            'enh2Num': 186,
+            'lv': 6,
+            'fixedValue': 14,
+            'changeValue': 984
+        }
+    },
+    'double_wing_enable_attr': 0,
+    'flySoulPhase': 2,
+    'credit': {
+        '38': 862,
+        '22': 998,
+        '35': 38,
+        '26': 40,
+        '64': 4019,
+        '47': 74,
+        '56': 66083,
+        '15': 51487
+    },
+    'spreduce': 4,
+    'msp': 8237,
+    'attadd': 29,
+    'absolutely_defence': 10,
+    'monster_souls': {
+        '7': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 93,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '花草系',
+            'b_con': 507,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 4,
+            'xiuwei': 10791,
+            't_str': 5,
+            'new_bg_num': 9,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'exp': 9521809,
+            'name': '莫彦是猪',
+            'prototype': 4113,
+            'b_mind': 404,
+            'lv': 67,
+            'shentong_unlock': [
+
+            ],
+            't_con': 5,
+            'erasable': 0,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 7,
+            'new_tree_num': [
+                11,
+                34,
+                0
+            ],
+            'pskills': [
+
+            ],
+            'new_tree': {
+                '11': {
+                    '1': 1,
+                    '2': 1
+                },
+                '34': {
+                    '7': 5,
+                    '4': 20,
+                    '8': 10,
+                    '1': 1,
+                    '3': 1,
+                    '6': 5,
+                    '2': 1,
+                    '5': 13
+                }
+            },
+            'en_lv': 24,
+            'speed': 360,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 199,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 2,
+            'skills': [
+                1551
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 0,
+            'real_name': '小草娃',
+            'evolution': 1066.0,
+            'b_dex': 248,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 162,
+            'new_shentong': 10,
+            'attrib_point': 0
+        },
+        '1': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 402,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '有熊系',
+            'b_con': 1750,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 4,
+            'xiuwei': 53226,
+            't_str': 5,
+            'new_bg_num': 2,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'exp': 500000000,
+            'name': '熊大大',
+            'prototype': 3204,
+            'b_mind': 445,
+            'lv': 80,
+            'shentong_unlock': [
+                80,
+                3
+            ],
+            't_con': 5,
+            'erasable': 0,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 34,
+            'new_tree_num': [
+                2,
+                29,
+                0
+            ],
+            'pskills': [
+                1125,
+                1008,
+                1077,
+                1078,
+                1015,
+                1014
+            ],
+            'new_tree': {
+                '29': {
+                    '1': 1,
+                    '3': 1,
+                    '2': 1,
+                    '4': 1
+                },
+                '2': {
+                    '7': 3,
+                    '4': 1,
+                    '3': 50,
+                    '6': 5,
+                    '14': 1,
+                    '12': 5,
+                    '5': 1,
+                    '9': 1,
+                    '1': 1,
+                    '2': 1,
+                    '8': 5,
+                    '10': 1
+                }
+            },
+            'en_lv': 77,
+            'speed': 400,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 113,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 5,
+            'skills': [
+                1614,
+                1588,
+                1851,
+                1775,
+                1607,
+                1730
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 573,
+            'real_name': '熊战将',
+            'evolution': 1295.0,
+            'b_dex': 396,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 170,
+            'new_shentong': 2,
+            'attrib_point': 0
+        },
+        '4': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 297,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '强盗系',
+            'b_con': 466,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 5,
+            'xiuwei': 25004,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'evolution': 1135.0,
+            'name': '猎杀残魂',
+            'prototype': 4800,
+            'b_mind': 81,
+            'lv': 80,
+            'shentong_unlock': [
+
+            ],
+            't_con': 5,
+            'erasable': 1,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 89,
+            'new_tree_num': [
+                55,
+                0,
+                0
+            ],
+            'pskills': [
+                1002,
+                1010,
+                1513
+            ],
+            'new_tree': {
+                '55': {
+                    '1': 1
+                }
+            },
+            'en_lv': 1,
+            'speed': 460,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 84,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 4,
+            'skills': [
+                1705,
+                1709,
+                2000,
+                1617
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 0,
+            'real_name': '猎杀残魂',
+            't_str': 5,
+            'b_dex': 410,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'exp': 133,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 198,
+            'new_shentong': 80,
+            'attrib_point': 0
+        },
+        '0': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 117,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '花草系',
+            'b_con': 583,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 4,
+            'xiuwei': 49098,
+            't_str': 5,
+            'new_bg_num': 9,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'exp': 184679603,
+            'name': '二妖妖',
+            'prototype': 3051,
+            'b_mind': 1572,
+            'lv': 76,
+            'shentong_unlock': [
+
+            ],
+            't_con': 5,
+            'erasable': 0,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 10,
+            'new_tree_num': [
+                11,
+                34,
+                0
+            ],
+            'pskills': [
+                1009,
+                1001,
+                1005,
+                1105,
+                1011,
+                1068
+            ],
+            'new_tree': {
+                '11': {
+                    '7': 3,
+                    '4': 1,
+                    '8': 5,
+                    '1': 1,
+                    '3': 50,
+                    '6': 5,
+                    '2': 1,
+                    '5': 1
+                },
+                '34': {
+                    '1': 1,
+                    '3': 1,
+                    '2': 1
+                }
+            },
+            'en_lv': 59,
+            'speed': 430,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 316,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 5,
+            'skills': [
+                1554,
+                1555,
+                1850,
+                1558,
+                1559
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 520,
+            'real_name': '梅花姬',
+            'evolution': 1294.0,
+            'b_dex': 429,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 255,
+            'new_shentong': 7,
+            'attrib_point': 0
+        },
+        '6': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 243,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '尸兵系',
+            'b_con': 551,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 4,
+            'xiuwei': 24950,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'evolution': 1140.0,
+            'name': '尸魔残魂',
+            'prototype': 4801,
+            'b_mind': 70,
+            'lv': 80,
+            'shentong_unlock': [
+
+            ],
+            't_con': 5,
+            'erasable': 1,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 53,
+            'new_tree_num': [
+                56,
+                0,
+                0
+            ],
+            'pskills': [
+                1013,
+                1015,
+                1016,
+                1513
+            ],
+            'new_tree': {
+                '56': {
+                    '1': 1
+                }
+            },
+            'en_lv': 1,
+            'speed': 420,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 70,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 4,
+            'skills': [
+                1759,
+                3616,
+                3617
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 0,
+            'real_name': '尸魔残魂',
+            't_str': 5,
+            'b_dex': 348,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'exp': 634,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 196,
+            'new_shentong': 80,
+            'attrib_point': 0
+        },
+        '2': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 885,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '尸兵系',
+            'b_con': 589,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 4,
+            'xiuwei': 41805,
+            't_str': 5,
+            'new_bg_num': 6,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'exp': 192788625,
+            'name': '大鬼',
+            'prototype': 3142,
+            'b_mind': 106,
+            'lv': 74,
+            'shentong_unlock': [
+
+            ],
+            't_con': 5,
+            'erasable': 0,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 10,
+            'new_tree_num': [
+                8,
+                0,
+                0
+            ],
+            'pskills': [
+                1040,
+                1008,
+                1071,
+                1072,
+                1015,
+                1016
+            ],
+            'new_tree': {
+                '8': {
+                    '7': 3,
+                    '4': 1,
+                    '8': 5,
+                    '1': 1,
+                    '3': 50,
+                    '6': 5,
+                    '2': 1,
+                    '5': 1
+                }
+            },
+            'en_lv': 54,
+            'speed': 405,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 103,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 5,
+            'skills': [
+                1705,
+                1588,
+                1749,
+                1754,
+                1759,
+                1617
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 178,
+            'real_name': '暴虐尸鬼',
+            'evolution': 1289.0,
+            'b_dex': 371,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 233,
+            'new_shentong': 8,
+            'attrib_point': 0
+        },
+        '5': {
+            'fs_int': 0,
+            'seventh_extra_skill': 0,
+            'penetrate': 0,
+            'b_str': 88,
+            'seventh_extra_skill_lv': 0,
+            'type_name': '花草系',
+            'b_con': 544,
+            't_dog': 5,
+            'skills_lv': {
+
+            },
+            'fs_fp_cnt': 0,
+            'absorb': 4,
+            'xiuwei': 29028,
+            't_dex': 5,
+            't_mind': 5,
+            'fs_mind': 0,
+            'evolution': 1179.0,
+            'name': '花仙残魂',
+            'prototype': 4802,
+            'b_mind': 530,
+            'lv': 80,
+            'shentong_unlock': [
+
+            ],
+            't_con': 5,
+            'erasable': 1,
+            'seventh_skill_type': 0,
+            't_int': 5,
+            'seventh_skill': 0,
+            'power': 100,
+            'new_tree_num': [
+                57,
+                0,
+                0
+            ],
+            'pskills': [
+                1005,
+                1011,
+                1104
+            ],
+            'new_tree': {
+                '57': {
+                    '1': 1
+                }
+            },
+            'en_lv': 1,
+            'speed': 440,
+            'flysoul_lv': '',
+            'fs_four_phase': 0,
+            'b_int': 285,
+            'ms_jnd_id': 0,
+            'fs_dog': 0,
+            'fs_str': 0,
+            'mstar': 4,
+            'skills': [
+                1558,
+                1555,
+                1556,
+                1612
+            ],
+            'seventh_extra_skill_type': 0,
+            'new_fuse_ap': 0,
+            'real_name': '花仙残魂',
+            't_str': 5,
+            'b_dex': 390,
+            'fs_con': 0,
+            'jnd_lv': 0,
+            'exp': 0,
+            'seventh_skill_lv': 0,
+            'fs_dex': 0,
+            'fs_last_fp': 0,
+            'generation': 0,
+            'b_dog': 202,
+            'new_shentong': 80,
+            'attrib_point': 0
+        }
+    },
+    'sg': {
+        '21': 86,
+        '19': 86,
+        '20': 86
+    },
+    'migrate_time': 1468686322,
+    'new_childs': [
+        {
+            'lv': 74,
+            'srmind': 62,
+            'exp': 138564609,
+            'mattack_max': 510,
+            'cri_sub_p': 73,
+            'kongfu': 6,
+            'pattack_max': 348,
+            'unpoint': 0,
+            'potential': 992,
+            'cri_add_p': 0,
+            'mdef': 2075,
+            'commander': 70,
+            'knowledge': 76,
+            'attadd': 0,
+            'mother': '云乄舞纤纤',
+            'int': 75,
+            'name': '花溪',
+            'sex': 2,
+            'fashion': {
+
+            },
+            'critical': 105,
+            'mhp': 13157,
+            'mattack_min': 167,
+            'thump_sub_p': 0,
+            'intimacy': 0,
+            'tskills': {
+
+            },
+            'dog': 217,
+            'repute': 11473,
+            'pattack_min': 118,
+            'mind': 344,
+            'thump_add_p': 0,
+            'sch': 7,
+            'pdef': 2220,
+            'msp': 3170,
+            'modadd': 0,
+            'pskills': {
+                '4': 10,
+                '1': 10,
+                '3': 10,
+                '6': 10,
+                '2': 10,
+                '5': 10
+            },
+            'father': '云乄夜末丶',
+            'avoid': 866,
+            'equs': {
+                '1': {
+                    'child_only': 1,
+                    'mind': 28,
+                    'latch_time': 1,
+                    'reqlv': 75,
+                    'cwrap': 1,
+                    'uutime': 1385563796,
+                    'equ_lv': 89,
+                    'rpr': 287,
+                    'ep2_enh': 8,
+                    'mdur': 322,
+                    'kechongzhu': 1,
+                    'imprint': 1,
+                    'mdef': 268,
+                    'pdef': 249,
+                    'equ_team': 2,
+                    'assess2': 70,
+                    'cenh': 8,
+                    'id': 33099,
+                    'can_inlay': 1,
+                    'cri_sub_p': 0.48,
+                    'latch_cipher': 1,
+                    'use_rand_rule': 2627,
+                    'mhp': 101,
+                    'bargain_visible': 1,
+                    '_latchOfCipher': 1463817658,
+                    'child_inlay_props': {
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'dog': 32,
+                        'child_rule_dei': [
+                            4,
+                            7
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'pdef': 54,
+                        'child_rule_desc': [
+                            [
+                                4,
+                                {
+                                    'dog': 32
+                                }
+                            ],
+                            [
+                                7,
+                                {
+                                    'pdef': 54
+                                }
+                            ]
+                        ]
+                    },
+                    'star': 3,
+                    'cdur': 322,
+                    'dog': 20,
+                    'menh': 15,
+                    'ntr': 10
+                },
+                '4': {
+                    'child_only': 1,
+                    'hidden_prop_rand_rule': {
+                        '3': 3787,
+                        '4': 3792,
+                        '5': 3795
+                    },
+                    'assess2': 0,
+                    'hidden_prop_act': {
+                        '3': {
+                            'avoid': 66
+                        },
+                        '4': {
+                            'md7': 35,
+                            'md5': 39
+                        },
+                        '5': {
+                            'cri_sub_p': 1.55
+                        }
+                    },
+                    'reqlv': 80,
+                    'cwrap': 1,
+                    'uutime': 1383226525,
+                    'equ_lv': 92,
+                    'rpr': 0,
+                    'child_inlay_props': {
+                        'hidden_count': 3,
+                        'inlay_count': 0,
+                        'child_hidden_dei': [
+
+                        ],
+                        'child_rule_dei': [
+
+                        ],
+                        'child_rule_desc': [
+
+                        ]
+                    },
+                    'max_hidden_prop_num': 3,
+                    'kechongzhu': 1,
+                    'mdef': 272,
+                    'imprint': 1,
+                    'hidden_prop_num': 3,
+                    'cdur': 318,
+                    'hidden_equ_xiuwei': 77,
+                    'bargain_visible': 1,
+                    'cenh': 10,
+                    'suit': 147,
+                    'sch': [
+                        7
+                    ],
+                    'nosell': 1,
+                    'id': 33378,
+                    'nodis': 1,
+                    'latch_cipher': 1,
+                    'use_rand_rule': 5472,
+                    'mhp': 375,
+                    'ntr': 10,
+                    'rad10': 0,
+                    'equ_xchange_num': 24,
+                    '_latchOfCipher': 1467996364,
+                    'latch_time': 1,
+                    'star': 3,
+                    'changeback_flag': 1,
+                    'avoid': 163,
+                    'menh': 20,
+                    'mdur': 318
+                },
+                '0': {
+                    'hgt': 3,
+                    'child_only': 1,
+                    'twohand': 1,
+                    'mind': 35,
+                    'int': 35,
+                    'reqlv': 72,
+                    'atspd': 0,
+                    'uutime': 1392015047,
+                    'range': 0,
+                    'equ_lv': 85,
+                    'rpr': 366,
+                    'ep2_enh': 8,
+                    'child_inlay_props': {
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'con': 34,
+                        'child_rule_dei': [
+                            2,
+                            7
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'special_weight': 0,
+                        'pdef': 37,
+                        'child_rule_desc': [
+                            [
+                                2,
+                                {
+                                    'special_weight': 0,
+                                    'con': 34
+                                }
+                            ],
+                            [
+                                7,
+                                {
+                                    'special_weight': 0,
+                                    'pdef': 37
+                                }
+                            ]
+                        ]
+                    },
+                    'enh_restrict': 0,
+                    'imprint': 1,
+                    '_vendorip_consign': 1028780764,
+                    'mmax': 317,
+                    '_latchOfCipher': 1457919999,
+                    'cdur': 302,
+                    'inlay_restrict': 0,
+                    '_ntr_date': 1440388181,
+                    'cenh': 9,
+                    'id': 1082,
+                    'idt_restrict': 1,
+                    'can_inlay': 1,
+                    'hit': 207,
+                    'sell_bind_flag': 1,
+                    'latch_cipher': 1,
+                    'pmin': 143,
+                    'ntr': 10,
+                    'con': 37,
+                    'cri': 127,
+                    'pmax': 221,
+                    'star': 3,
+                    'atype': 7,
+                    'mmin': 202,
+                    'cwrap': 1,
+                    'menh': 14,
+                    'mdur': 302
+                },
+                '3': {
+                    'child_only': 1,
+                    'mind': 20,
+                    'latch_time': 1,
+                    'reqlv': 75,
+                    'cwrap': 1,
+                    'mdur': 313,
+                    'uutime': 1386083192,
+                    'equ_lv': 89,
+                    'rpr': 239,
+                    'ep2_enh': 8,
+                    'use_rand_rule': 2630,
+                    'kechongzhu': 1,
+                    'imprint': 1,
+                    'pdef': 210,
+                    'equ_team': 2,
+                    'assess2': 79,
+                    'cenh': 9,
+                    'id': 33102,
+                    'dog': 19,
+                    'can_inlay': 1,
+                    'cri_sub_p': 0.8,
+                    'latch_cipher': 1,
+                    'mhp': 83,
+                    'bargain_visible': 1,
+                    'con': 18,
+                    '_latchOfCipher': 1443569208,
+                    'child_inlay_props': {
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'mind': 28,
+                        'child_rule_dei': [
+                            6,
+                            7
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'pdef': 51,
+                        'child_rule_desc': [
+                            [
+                                6,
+                                {
+                                    'mind': 28
+                                }
+                            ],
+                            [
+                                7,
+                                {
+                                    'pdef': 51
+                                }
+                            ]
+                        ]
+                    },
+                    'star': 3,
+                    'cdur': 313,
+                    'avoid': 148,
+                    'menh': 15,
+                    'ntr': 10
+                },
+                '2': {
+                    'child_only': 1,
+                    'mind': 35,
+                    'assess2': 68,
+                    'reqlv': 75,
+                    'cwrap': 1,
+                    'mdur': 349,
+                    'uutime': 1386681217,
+                    'equ_lv': 89,
+                    'rpr': 431,
+                    'ep2_enh': 8,
+                    'ntr': 10,
+                    'kechongzhu': 1,
+                    'imprint': 1,
+                    'mdef': 434,
+                    'pdef': 403,
+                    'equ_team': 2,
+                    'cenh': 13,
+                    'id': 33100,
+                    'dog': 28,
+                    'can_inlay': 1,
+                    'cri_sub_p': 0.98,
+                    'latch_cipher': 1,
+                    'use_rand_rule': 2628,
+                    'mhp': 152,
+                    'bargain_visible': 1,
+                    '_latchOfCipher': 1464612614,
+                    'latch_time': 1,
+                    'star': 3,
+                    'cdur': 349,
+                    'avoid': 279,
+                    'menh': 15,
+                    'child_inlay_props': {
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'mind': 29,
+                        'child_rule_dei': [
+                            6,
+                            7
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'pdef': 51,
+                        'child_rule_desc': [
+                            [
+                                6,
+                                {
+                                    'mind': 29
+                                }
+                            ],
+                            [
+                                7,
+                                {
+                                    'pdef': 51
+                                }
+                            ]
+                        ]
+                    }
+                },
+                '5': {
+                    'child_only': 1,
+                    'hidden_prop_rand_rule': {
+                        '8': 4900
+                    },
+                    'ws53': 0,
+                    'latch_time': 1,
+                    'hidden_prop_act': {
+                        '8': {
+                            'avoid': 130
+                        }
+                    },
+                    'reqlv': 80,
+                    'cwrap': 1,
+                    'mdur': 338,
+                    'uutime': 1412139130,
+                    'equ_lv': 93,
+                    'rpr': 342,
+                    'condition_hidden_shot': 1,
+                    'max_hidden_prop_num': 3,
+                    'rand_way': 73,
+                    'kechongzhu': 1,
+                    'imprint': 1,
+                    'sdmd': 57,
+                    'mmax': 76,
+                    '_latchOfCipher': 1440065723,
+                    'cdur': 338,
+                    'hidden_equ_xiuwei': 20,
+                    'bargain_visible': 1,
+                    'cenh': 9,
+                    'condition_hidden_num': 10,
+                    'nosell': 1,
+                    'id': 3949,
+                    'can_inlay': 1,
+                    'no_regen': 1,
+                    'latch_cipher': 1,
+                    'use_rand_rule': 4897,
+                    'mhp': 1414,
+                    'ntr': 10,
+                    'assess2': 110,
+                    'hidden_prop_num': 3,
+                    'child_inlay_props': {
+                        'hidden_count': 1,
+                        'inlay_count': 2,
+                        'dog': 38,
+                        'child_rule_dei': [
+                            4,
+                            7
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'pdef': 52,
+                        'child_rule_desc': [
+                            [
+                                4,
+                                {
+                                    'dog': 38
+                                }
+                            ],
+                            [
+                                7,
+                                {
+                                    'pdef': 52
+                                }
+                            ]
+                        ]
+                    },
+                    'star': 3,
+                    'condition_hidden_rule': 1,
+                    'inosculate_state': 1,
+                    'menh': 20,
+                    'ep2_enh': 8
+                }
+            },
+            'attdef': 43,
+            'dex': 0,
+            'str': 0,
+            'hit': 171,
+            'con': 155,
+            'srbody': 0,
+            'sdact': 0
+        },
+        {
+            'lv': 35,
+            'srmind': 0,
+            'exp': 1162843,
+            'mattack_max': 165,
+            'cri_sub_p': 0,
+            'kongfu': 3,
+            'pattack_max': 165,
+            'unpoint': 0,
+            'potential': 995,
+            'cri_add_p': 0,
+            'mdef': 1466,
+            'commander': 98,
+            'knowledge': 84,
+            'attadd': 58,
+            'mother': '丷尐妞',
+            'int': 0,
+            'name': '槿',
+            'sex': 1,
+            'fashion': {
+
+            },
+            'critical': 0,
+            'mhp': 5712,
+            'mattack_min': 0,
+            'thump_sub_p': 0,
+            'intimacy': 0,
+            'tskills': {
+
+            },
+            'dog': 96,
+            'repute': 6852,
+            'pattack_min': 0,
+            'mind': 42,
+            'thump_add_p': 0,
+            'sch': 2,
+            'pdef': 2573,
+            'msp': 1158,
+            'modadd': 0,
+            'pskills': {
+                '4': 10,
+                '1': 10,
+                '3': 10,
+                '6': 10,
+                '2': 10,
+                '5': 10
+            },
+            'father': '丨繁星夜耀仲夏',
+            'avoid': 0,
+            'equs': {
+                '1': {
+                    'child_only': 1,
+                    'reqlv': 60,
+                    'cwrap': 1,
+                    'uutime': 1434429437,
+                    'equ_lv': 72,
+                    'rpr': 253,
+                    'ntr': 10,
+                    'imprint': 1,
+                    'mdef': 104,
+                    'child_inlay_props': {
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'mind': 40,
+                        'aa0': 27,
+                        'child_rule_dei': [
+                            6,
+                            9
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'special_weight': 0,
+                        'child_rule_desc': [
+                            [
+                                6,
+                                {
+                                    'mind': 40,
+                                    'special_weight': 0
+                                }
+                            ],
+                            [
+                                9,
+                                {
+                                    'aa0': 27,
+                                    'special_weight': 0
+                                }
+                            ]
+                        ]
+                    },
+                    'pdef': 344,
+                    'cdur': 295,
+                    '_ntr_date': 1456823801,
+                    'cenh': 7,
+                    'suit': 10,
+                    'id': 2266,
+                    'req_xiuwei': 15260,
+                    'can_inlay': 1,
+                    'dex': 17,
+                    'latch_cipher': 1,
+                    'bargain_visible': 1,
+                    'con': 28,
+                    'latch_time': 1,
+                    'star': 3,
+                    'yironghe': 1,
+                    'ep2_enh': 8,
+                    'dog': 10,
+                    'menh': 17,
+                    'mdur': 295
+                },
+                '3': {
+                    'child_only': 1,
+                    'reqlv': 60,
+                    'cwrap': 1,
+                    'uutime': 1435459476,
+                    'equ_lv': 72,
+                    'rpr': 211,
+                    'ntr': 10,
+                    'imprint': 1,
+                    'mdef': 83,
+                    'child_inlay_props': {
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'dog': 27,
+                        'child_rule_dei': [
+                            4,
+                            7
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'special_weight': 0,
+                        'pdef': 46,
+                        'child_rule_desc': [
+                            [
+                                4,
+                                {
+                                    'dog': 27,
+                                    'special_weight': 0
+                                }
+                            ],
+                            [
+                                7,
+                                {
+                                    'special_weight': 0,
+                                    'pdef': 46
+                                }
+                            ]
+                        ]
+                    },
+                    'pdef': 276,
+                    'cdur': 288,
+                    'str': 8,
+                    '_ntr_date': 1456823786,
+                    'cenh': 5,
+                    'suit': 10,
+                    'id': 2269,
+                    'req_xiuwei': 15050,
+                    'can_inlay': 1,
+                    'dex': 8,
+                    'latch_cipher': 1,
+                    'bargain_visible': 1,
+                    'con': 24,
+                    'latch_time': 1,
+                    'star': 3,
+                    'yironghe': 1,
+                    'ep2_enh': 8,
+                    'dog': 10,
+                    'menh': 17,
+                    'mdur': 288
+                },
+                '2': {
+                    'child_only': 1,
+                    'reqlv': 60,
+                    'cwrap': 1,
+                    'uutime': 1440868342,
+                    'equ_lv': 72,
+                    'rpr': 380,
+                    'ntr': 10,
+                    'imprint': 1,
+                    'mdef': 171,
+                    'child_inlay_props': {
+                        'con': 36,
+                        'hidden_count': 0,
+                        'inlay_count': 2,
+                        'aa3': 29,
+                        'child_rule_dei': [
+                            2,
+                            12
+                        ],
+                        'child_hidden_dei': [
+
+                        ],
+                        'special_weight': 0,
+                        'child_rule_desc': [
+                            [
+                                2,
+                                {
+                                    'special_weight': 0,
+                                    'con': 36
+                                }
+                            ],
+                            [
+                                12,
+                                {
+                                    'special_weight': 0,
+                                    'aa3': 29
+                                }
+                            ]
+                        ]
+                    },
+                    'pdef': 543,
+                    'cdur': 316,
+                    'str': 25,
+                    '_ntr_date': 1456823792,
+                    'cenh': 10,
+                    'suit': 10,
+                    'id': 2268,
+                    'req_xiuwei': 15890,
+                    'can_inlay': 1,
+                    'latch_cipher': 1,
+                    'bargain_visible': 1,
+                    'con': 41,
+                    'latch_time': 1,
+                    'star': 3,
+                    'yironghe': 1,
+                    'ep2_enh': 8,
+                    'dog': 17,
+                    'menh': 17,
+                    'mdur': 316
+                },
+                '4': {
+                    'child_only': 1,
+                    'reqlv': 60,
+                    'cwrap': 1,
+                    'uutime': 1450242804,
+                    'equ_lv': 72,
+                    'rpr': 211,
+                    'ntr': 10,
+                    'imprint': 1,
+                    'mdef': 81,
+                    'child_inlay_props': {
+                        'child_rule_desc': [
+
+                        ],
+                        'hidden_count': 0,
+                        'inlay_count': 0,
+                        'child_hidden_dei': [
+
+                        ],
+                        'child_rule_dei': [
+
+                        ]
+                    },
+                    'pdef': 271,
+                    'cdur': 288,
+                    'str': 14,
+                    '_ntr_date': 1465400455,
+                    'cenh': 4,
+                    'suit': 10,
+                    'id': 2273,
+                    'req_xiuwei': 15050,
+                    'latch_cipher': 1,
+                    'bargain_visible': 1,
+                    'con': 22,
+                    'latch_time': 1,
+                    'star': 3,
+                    'yironghe': 1,
+                    'menh': 17,
+                    'mdur': 288
+                }
+            },
+            'attdef': 0,
+            'dex': 47,
+            'str': 73,
+            'hit': 0,
+            'con': 239,
+            'srbody': 0,
+            'sdact': 0
+        }
+    ],
+    'avoid': 2934,
+    'sract': 404,
+    'attdef': 114,
+    'cri_sub_p': 35,
+    'enh_wing_lv': 4,
+    'sex': 2,
+    'wing_inlay_prop': '#r#r#W左翼：#r#c00AAEE念+34#r#cBB44BB疾语：吟唱速度加成力上升50#r#cBB44BB神明：施法保护力和会心防护力上升33#r#cFF8800最大法术攻击力: +18#r#cFF8800物理防御力: +27#r#r#r#W右翼：#r#c00AAEE魂+31#r#c00AAEE念+24#r#c00AAEE附加13点火伤害#r#cBB44BB疾语：吟唱速度加成力上升44#r#cFF8800最大法术攻击力: +19#r',
+    'cash': '260金42银3铜',
+    'beast_disk_attr': {
+        'dex': 7,
+        'mind': 14,
+        'con': 16,
+        'dog': 11,
+        'avoid': 26,
+        'mhp': 425
+    },
+    'defhuman': 0,
+    'srbody': 363,
+    'modadd': 43,
+    'attackspeed': 40,
+    'inv': {
+        '0': {
+            'rpr': 0,
+            'uutime': 1466652139,
+            'nosell': 1,
+            'id': 88826,
+            'cpotion': 416,
+            'mpotion': 500,
+            'need_target': 1,
+            'common_cooldown': 100,
+            'bargain_visible': 1,
+            'ntr': 10,
+            'self_cooldown': 100,
+            'star': 4,
+            'cwrap': 1,
+            'cheat_rate': 3.0
+        },
+        '32': {
+            'bargain_visible': 1,
+            'uutime': 1475463875,
+            'nosell': 1,
+            'id': 24789,
+            '_mallOfWay': 1,
+            'star': 2,
+            'need_target': 1,
+            'cheat_rate': 3.0,
+            'rpr': 0,
+            '_mallOfDateP': 1475463875,
+            'ntr': 10,
+            'bWrap': False,
+            'cwrap': 1,
+            '_mallOfDateC': 1491015875,
+            '_mallOfMode': 1,
+            '_mallOfMark': False
+        },
+        '27': {
+            'bargain_visible': 1,
+            'rpr': 100,
+            'id': 5849,
+            'ntr': 0,
+            'star': 3,
+            'consign_name': '',
+            'cwrap': 1,
+            'uutime': 1475648719,
+            'cheat_rate': 3.0
+        },
+        '14': {
+            'bargain_visible': 1,
+            'rpr': 1,
+            'id': 25265,
+            'ntr': 10,
+            'star': 3,
+            'consign_name': '',
+            'cwrap': 1,
+            'uutime': 1477759338,
+            'cheat_rate': 3.0
+        },
+        '31': {
+            'rpr': 0,
+            'bargain_visible': 1,
+            'id': 26572,
+            'ntr': 10,
+            'nosell': 1,
+            'star': 3,
+            'consign_name': '',
+            'cwrap': 2,
+            'uutime': 1477757975,
+            'cheat_rate': 3.0
+        }
+    },
+    'exp': 191663197,
+    'skp': 178498920
+}
