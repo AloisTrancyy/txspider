@@ -19,6 +19,10 @@ class Role(object):
         try:
             with connection.cursor() as cursor:
                 for role in roles:
+                    query = 'select count(1) from role where equip_id=' + str(role['equip_id'])
+                    count = cursor.execute(query)
+                    if count > 0:
+                        continue
                     sql = 'INSERT INTO role (equip_id'
                     for key, value in role.items():
                         if key == 'equip_id':

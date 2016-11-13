@@ -25,6 +25,7 @@ class HtmlParser(object):
         res_data['lv'] = role_json['lv']
         role_json.setdefault('fly_soul_phase', None)
         role_json.setdefault('fly_soul_lv', None)
+        role_json.setdefault('cri_add_p', None)
         res_data['fly_soul_phase'] = role_json['fly_soul_phase']
         res_data['fly_soul_lv'] = role_json['fly_soul_lv']
         res_data['xiuwei'] = role_json['xiuwei']
@@ -66,6 +67,7 @@ class HtmlParser(object):
         res_data['mind'] = attr['mind']
 
         # 门派轻功
+        role_json.setdefault('school_qinggong', None)
         lingskills = role_json['school_qinggong']
         if lingskills is not None and lingskills != 'None':
             calc_data['lignt_menpai'] = 1
