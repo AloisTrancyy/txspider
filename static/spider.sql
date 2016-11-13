@@ -103,3 +103,7 @@ CREATE TABLE `role_calc` (
   PRIMARY KEY (`id`),
   KEY `idx_role_id` (`role_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+ALTER TABLE role ADD UNIQUE `idx_equip_id` (`equip_id`) comment '';
+ALTER TABLE role_basic DROP INDEX `idx_role_id`, ADD UNIQUE `idx_role_id` USING BTREE (`role_id`) comment '';
+ALTER TABLE role_calc DROP INDEX `idx_role_id`, ADD UNIQUE `idx_role_id` USING BTREE (`role_id`) comment '';

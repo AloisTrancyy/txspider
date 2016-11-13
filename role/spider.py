@@ -36,50 +36,43 @@ class SpiderMain(object):
                     equip_id = key[9:len(key)]
             html_cont = self.downloader.download(url)
             basic_data, calc_data = self.parser.parse(html_cont, equip_id)
-            print(basic_data)
-            print(calc_data)
             try:
                 connection = pymysql.connect(**config)
                 with connection.cursor() as cursor:
-                    query = 'select count(1) from role_basic where role_id=' + str(equip_id)
-                    count = cursor.execute(query)
-                    if count == 0:
-                        sql = 'INSERT INTO role_basic (role_id'
-                        for key, value in basic_data.items():
-                            if key == 'role_id' or value is None:
-                                continue
-                            sql = sql + ',' + key
-                        sql = sql + ' ) values (' + basic_data['role_id']
-                        for key, value in basic_data.items():
-                            if key == 'role_id' or value is None:
-                                continue
-                            if type(value) == int:
-                                sql = sql + ',' + str(value)
-                            else:
-                                sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
-                        sql += ')'
-                        print(sql)
-                        cursor.execute(sql)
-                    query = 'select count(1) from role_calc where role_id=' + str(equip_id)
-                    count = cursor.execute(query)
-                    if count == 0:
-                        calcsql = 'INSERT INTO role_calc (role_id'
-                        for key, value in calc_data.items():
-                            if key == 'role_id' or value is None:
-                                continue
-                            calcsql = calcsql + ',' + key
-                        calcsql = calcsql + ' ) values (' + calc_data['role_id']
-                        for key, value in calc_data.items():
-                            if key == 'role_id' or value is None:
-                                continue
-                            if type(value) == int:
-                                calcsql = calcsql + ',' + str(value)
-                            else:
-                                calcsql = calcsql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                    sql = 'INSERT INTO role_basic (role_id'
+                    for key, value in basic_data.items():
+                        if key == 'role_id' or value is None:
+                            continue
+                        sql = sql + ',' + key
+                    sql = sql + ' ) values (' + basic_data['role_id']
+                    for key, value in basic_data.items():
+                        if key == 'role_id' or value is None:
+                            continue
+                        if type(value) == int:
+                            sql = sql + ',' + str(value)
+                        else:
+                            sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                    sql += ')'
 
-                        calcsql += ')'
-                        print(calcsql)
-                        cursor.execute(calcsql)
+                    calcsql = 'INSERT INTO role_calc (role_id'
+                    for key, value in calc_data.items():
+                        if key == 'role_id' or value is None:
+                            continue
+                        calcsql = calcsql + ',' + key
+                    calcsql = calcsql + ' ) values (' + calc_data['role_id']
+                    for key, value in calc_data.items():
+                        if key == 'role_id' or value is None:
+                            continue
+                        if type(value) == int:
+                            calcsql = calcsql + ',' + str(value)
+                        else:
+                            calcsql = calcsql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+
+                    calcsql += ')'
+                    print(sql)
+                    print(calcsql)
+                    cursor.execute(sql)
+                    cursor.execute(calcsql)
                     connection.commit()
             except Exception as e:
                 print(e, traceback.print_exc())
@@ -95,7 +88,7 @@ if __name__ == "__main__":
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
-            obj_spider.urlManager.add_new_url(row['url'])
+            obj_spider.urlManager.add_new_url('http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=7&equip_id=194017')
     cursor.close()
     connection.close()
     obj_spider.craw()

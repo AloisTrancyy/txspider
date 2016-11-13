@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 class HtmlParser(object):
     def parse(self, html_cont, equip_id):
-        soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='utf-8')
+        soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='gb18030')
         new_data = self._get_new_data(soup, equip_id)
         return new_data
 
@@ -20,7 +20,7 @@ class HtmlParser(object):
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
         role_json = json.loads(role, 'utf-8')
-
+        # print(role_json)
         # 基础信息
         res_data['lv'] = role_json['lv']
         role_json.setdefault('fly_soul_phase', None)
@@ -99,7 +99,7 @@ class HtmlParser(object):
         # 特技
         huikan, dunci, shuifengdu, huoyuan, huxin, wanfeng = 0, 0, 0, 0, 0, 0
         equ = role_json['equ']
-        shoushi = ['5', '6', '13', '14', '15', '16', '17', '18']
+        shoushi = ['6', '7', '13', '14', '15', '16', '17', '18']
 
         for index in shoushi:
             if equ[index].setdefault('ws47', None) is not None:
@@ -118,6 +118,17 @@ class HtmlParser(object):
         chibangdesc = role_json['wing_inlay_prop']
         if chibangdesc is not None and '护心' in chibangdesc:
             huxin += 3
+
+        if equ[index].setdefault('4', None) is not None:
+            if equ['4']['id'] in [22374, 22375, 22376, 22377, 22378, 22379, 22380, 22381, 22502]:
+                calc_data['shilifushou'] = 1
+
+        if equ[index].setdefault('5', None) is not None:
+            if equ['5']['id'] in [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1967]:
+                calc_data['taichu'] = 1
+
+        # print('武器=' + str(equ['5']['id']))
+        # print('副手=' + str(equ['4']['id']))
 
         # 觉醒
         final_skill = role_json['final_skill']
@@ -202,7 +213,7 @@ class HtmlParser(object):
                     canghai = 1
                 if yfid == 210168 or yfid == 210169:
                     jiangnan = 1
-                if yfid == 210037:
+                if yfid == 210037 or yfid == 210038:
                     haitang = 1
 
         # 包裹
@@ -223,7 +234,7 @@ class HtmlParser(object):
                 canghai = 1
             if yfid == 210168 or yfid == 210169:
                 jiangnan = 1
-            if yfid == 210037:
+            if yfid == 210037 or yfid == 210038:
                 haitang = 1
 
         calc_data['qinghua'] = qinghua
