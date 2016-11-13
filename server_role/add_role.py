@@ -15,8 +15,8 @@ config = {
 
 class Role(object):
     def addRoles(self, roles):
-        connection = pymysql.connect(**config)
         try:
+            connection = pymysql.connect(**config)
             with connection.cursor() as cursor:
                 for role in roles:
                     query = 'select count(1) from role where equip_id=' + str(role['equip_id'])
