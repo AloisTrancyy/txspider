@@ -4,11 +4,11 @@ import pymysql.cursors
 import traceback
 
 config = {
-    'host': 'localhost',
+    'host': '10.168.66.173',
     'port': 3306,
-    'user': 'root',
-    'password': 'root',
-    'db': 'spider',
+    'user': 'sellmall',
+    'password': 'sellmall1234',
+    'db': 'test',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,
 }

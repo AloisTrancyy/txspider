@@ -7,6 +7,7 @@ import server_downloader
 import server_parser
 import add_role
 import traceback
+import time
 
 class ServerSpider(object):
     def __init__(self):
@@ -19,6 +20,7 @@ class ServerSpider(object):
         while self.urls.has_new_url():
             try:
                 new_url = self.urls.get_new_url()
+                time.sleep(10)
                 print('craw :' + new_url)
                 html_cont = self.downloader.download(new_url)
                 new_data = self.parser.parse(html_cont)
