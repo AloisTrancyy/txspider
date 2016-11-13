@@ -87,9 +87,9 @@ class HtmlParser(object):
         for child in childs:
             if child['lv'] >= haizi_lv:
                 haizi_lv = child['lv']
-            if child['potential'] >= haizi_lv:
+            if child['potential'] >= haizi_zizhi:
                 haizi_zizhi = child['potential']
-            if child['kongfu'] >= haizi_lv:
+            if child['kongfu'] >= haizi_wuxue:
                 haizi_wuxue = child['kongfu']
 
         calc_data['haizi_lv'] = haizi_lv
