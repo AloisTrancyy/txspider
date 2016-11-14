@@ -15,7 +15,7 @@ class HtmlDownloader(object):
                    'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search',
                    'Origin': 'http://tx3.cbg.163.com'}
 
-        response = requests.get(url)
+        response = requests.get(url, headers=headers, imeout=3)
         if response.status_code != 200:
             return None
         return response.text

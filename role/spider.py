@@ -10,11 +10,11 @@ import traceback
 import time
 
 config = {
-    'host': '10.168.66.173',
+    'host': 'localhost',
     'port': 3306,
-    'user': 'sellmall',
-    'password': 'sellmall1234',
-    'db': 'test',
+    'user': 'root',
+    'password': 'root',
+    'db': 'spider',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,
 }
@@ -39,40 +39,44 @@ class SpiderMain(object):
             try:
                 connection = pymysql.connect(**config)
                 with connection.cursor() as cursor:
-                    sql = 'INSERT INTO role_basic (role_id'
-                    for key, value in basic_data.items():
-                        if key == 'role_id' or value is None:
-                            continue
-                        sql = sql + ',' + key
-                    sql = sql + ' ) values (' + basic_data['role_id']
-                    for key, value in basic_data.items():
-                        if key == 'role_id' or value is None:
-                            continue
-                        if type(value) == int:
-                            sql = sql + ',' + str(value)
-                        else:
-                            sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
-                    sql += ')'
-
-                    calcsql = 'INSERT INTO role_calc (role_id'
-                    for key, value in calc_data.items():
-                        if key == 'role_id' or value is None:
-                            continue
-                        calcsql = calcsql + ',' + key
-                    calcsql = calcsql + ' ) values (' + calc_data['role_id']
-                    for key, value in calc_data.items():
-                        if key == 'role_id' or value is None:
-                            continue
-                        if type(value) == int:
-                            calcsql = calcsql + ',' + str(value)
-                        else:
-                            calcsql = calcsql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
-
-                    calcsql += ')'
-                    print(sql)
-                    print(calcsql)
-                    cursor.execute(sql)
-                    cursor.execute(calcsql)
+                    query = 'select count(1) as count from role_basic where role_id=' + str(equip_id)
+                    cursor.execute(query)
+                    if cursor.fetchone()['count'] == 0:
+                        sql = 'INSERT INTO role_basic (role_id'
+                        for key, value in basic_data.items():
+                            if key == 'role_id' or value is None:
+                                continue
+                            sql = sql + ',' + key
+                        sql = sql + ' ) values (' + basic_data['role_id']
+                        for key, value in basic_data.items():
+                            if key == 'role_id' or value is None:
+                                continue
+                            if type(value) == int or type(value) == float:
+                                sql = sql + ',' + str(value)
+                            else:
+                                sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                        sql += ')'
+                        print(sql)
+                        cursor.execute(sql)
+                    query = 'select count(1) as count from role_calc where role_id=' + str(equip_id)
+                    cursor.execute(query)
+                    if cursor.fetchone()['count'] == 0:
+                        calcsql = 'INSERT INTO role_calc (role_id'
+                        for key, value in calc_data.items():
+                            if key == 'role_id' or value is None:
+                                continue
+                            calcsql = calcsql + ',' + key
+                        calcsql = calcsql + ' ) values (' + calc_data['role_id']
+                        for key, value in calc_data.items():
+                            if key == 'role_id' or value is None:
+                                continue
+                            if type(value) == int or type(value) == float:
+                                calcsql = calcsql + ',' + str(value)
+                            else:
+                                calcsql = calcsql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                        calcsql += ')'
+                        print(calcsql)
+                        cursor.execute(calcsql)
                     connection.commit()
             except Exception as e:
                 print(e, traceback.print_exc())
@@ -84,11 +88,11 @@ if __name__ == "__main__":
     obj_spider = SpiderMain()
     connection = pymysql.connect(**config)
     with connection.cursor() as cursor:
-        sql = 'select equip_id,url from role '
+        sql = 'select url from role where equip_id not in (select role_id from role_basic)  '
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
-            obj_spider.urlManager.add_new_url('http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=7&equip_id=194017')
+            obj_spider.urlManager.add_new_url(row['url'])
     cursor.close()
     connection.close()
     obj_spider.craw()

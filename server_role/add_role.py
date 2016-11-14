@@ -4,11 +4,11 @@ import pymysql.cursors
 import traceback
 
 config = {
-    'host': '10.168.66.173',
+    'host': 'localhost',
     'port': 3306,
-    'user': 'sellmall',
-    'password': 'sellmall1234',
-    'db': 'test',
+    'user': 'root',
+    'password': 'root',
+    'db': 'spider',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,
 }
@@ -19,9 +19,9 @@ class Role(object):
             connection = pymysql.connect(**config)
             with connection.cursor() as cursor:
                 for role in roles:
-                    query = 'select count(1) from role where equip_id=' + str(role['equip_id'])
-                    count = cursor.execute(query)
-                    if count > 0:
+                    query = 'select count(1) as count from role where equip_id=' + str(role['equip_id'])
+                    cursor.execute(query)
+                    if cursor.fetchone()['count'] > 0:
                         continue
                     sql = 'INSERT INTO role (equip_id'
                     for key, value in role.items():
@@ -36,7 +36,6 @@ class Role(object):
                             sql = sql + ',' + str(value)
                         else:
                             sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
-
                     sql += ')'
                     print(sql)
                     cursor.execute(sql)

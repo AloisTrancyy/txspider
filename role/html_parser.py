@@ -20,12 +20,18 @@ class HtmlParser(object):
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
         role_json = json.loads(role, 'utf-8')
-        # print(role_json)
+        print(role_json)
         # 基础信息
         res_data['lv'] = role_json['lv']
         role_json.setdefault('fly_soul_phase', None)
         role_json.setdefault('fly_soul_lv', None)
         role_json.setdefault('cri_add_p', None)
+        role_json.setdefault('cri_sub_p', None)
+        role_json.setdefault('absolutely_attack', None)
+        role_json.setdefault('absolutely_defence', None)
+        role_json.setdefault('thump_sub_p', None)
+        role_json.setdefault('thump_add_p', None)
+        role_json.setdefault('final_skill', None)
         res_data['fly_soul_phase'] = role_json['fly_soul_phase']
         res_data['fly_soul_lv'] = role_json['fly_soul_lv']
         res_data['xiuwei'] = role_json['xiuwei']
@@ -102,6 +108,9 @@ class HtmlParser(object):
         shoushi = ['6', '7', '13', '14', '15', '16', '17', '18']
 
         for index in shoushi:
+            equ.setdefault(index, None)
+            if equ[index] is None:
+                continue
             if equ[index].setdefault('ws47', None) is not None:
                 huikan += equ[index]['ws47']
             if equ[index].setdefault('ws48', None) is not None:
