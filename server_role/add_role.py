@@ -2,7 +2,9 @@
 #  -*- coding: utf-8 -*-
 import pymysql.cursors
 import traceback
-import config
+import configparser
+config = configparser.ConfigParser()
+config.read("../config.ini")
 
 
 class Role(object):
@@ -21,15 +23,11 @@ class Role(object):
                     cursor.execute(query)
                     if cursor.fetchone()['count'] > 0:
                         continue
-                    sql = 'INSERT INTO role (equip_id'
+                    sql = 'INSERT INTO role (yn,create_time'
                     for key, value in role.items():
-                        if key == 'equip_id':
-                            continue
                         sql = sql + ',' + key
-                    sql = sql + ' ) values (' + str(role['equip_id'])
+                    sql = sql + ' ) values (1,now()' + str(role['equip_id'])
                     for key, value in role.items():
-                        if key == 'equip_id':
-                            continue
                         if type(value) == int:
                             sql = sql + ',' + str(value)
                         else:

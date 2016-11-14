@@ -12,6 +12,7 @@ class HtmlParser(object):
         json_data = json.loads(html_cont)
         msg = json_data['msg']
         for role in msg:
+            print(role)
             res_data = {}
             res_data['equip_id'] = role['equipid']
             res_data['server_id'] = role['serverid']

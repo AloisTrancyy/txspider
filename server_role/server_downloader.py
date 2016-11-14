@@ -14,8 +14,8 @@ class HtmlDownloader(object):
                                  '(KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
                    'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search',
                    'Origin': 'http://tx3.cbg.163.com'}
-
-        response = requests.get(url, headers=headers, imeout=3)
+        requests.adapters.DEFAULT_RETRIES = 3
+        response = requests.get(url, headers=headers, timeout=3)
         if response.status_code != 200:
             return None
         return response.text
