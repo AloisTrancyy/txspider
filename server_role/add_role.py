@@ -2,21 +2,19 @@
 #  -*- coding: utf-8 -*-
 import pymysql.cursors
 import traceback
+import config
 
-config = {
-    'host': '10.168.66.173',
-    'port': 3306,
-    'user': 'sellmall',
-    'password': 'sellmall1234',
-    'db': 'test',
-    'charset': 'utf8mb4',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
 
 class Role(object):
     def addRoles(self, roles):
         try:
-            connection = pymysql.connect(**config)
+            connection = pymysql.connect(host=config.get('mysql', 'host'),
+                                         port=config.get('mysql', 'port'),
+                                         user=config.get('mysql', 'user'),
+                                         password=config.get('mysql', 'password'),
+                                         db=config.get('mysql', 'db'),
+                                         charset=config.get('mysql', 'charset'),
+                                         cursorclass=config.get('mysql', 'cursorclass'))
             with connection.cursor() as cursor:
                 for role in roles:
                     query = 'select count(1) from role where equip_id=' + str(role['equip_id'])
