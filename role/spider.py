@@ -8,6 +8,7 @@ import url_manager
 import pymysql.cursors
 import traceback
 import time
+import config
 
 config = {
     'host': 'localhost',
@@ -37,7 +38,13 @@ class SpiderMain(object):
             html_cont = self.downloader.download(url)
             basic_data, calc_data = self.parser.parse(html_cont, equip_id)
             try:
-                connection = pymysql.connect(**config)
+                connection = pymysql.connect(host=config.get('mysql', 'host'),
+                                             port=config.get('mysql', 'port'),
+                                             user=config.get('mysql', 'user'),
+                                             password=config.get('mysql', 'password'),
+                                             db=config.get('mysql', 'db'),
+                                             charset=config.get('mysql', 'charset'),
+                                             cursorclass=config.get('mysql', 'cursorclass'))
                 with connection.cursor() as cursor:
                     query = 'select count(1) as count from role_basic where role_id=' + str(equip_id)
                     cursor.execute(query)
@@ -86,13 +93,20 @@ class SpiderMain(object):
 
 if __name__ == "__main__":
     obj_spider = SpiderMain()
-    connection = pymysql.connect(**config)
+    connection = pymysql.connect(host=config.get('mysql', 'host'),
+                                 port=config.get('mysql', 'port'),
+                                 user=config.get('mysql', 'user'),
+                                 password=config.get('mysql', 'password'),
+                                 db=config.get('mysql', 'db'),
+                                 charset=config.get('mysql', 'charset'),
+                                 cursorclass=config.get('mysql', 'cursorclass'))
     with connection.cursor() as cursor:
-        sql = 'select url from role where equip_id not in (select role_id from role_basic)  '
+        sql = 'select equip_id,url from role '
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
-            obj_spider.urlManager.add_new_url(row['url'])
+            obj_spider.urlManager.add_new_url(
+                'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=7&equip_id=194017')
     cursor.close()
     connection.close()
     obj_spider.craw()
