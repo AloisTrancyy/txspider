@@ -3,30 +3,34 @@
 import pymysql.cursors
 import traceback
 import configparser
+
 config = configparser.ConfigParser()
 config.read("../config.ini")
+dbconfig = {
+    'host': config.get('mysql', 'host'),
+    'port': config.getint('mysql', 'port'),
+    'user': config.get('mysql', 'user'),
+    'password': config.get('mysql', 'password'),
+    'db': config.get('mysql', 'db'),
+    'charset': config.get('mysql', 'charset'),
+    'cursorclass': pymysql.cursors.DictCursor
+}
 
 
 class Role(object):
     def addRoles(self, roles):
+        connection = pymysql.connect(**dbconfig)
         try:
-            connection = pymysql.connect(host=config.get('mysql', 'host'),
-                                         port=config.get('mysql', 'port'),
-                                         user=config.get('mysql', 'user'),
-                                         password=config.get('mysql', 'password'),
-                                         db=config.get('mysql', 'db'),
-                                         charset=config.get('mysql', 'charset'),
-                                         cursorclass=config.get('mysql', 'cursorclass'))
             with connection.cursor() as cursor:
                 for role in roles:
-                    query = 'select count(1) as count from role where equip_id=' + str(role['equip_id'])
+                    query = 'select count(1) as count from role where role_id=' + str(role['role_id'])
                     cursor.execute(query)
                     if cursor.fetchone()['count'] > 0:
                         continue
                     sql = 'INSERT INTO role (yn,create_time'
                     for key, value in role.items():
                         sql = sql + ',' + key
-                    sql = sql + ' ) values (1,now()' + str(role['equip_id'])
+                    sql += ' ) values (1,now()'
                     for key, value in role.items():
                         if type(value) == int:
                             sql = sql + ',' + str(value)

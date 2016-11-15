@@ -2,13 +2,26 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
+import time
+import traceback
+import configparser
+
+import pymysql
 import html_downloader
 import html_parser
 import url_manager
-import pymysql.cursors
-import traceback
-import time
-import config
+
+config = configparser.ConfigParser()
+config.read("../config.ini")
+dbconfig = {
+    'host': config.get('mysql', 'host'),
+    'port': config.getint('mysql', 'port'),
+    'user': config.get('mysql', 'user'),
+    'password': config.get('mysql', 'password'),
+    'db': config.get('mysql', 'db'),
+    'charset': config.get('mysql', 'charset'),
+    'cursorclass': pymysql.cursors.DictCursor
+}
 
 
 class SpiderMain(object):
@@ -26,20 +39,14 @@ class SpiderMain(object):
                 if 'equip_id' in key:
                     equip_id = key[9:len(key)]
             html_cont = self.downloader.download(url)
-            basic_data, calc_data = self.parser.parse(html_cont, equip_id)
+            basic_data = self.parser.parse(html_cont, equip_id)
+            connection = pymysql.connect(**dbconfig)
             try:
-                connection = pymysql.connect(host=config.get('mysql', 'host'),
-                                             port=config.get('mysql', 'port'),
-                                             user=config.get('mysql', 'user'),
-                                             password=config.get('mysql', 'password'),
-                                             db=config.get('mysql', 'db'),
-                                             charset=config.get('mysql', 'charset'),
-                                             cursorclass=config.get('mysql', 'cursorclass'))
                 with connection.cursor() as cursor:
-                    query = 'select count(1) as count from role_basic where role_id=' + str(equip_id)
+                    query = 'select count(1) as count from role_data where role_id=' + str(equip_id)
                     cursor.execute(query)
                     if cursor.fetchone()['count'] == 0:
-                        sql = 'INSERT INTO role_basic (role_id'
+                        sql = 'INSERT INTO role_data (role_id'
                         for key, value in basic_data.items():
                             if key == 'role_id' or value is None:
                                 continue
@@ -55,25 +62,6 @@ class SpiderMain(object):
                         sql += ')'
                         print(sql)
                         cursor.execute(sql)
-                    query = 'select count(1) as count from role_calc where role_id=' + str(equip_id)
-                    cursor.execute(query)
-                    if cursor.fetchone()['count'] == 0:
-                        calcsql = 'INSERT INTO role_calc (role_id'
-                        for key, value in calc_data.items():
-                            if key == 'role_id' or value is None:
-                                continue
-                            calcsql = calcsql + ',' + key
-                        calcsql = calcsql + ' ) values (' + calc_data['role_id']
-                        for key, value in calc_data.items():
-                            if key == 'role_id' or value is None:
-                                continue
-                            if type(value) == int or type(value) == float:
-                                calcsql = calcsql + ',' + str(value)
-                            else:
-                                calcsql = calcsql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
-                        calcsql += ')'
-                        print(calcsql)
-                        cursor.execute(calcsql)
                     connection.commit()
             except Exception as e:
                 print(e, traceback.print_exc())
@@ -83,20 +71,13 @@ class SpiderMain(object):
 
 if __name__ == "__main__":
     obj_spider = SpiderMain()
-    connection = pymysql.connect(host=config.get('mysql', 'host'),
-                                 port=config.get('mysql', 'port'),
-                                 user=config.get('mysql', 'user'),
-                                 password=config.get('mysql', 'password'),
-                                 db=config.get('mysql', 'db'),
-                                 charset=config.get('mysql', 'charset'),
-                                 cursorclass=config.get('mysql', 'cursorclass'))
+    connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        sql = 'select equip_id,url from role '
+        sql = 'select url from role where yn=1 and role_id not in (select role_id from role_data)'
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
-            obj_spider.urlManager.add_new_url(
-                'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail&serverid=7&equip_id=194017')
+            obj_spider.urlManager.add_new_url(row['url'])
     cursor.close()
     connection.close()
     obj_spider.craw()

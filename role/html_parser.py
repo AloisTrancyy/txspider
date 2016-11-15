@@ -13,16 +13,14 @@ class HtmlParser(object):
 
     def _get_new_data(self, soup, equip_id):
         res_data = {}
-        calc_data = {}
         res_data['role_id'] = equip_id
-        calc_data['role_id'] = equip_id
 
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
         role_json = json.loads(role, 'utf-8')
-        print(role_json)
+        # print(role_json)
         # 基础信息
-        res_data['lv'] = role_json['lv']
+
         role_json.setdefault('fly_soul_phase', None)
         role_json.setdefault('fly_soul_lv', None)
         role_json.setdefault('cri_add_p', None)
@@ -32,8 +30,37 @@ class HtmlParser(object):
         role_json.setdefault('thump_sub_p', None)
         role_json.setdefault('thump_add_p', None)
         role_json.setdefault('final_skill', None)
-        res_data['fly_soul_phase'] = role_json['fly_soul_phase']
-        res_data['fly_soul_lv'] = role_json['fly_soul_lv']
+        fly_soul_phase = role_json['fly_soul_phase']
+        fly_soul_lv = role_json['fly_soul_lv']
+
+        level = role_json['lv']
+        if int(fly_soul_phase) == 1:
+            if '肆天玖境界' in fly_soul_lv:
+                level = 85
+            elif '肆天' in fly_soul_lv:
+                level = 84
+            elif '叁天' in fly_soul_lv:
+                level = 83
+            elif '贰天' in fly_soul_lv:
+                level = 82
+            elif '壹天' in fly_soul_lv:
+                level = 81
+
+        if int(fly_soul_phase) == 2:
+            if '肆天玖境界' in fly_soul_lv:
+                level = 90
+            elif '肆天' in fly_soul_lv:
+                level = 89
+            elif '叁天' in fly_soul_lv:
+                level = 88
+            elif '贰天' in fly_soul_lv:
+                level = 87
+            elif '壹天' in fly_soul_lv:
+                level = 86
+
+        res_data['lv'] = level
+        res_data['fly_soul_phase'] = fly_soul_phase
+        res_data['fly_soul_lv'] = fly_soul_lv
         res_data['xiuwei'] = role_json['xiuwei']
         res_data['equ_xiuwei'] = role_json['equ_xiuwei']
         res_data['sch'] = role_json['sch']
@@ -76,13 +103,31 @@ class HtmlParser(object):
         role_json.setdefault('school_qinggong', None)
         lingskills = role_json['school_qinggong']
         if lingskills is not None and lingskills != 'None':
-            calc_data['lignt_menpai'] = 1
+            res_data['lignt_menpai'] = 1
 
         # 英魂
         # lingskills = role_json['multiMS']
 
         # 元魂珠
-        # lingskills = role_json['monster_souls']
+        monster_souls = role_json['monster_souls']
+        for key, value in monster_souls.items():
+            prototype = value['prototype']
+            if prototype == 4772:
+                res_data['mawangye'] = 1
+            if prototype == 5207:
+                res_data['wanshengtianzun'] = 1
+            if prototype == 5037:
+                res_data['yehuo'] = 1
+            if prototype == 5054:
+                res_data['xiyangyang'] = 1
+            if prototype == 3117 or prototype == 4657:
+                value.setdefault('skills_lv', None)
+                skills_lv = value['skills_lv']
+                if skills_lv is None:
+                    continue
+                for sk, level in skills_lv.items():
+                    if sk == '4436':
+                        res_data['dulanggui'] = 1
 
         # 灵兽
         # hbs = role_json['hbs']
@@ -98,9 +143,9 @@ class HtmlParser(object):
             if child['kongfu'] >= haizi_wuxue:
                 haizi_wuxue = child['kongfu']
 
-        calc_data['haizi_lv'] = haizi_lv
-        calc_data['haizi_zizhi'] = haizi_zizhi
-        calc_data['haizi_wuxue'] = haizi_wuxue
+        res_data['haizi_lv'] = haizi_lv
+        res_data['haizi_zizhi'] = haizi_zizhi
+        res_data['haizi_wuxue'] = haizi_wuxue
 
         # 特技
         huikan, dunci, shuifengdu, huoyuan, huxin, wanfeng = 0, 0, 0, 0, 0, 0
@@ -130,11 +175,11 @@ class HtmlParser(object):
 
         if equ[index].setdefault('4', None) is not None:
             if equ['4']['id'] in [22374, 22375, 22376, 22377, 22378, 22379, 22380, 22381, 22502]:
-                calc_data['shilifushou'] = 1
+                res_data['shilifushou'] = 1
 
         if equ[index].setdefault('5', None) is not None:
             if equ['5']['id'] in [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1967]:
-                calc_data['taichu'] = 1
+                res_data['taichu'] = 1
 
         # print('武器=' + str(equ['5']['id']))
         # print('副手=' + str(equ['4']['id']))
@@ -142,14 +187,14 @@ class HtmlParser(object):
         # 觉醒
         final_skill = role_json['final_skill']
         if final_skill is not None:
-            calc_data['awake_lv'] = final_skill['lv']
-            calc_data['release_lv'] = final_skill['releaseScale']
-            calc_data['awake_value'] = final_skill['attrId']
+            res_data['awake_lv'] = final_skill['lv']
+            res_data['release_lv'] = final_skill['releaseScale']
+            res_data['awake_value'] = final_skill['attrId']
 
             minglian = final_skill['minglian']
             if minglian is not None:
-                calc_data['lianhu'] = minglian['enh2Num']
-                calc_data['minglian'] = minglian['changeValue'] + minglian['fixedValue']
+                res_data['lianhu'] = minglian['enh2Num']
+                res_data['minglian'] = minglian['changeValue'] + minglian['fixedValue']
 
             if final_skill['lv'] >= 70:
                 subSkills = final_skill['subSkills']
@@ -158,17 +203,17 @@ class HtmlParser(object):
                         wanfeng += subSkill['lv']
 
         if huikan >= 10:
-            calc_data['huikanfanghu'] = 1
+            res_data['huikanfanghu'] = 1
         if dunci >= 10:
-            calc_data['duncifanghu'] = 1
+            res_data['duncifanghu'] = 1
         if huoyuan >= 10:
-            calc_data['huoyuanfanghu'] = 1
+            res_data['huoyuanfanghu'] = 1
         if shuifengdu >= 10:
-            calc_data['shuifengdufanghu'] = 1
+            res_data['shuifengdufanghu'] = 1
         if wanfeng >= 10:
-            calc_data['wanfeng'] = 1
+            res_data['wanfeng'] = 1
         if huxin >= 10:
-            calc_data['huxin'] = 1
+            res_data['huxin'] = 1
 
         # 时装
         xuansu, qinghua, guhong, haitang = 0, 0, 0, 0
@@ -246,16 +291,15 @@ class HtmlParser(object):
             if yfid == 210037 or yfid == 210038:
                 haitang = 1
 
-        calc_data['qinghua'] = qinghua
-        calc_data['xuansu'] = xuansu
-        calc_data['guhong'] = guhong
-        calc_data['xiangyun'] = xiangyun
-        calc_data['tinglan'] = tinglan
-        calc_data['haitang'] = haitang
-        calc_data['feihuhuaqiu'] = feitian
-        calc_data['tianhulishang'] = tianhu
-        calc_data['xianhucaijue'] = xianhu
-        calc_data['canghaisangtian'] = canghai
-        calc_data['yeyujiangnan'] = jiangnan
-
-        return res_data, calc_data
+        res_data['qinghua'] = qinghua
+        res_data['xuansu'] = xuansu
+        res_data['guhong'] = guhong
+        res_data['xiangyun'] = xiangyun
+        res_data['tinglan'] = tinglan
+        res_data['haitang'] = haitang
+        res_data['feihuhuaqiu'] = feitian
+        res_data['tianhulishang'] = tianhu
+        res_data['xianhucaijue'] = xianhu
+        res_data['canghaisangtian'] = canghai
+        res_data['yeyujiangnan'] = jiangnan
+        return res_data

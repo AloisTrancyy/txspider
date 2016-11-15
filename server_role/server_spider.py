@@ -9,6 +9,7 @@ import add_role
 import traceback
 import time
 
+
 class ServerSpider(object):
     def __init__(self):
         self.urls = server_url_manager.UrlManager()
@@ -27,6 +28,7 @@ class ServerSpider(object):
                 self.store.addRoles(new_data)
             except Exception as e:
                 print(e, traceback.print_exc())
+
 
 if __name__ == "__main__":
     obj_spider = ServerSpider()
