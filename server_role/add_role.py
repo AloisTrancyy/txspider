@@ -22,6 +22,10 @@ class Role(object):
         connection = pymysql.connect(**dbconfig)
         try:
             with connection.cursor() as cursor:
+                updatesql = 'update role set yn = 0 where exp_time <=now()'
+                cursor.execute(updatesql)
+                connection.commit()
+
                 for role in roles:
                     query = 'select count(1) as count from role where role_id=' + str(role['role_id'])
                     cursor.execute(query)
