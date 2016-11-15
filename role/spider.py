@@ -32,7 +32,7 @@ class SpiderMain(object):
 
     def craw(self):
         while (self.urlManager.has_new_url()):
-            time.sleep(5)
+            time.sleep(2)
             url = self.urlManager.get_new_url()
             print(url)
             for key in url.split('&'):

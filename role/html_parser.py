@@ -34,29 +34,30 @@ class HtmlParser(object):
         fly_soul_lv = role_json['fly_soul_lv']
 
         level = role_json['lv']
-        if int(fly_soul_phase) == 1:
-            if '肆天玖境界' in fly_soul_lv:
-                level = 85
-            elif '肆天' in fly_soul_lv:
-                level = 84
-            elif '叁天' in fly_soul_lv:
-                level = 83
-            elif '贰天' in fly_soul_lv:
-                level = 82
-            elif '壹天' in fly_soul_lv:
-                level = 81
+        if fly_soul_phase is not None:
+            if int(fly_soul_phase) == 1:
+                if '肆天玖境界' in fly_soul_lv:
+                    level = 85
+                elif '肆天' in fly_soul_lv:
+                    level = 84
+                elif '叁天' in fly_soul_lv:
+                    level = 83
+                elif '贰天' in fly_soul_lv:
+                    level = 82
+                elif '壹天' in fly_soul_lv:
+                    level = 81
 
-        if int(fly_soul_phase) == 2:
-            if '肆天玖境界' in fly_soul_lv:
-                level = 90
-            elif '肆天' in fly_soul_lv:
-                level = 89
-            elif '叁天' in fly_soul_lv:
-                level = 88
-            elif '贰天' in fly_soul_lv:
-                level = 87
-            elif '壹天' in fly_soul_lv:
-                level = 86
+            if int(fly_soul_phase) == 2:
+                if '肆天玖境界' in fly_soul_lv:
+                    level = 90
+                elif '肆天' in fly_soul_lv:
+                    level = 89
+                elif '叁天' in fly_soul_lv:
+                    level = 88
+                elif '贰天' in fly_soul_lv:
+                    level = 87
+                elif '壹天' in fly_soul_lv:
+                    level = 86
 
         res_data['lv'] = level
         res_data['fly_soul_phase'] = fly_soul_phase
