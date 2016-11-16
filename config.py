@@ -25,4 +25,5 @@ if __name__ == '__main__':
     date = now + datetime.timedelta(days=int(day)) + datetime.timedelta(hours=int(hour)) + datetime.timedelta(
         minutes=int(minute))
 
-    print(date.strftime('%Y-%m-%d %H:%M:%S'))
+    if 1943 in [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1967]:
+        print(date.strftime('%Y-%m-%d %H:%M:%S'))

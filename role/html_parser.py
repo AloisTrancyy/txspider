@@ -60,6 +60,10 @@ class HtmlParser(object):
                     level = 86
 
         res_data['lv'] = level
+        res_data['mhp'] = role_json['mhp']
+        res_data['msp'] = role_json['msp']
+        res_data['critical'] = role_json['critical']
+        res_data['sex'] = role_json['sex']
         res_data['fly_soul_phase'] = fly_soul_phase
         res_data['fly_soul_lv'] = fly_soul_lv
         res_data['xiuwei'] = role_json['xiuwei']
@@ -174,15 +178,16 @@ class HtmlParser(object):
         if chibangdesc is not None and '护心' in chibangdesc:
             huxin += 3
 
-        if equ[index].setdefault('4', None) is not None:
+        if equ.setdefault('4', None) is not None:
             if equ['4']['id'] in [22374, 22375, 22376, 22377, 22378, 22379, 22380, 22381, 22502]:
                 res_data['shilifushou'] = 1
 
-        if equ[index].setdefault('5', None) is not None:
-            if equ['5']['id'] in [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1967]:
+        if equ.setdefault('5', None) is not None:
+            if equ['5']['id'] in [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1963, 1967]:
                 res_data['taichu'] = 1
 
-        # print('武器=' + str(equ['5']['id']))
+        print(equ['5'])
+        print('武器=' + str(equ['5']['id']))
         # print('副手=' + str(equ['4']['id']))
 
         # 觉醒
