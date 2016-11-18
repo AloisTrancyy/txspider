@@ -61,7 +61,9 @@ class SpiderMain(object):
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
                         print(sql)
+                        update_craw = 'update role set  craw = 1 where role_id = ' + str(equip_id)
                         cursor.execute(sql)
+                        cursor.execute(update_craw)
                     connection.commit()
             except Exception as e:
                 print(e, traceback.print_exc())
@@ -73,7 +75,7 @@ if __name__ == "__main__":
     obj_spider = SpiderMain()
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        sql = 'select url from role where yn=1 and role_id not in (select role_id from role_data)'
+        sql = 'select url from role where yn=1 and craw = 0'
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
