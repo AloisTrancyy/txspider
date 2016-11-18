@@ -1,539 +1,410 @@
-[
-  {
-    'ws_fragments': '移形换影',
-    'cdur': 324,
-    'break_count': 3,
-    'hidden_ws': 0,
-    'ma7': 19,
-    'tcxb_weapon_icon_num': 9,
-    'equ_lv': 95,
-    'gm_lv': 1,
-    'pmax': 769,
-    'b_variety': 0,
-    'mdur': 340,
-    'enable_extra_adv': 1,
-    'wake_quality': 2,
-    'jx_lv': 4,
-    'star': 4,
-    'imprint': 1,
-    'xchange_sch': 8,
-    'adv_apt': 0.8502000000000003,
-    'dw_cnt': 3159,
-    'kid_slots': {
-      '1': {
-        'ma5': [
-          0.775,
-          31
-        ]
-      },
-      '3': {
-        'str': [
-          0.75,
-          51
-        ]
-      },
-      '4': {
-        'thump_add_p': [
-          0.6413647792207794,
-          1.2827295584415588
-        ]
-      },
-      '2': {
-        'raa10': [
-          0.4846140000000001,
-          1.4538420000000003
-        ]
-      }
-    },
-    'slot_lvs': {
-      '1': 2,
-      '3': 1,
-      '4': 3,
-      '2': 4
-    },
-    'hidden_prop_num': 4,
-    'cenh': 18,
-    'mmax': 544,
-    '_tmpidtOutdateC': 1479502286,
-    '_latchOfCipher': 1478872841,
-    'hgt': 3,
-    'identify_props': {
-      'pmax': 25
-    },
-    '_ntr_date': 1455971850,
-    'inlay_props': {
-      'pmin': 18,
-      'amvspd': 1.97,
-      'ma7': 19,
-      'str': 37
-    },
-    'lr': 0,
-    'amvspd': 1.97,
-    'mmin': 299,
-    'abs_props': {
-      'absolutely_attack_without_modify': 61
-    },
-    'acc_consume': 30,
-    'inlay_lv': 95,
+{
+  '34': {
+    'kechongzhu': 1,
+    'rpr': 0,
+    'uutime': 1470494176,
+    'addition_state': [],
+    'cultivate_rule': 6759,
+    'cultivate_prog': 60,
     'cwrap': 1,
-    'dw_cnt_25': 19,
-    'ws_ever': [
-      [
-        245,
-        1
-      ],
-      [
-        263,
-        1
-      ],
-      [
-        249,
-        1
-      ],
-      [
-        250,
-        1
-      ],
-      [
-        222,
-        1
-      ],
-      [
-        265,
-        1
-      ],
-      [
-        246,
-        1
-      ],
-      [
-        192,
-        1
-      ],
-      [
-        241,
-        1
-      ],
-      [
-        266,
-        1
-      ],
-      [
-        225,
-        1
-      ],
-      [
-        240,
-        1
-      ],
-      [
-        251,
-        1
-      ],
-      [
-        200,
-        1
-      ],
-      [
-        277,
-        1
-      ]
-    ],
-    'exfix': 5,
-    'menh': 20,
-    'range': 4.5,
-    'ep2_slot': 14,
-    'latch_cipher': 1,
-    'no_up_log': {
-      'str': 1
-    },
-    'nosell': 1,
-    'ep2_enh_props': {
-      'pmin': 28,
-      'ma7': 14,
-      'str': 14
-    },
-    'bargain_visible': 1,
-    'eighty_growth': 0.7235061073443146,
+    'cenh': 3,
     'latch_time': 1,
-    '_tmpidtOutdateP': 1478872706,
-    'is_kid': 0,
-    'id': 1963,
-    'enh_ws': [
-      [
-        14,
-        10
-      ],
-      [
-        15,
-        15
-      ],
-      [
-        16,
-        20
-      ]
-    ],
-    'hit': 209,
-    'hidden_prop_act': {
-      '1': {
-        'ma5': 49
-      },
-      '3': {
-        'str': 69
-      },
-      '4': {
-        'thump_add_p': 1.2827295584415588
-      },
-      '2': {
-        'raa10': 1.4538420000000003
-      }
-    },
-    'equ_xchange_num': 53,
-    'rpr': 1130,
-    'tcxb_flag': 1,
-    'pmin': 375,
-    'dw_cnt_80': 80,
-    'base_props': {
-      'pmin': [
-        90.0,
-        165.4062810810811,
-        15.900000000000002,
-        0
-      ],
-      'hit': [
-        50.1,
-        95.15815664864864,
-        10.354,
-        0
-      ],
-      'pmax': [
-        158.4,
-        290.45679567567566,
-        30.096000000000004,
-        0
-      ],
-      'mmin': [
-        75.6,
-        141.69025556756753,
-        10.584000000000001,
-        0
-      ],
-      'mmax': [
-        133.8,
-        255.35650443243244,
-        28.544,
-        0
-      ]
-    },
-    'str': 37,
-    'ntr': 10,
-    'tmp_idt_props': {
-      'pmax': 150
-    },
-    'reqlv': 80,
-    'ep2_enh': 14,
-    'max_break_count': 4,
-    'kechongzhu': 1,
-    'extra_adv_prop': {
-      'rad10': [
-        1.42,
-        0.6260013234024933
-      ]
-    },
-    'can_inlay': 1,
-    'uutime': 1453731200,
-    'gm_exp': 0,
-    'variety_id': 1,
-    'ws_slots': {
-      '1': [
-        192,
-        1
-      ],
-      '2': [
-        277,
-        1
-      ]
-    },
-    'ma5': 0,
-    'atype': 5,
-    'ly': 7,
-    'atspd': 30
-  },
-  {
-    'menh': 20,
-    'cwrap': '斗转变',
-    'int': 35,
-    'is_kid': 0,
-    'latch_cipher': 1,
-    'lr': 0,
-    'base_props_develop': {
-      'mmin': 1
-    },
-    'extra_adv_prop': {
-      'rad10': [
-        1.98,
-        1.096683780383699
-      ]
-    },
-    'enable_extra_adv': 1,
-    'ws_fragments': [],
-    'acc_consume': 420,
-    'ntr': 10,
-    'hit': 348,
-    'exfix': 6,
-    'tcxb_weapon_icon_num': 7,
-    'hgt': 3,
-    'ep2_enh_props': {
-      'mmax': 18,
-      'md3': 36,
-      'int': 18
-    },
-    'jx_lv': 5,
-    'hidden_ws': 0,
-    'eighty_growth': 0.8122159640474182,
-    'ly': 9,
-    'use_lhj_time': {
-      '': 1454479993
-    },
-    'kechongzhu': 1,
-    'equ_xchange_num': 53,
-    'dw_cnt': 5754,
-    'mmax': 949,
-    'md3': 36,
-    'ws_ever': [
-      [
-        256,
-        1
-      ],
-      [
-        226,
-        1
-      ],
-      [
-        267,
-        1
-      ],
-      [
-        246,
-        1
-      ],
-      [
-        258,
-        1
-      ],
-      [
-        242,
-        1
-      ],
-      [
-        260,
-        1
-      ],
-      [
-        252,
-        1
-      ],
-      [
-        224,
-        1
-      ],
-      [
-        251,
-        1
-      ],
-      [
-        241,
-        1
-      ],
-      [
-        250,
-        1
-      ],
-      [
-        261,
-        1
-      ],
-      [
-        228,
-        1
-      ],
-      [
-        249,
-        1
-      ],
-      [
-        238,
-        1
-      ],
-      [
-        205,
-        1
-      ],
-      [
-        200,
-        1
-      ]
-    ],
-    'ep2_enh': 18,
     'imprint': 1,
-    'wake_quality': 2,
-    'base_props': {
-      'hit': [
-        80.4,
-        161.3099243243243,
-        15.946,
-        0
-      ],
-      'pmax': [
-        177.6,
-        357.5168,
-        28.711999999999996,
-        0
-      ],
-      'mmax': [
-        212.1,
-        427.44073513513507,
-        41.3595,
-        0
-      ],
-      'pmin': [
-        118.5,
-        239.2077297297297,
-        21.330000000000002,
-        0
-      ],
-      'mmin': [
-        141.3,
-        288.28454054054055,
-        17.2495,
-        0
-      ]
+    'cdur': 215,
+    'mdur': 215,
+    'reqlv': 74,
+    'str': 33,
+    'star': 3,
+    'mhp': 447,
+    '_latchOfCipher': 1478880449,
+    'ma5': 16,
+    'cultivate_props': {
+      'ma5': 3,
+      'str': 2
     },
-    'xchange_sch': 6,
-    'range': 18.0,
-    'b_variety': 0,
-    'ep2_slot': 18,
-    'inlay_lv': 95,
-    'ws_slots': {
-      '1': [
-        205,
-        1
-      ],
-      '2': [
-        200,
-        1
-      ]
-    },
-    'hidden_prop_num': 4,
-    'kid_slots': {
-      '1': {
-        'rad10': [
-          0.9058860579420581,
-          2.7176581738261745
-        ]
-      },
-      '2': {
-        'cri_sub_p': [
-          0.8015369230769231,
-          1.6030738461538463
-        ]
-      },
-      '4': {
-        'skspd': [
-          0.6883787692307693,
-          2.065136307692308
-        ]
-      },
-      '3': {
-        'int': [
-          0.9411764705882353,
-          64
-        ]
-      }
-    },
-    '_ntr_date': 1449219241,
-    'look_id': 1506,
-    'variety_id': 1,
-    'skspd': 2.85,
-    'identify_props': {
-      'mmax': 46
-    },
-    'use_lhj_cnt': {
-      '': 1
-    },
-    'gm_exp': 0,
-    'reqlv': 80,
-    'uutime': 1443718207,
-    'id': 1943,
-    'mdur': 300,
+    'latch_cipher': 1,
+    'ntr': 10,
+    'cultivate_phase': 1,
+    'menh': 20,
+    'bargain_visible': 1,
+    'id': 22503,
+    'assess2': 45,
+    'use_rand_rule': 6709
+  },
+  '38': {
+    'star': 3,
+    'uutime': 1469449603,
+    'cwrap': 29,
+    'rpr': 30,
+    'nosell': 1,
+    'id': 24987,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'utime': 1
+  },
+  '14': {
+    'star': 3,
+    'cwrap': 81,
+    'rpr': 1,
+    'uutime': 1412175997,
+    'id': 26132,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'consign_name': ''
+  },
+  '37': {
+    'star': 3,
+    'uutime': 1479011418,
+    'cwrap': 3,
+    'rpr': 30,
+    'nosell': 1,
+    'id': 74534,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'utime': 1
+  },
+  '30': {
+    'uutime': 1418797624,
+    'cheapfix': 1,
+    'rpr': 0,
+    'nosell': 1,
+    'reqlv': 10,
+    'int': 1,
+    'dog': 1,
     'latch_time': 1,
+    'mhp': 15,
+    'cwrap': 1,
+    'cdur': 98,
+    'mdur': 100,
+    'ntr': 10,
+    'str': 1,
+    'star': 2,
+    'dex': 1,
+    'mind': 1,
+    '_latchOfCipher': 1422799164,
+    'bargain_visible': 1,
+    'con': 1,
+    'msp': 10,
+    'latch_cipher': 1,
+    'id': 210000
+  },
+  '28': {
+    'self_cooldown': 2,
+    'rpr': 0,
+    'nosell': 1,
+    'reqlv': 10,
+    'cwrap': 1,
+    'latch_time': 1,
+    'need_target': 1,
+    'cdur': 100,
+    'mdur': 100,
+    'latch_free': 1,
+    'horse': 191,
+    'ntr': 10,
+    '_kaputOfDateP': 1328026435,
+    'utime': 3,
+    'star': 3,
+    'common_cooldown': 2,
+    'uutime': 1328026435,
+    'bargain_visible': 1,
+    'recycle_flag': 1,
+    '_kaputOfDateC': 1330618435,
+    'latch_cipher': 1,
+    'id': 21613
+  },
+  '8': {
+    'latch_time': 1,
+    'star': 3,
+    'need_target': 1,
+    'cwrap': 1,
+    'rpr': 0,
+    'nosell': 1,
+    'uutime': 1477994594,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'id': 39746
+  },
+  '17': {
+    'ma6': 45,
+    'rpr': 1597,
+    'mmax': 631,
+    'ws_min_enh': 18,
+    'ws96': 10,
+    'keep_look': 1,
+    'cenh': 18,
+    'latch_time': 1,
+    'inlay_props': {
+      'pmax': 15,
+      'amvspd': 0.86,
+      'str': 23,
+      'aa0': 13
+    },
+    'can_inlay': 1,
+    'reqlv': 75,
+    'mdur': 360,
+    'identify_props': {
+      'pmax': 37
+    },
+    'xchange_sch': 1,
+    'hit': 433,
+    'mmin': 361,
+    'uutime': 1317799910,
+    'amvspd': 0.86,
+    'keep_look_enh': 18,
+    'keep_look_item_id': 1617,
+    'atspd': 22,
+    'twohand': 1,
+    'ep2_enh_props': {
+      'pmax': 10,
+      'str': 10,
+      'aa0': 10
+    },
     'enh_ws': [
       [
-        14,
+        16,
         10
       ],
       [
-        15,
+        17,
         15
       ],
       [
-        16,
+        18,
         20
       ]
     ],
-    'pmax': 735,
-    'nosell': 1,
-    'no_up_log': {},
-    'twohand': 1,
-    '_latchOfCipher': 1475405267,
-    'inlay_props': {
-      'skspd': 2.85,
-      'mmax': 17,
-      'md3': 36,
-      'int': 35
-    },
-    'look_cdur': 210,
-    'can_inlay': 1,
-    'dw_cnt_80': 63,
-    'adv_apt': 0.9429846153846155,
-    'tcxb_flag': 1,
-    'rpr': 1211,
-    'dw_cnt_25': 16,
-    'equ_lv': 95,
-    'cenh': 19,
-    'hidden_prop_act': {
-      '1': {
-        'rad10': 2.7176581738261745
-      },
-      '2': {
-        'cri_sub_p': 1.6030738461538463
-      },
-      '4': {
-        'skspd': 2.065136307692308
-      },
-      '3': {
-        'int': 98
-      }
+    'menh': 20,
+    'latch_cipher': 1,
+    'id': 1607,
+    'esid': 52,
+    'use_rand_rule': 2503,
+    'star': 4,
+    'kechongzhu': 1,
+    'pmin': 533,
+    'aa0': 13,
+    'cwrap': 1,
+    'pmax': 845,
+    'atype': 6,
+    'ws_min_enh_name': 'ws96',
+    'equ_xchange_num': 25,
+    'exfix': 9,
+    'equ_lv': 108,
+    'cdur': 337,
+    '_tmpidtOutdateC': 1479691498,
+    'ntr': 10,
+    'str': 98,
+    'tmp_idt_props': {
+      'mmax': 93
     },
     'bargain_visible': 1,
-    'slot_lvs': {
-      '1': 4,
-      '2': 3,
-      '4': 4,
-      '3': 1
+    'con': 73,
+    '_latchOfCipher': 1479203821,
+    'range': 4.4,
+    '_tmpidtOutdateP': 1479203818,
+    'imprint': 1,
+    'ep2_slot': 10,
+    'ep2_enh': 10,
+    'assess2': 122,
+    'hgt': 3
+  },
+  '15': {
+    'star': 3,
+    'cwrap': 3,
+    'rpr': 1,
+    'uutime': 1475594337,
+    'id': 27191,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'consign_name': ''
+  },
+  '40': {
+    'star': 3,
+    'uutime': 1479204283,
+    'need_target': 1,
+    'cwrap': 1,
+    'rpr': 0,
+    'nosell': 1,
+    'id': 63669,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'fbet': 4,
+    'ntr': 10
+  },
+  '31': {
+    'uutime': 1418797624,
+    'cheapfix': 1,
+    'rpr': 0,
+    'nosell': 1,
+    'reqlv': 10,
+    'int': 1,
+    'dog': 1,
+    'latch_time': 1,
+    'mhp': 35,
+    'cwrap': 1,
+    'cdur': 100,
+    'mdur': 100,
+    'ntr': 10,
+    'str': 1,
+    'star': 2,
+    'dex': 1,
+    'mind': 1,
+    '_latchOfCipher': 1422799162,
+    'bargain_visible': 1,
+    'con': 1,
+    'msp': 20,
+    'latch_cipher': 1,
+    'id': 210001
+  },
+  '13': {
+    'star': 3,
+    'cwrap': 72,
+    'rpr': 1,
+    'uutime': 1464450761,
+    'id': 25308,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'consign_name': ''
+  },
+  '36': {
+    'uutime': 1467695888,
+    'changeback_flag': 1,
+    'kechongzhu': 1,
+    'rpr': 0,
+    'nosell': 1,
+    'hidden_prop_rand_rule': {
+      '5': 3171,
+      '4': 3168,
+      '3': 3165
     },
-    'max_break_count': 4,
-    'break_count': 4,
-    'pmin': 498,
-    'cdur': 247,
-    'mmin': 594,
+    'reqlv': 80,
+    'nodis': 1,
+    'cwrap': 1,
+    'equ_xchange_num': 20,
+    'cenh': 9,
+    'latch_time': 1,
+    'hidden_equ_xiuwei': 122,
+    'can_inlay': 1,
+    'cdur': 318,
+    'mdur': 318,
+    'max_hidden_prop_num': 3,
+    'pdef': 327,
+    'ntr': 10,
+    'star': 3,
+    'avoid': 27,
+    'mhp': 483,
+    'rad10': 2.0,
+    '_latchOfCipher': 1478880342,
+    'bargain_visible': 1,
+    'equ_lv': 92,
+    'hidden_prop_act': {
+      '5': {
+        'cri_add_p': 1.76
+      },
+      '4': {
+        'cri_sub_p': 1.32
+      },
+      '3': {
+        'cri': 54
+      }
+    },
+    'hidden_prop_num': 3,
+    'inosculate_state': 1,
+    'menh': 20,
+    'latch_cipher': 1,
+    'id': 33326,
+    'suit': 141,
+    'use_rand_rule': 5472,
+    'assess2': 0,
+    'imprint': 1
+  },
+  '6': {
+    'uutime': 1316086158,
     'atspd': 24,
-    'gm_lv': 1,
-    'star': 4,
-    'abs_props': {
-      'egg_int': 20,
-      'absolutely_defence_without_modify': 29,
-      'int': 39
-    }
+    'ma1': 21,
+    'rpr': 444,
+    'mmax': 253,
+    'twohand': 1,
+    'reqlv': 60,
+    'pmax': 266,
+    'int': 24,
+    'cwrap': 1,
+    'cenh': 9,
+    'aa1': 109,
+    'latch_time': 1,
+    'aatspd': 6.46,
+    'can_inlay': 1,
+    'cdur': 129,
+    'mdur': 306,
+    'inlay_props': {
+      'int': 24,
+      'aatspd': 3.46
+    },
+    'inlay_lv': 72,
+    'identify_props': {
+      'mmin': 16
+    },
+    '_vendorip_consign': 1254003675,
+    'amvspd': 3.0,
+    'hit': 127,
+    '_ntr_date': 1316516875,
+    'star': 3,
+    'range': 30.0,
+    'mmin': 183,
+    'bargain_visible': 1,
+    '_latchOfCipher': 1471156016,
+    'ntr': 10,
+    'menh': 17,
+    'imprint': 1,
+    'equ_lv': 72,
+    'pmin': 197,
+    'maker': '丷刺乄心丿',
+    'look_id': 1296,
+    'latch_cipher': 1,
+    'atype': 7,
+    'id': 1140,
+    'look_cdur': 0,
+    'hgt': 3,
+    'cri': 26
+  },
+  '20': {
+    'star': 2,
+    'uutime': 1473172651,
+    'need_target': 1,
+    'cwrap': 4,
+    'rpr': 0,
+    'nosell': 1,
+    'id': 24163,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'utime': 2
+  },
+  '12': {
+    'star': 3,
+    'cwrap': 99,
+    'rpr': 1,
+    'uutime': 1429719003,
+    'id': 25274,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'consign_name': ''
+  },
+  '16': {
+    'star': 3,
+    'cwrap': 163,
+    'rpr': 1,
+    'uutime': 1464690311,
+    'id': 25265,
+    'cheat_rate': 3.0,
+    'bargain_visible': 1,
+    'ntr': 10,
+    'consign_name': ''
   }
-]
+}

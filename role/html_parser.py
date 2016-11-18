@@ -148,6 +148,15 @@ class HtmlParser(object):
             if child['kongfu'] >= haizi_wuxue:
                 haizi_wuxue = child['kongfu']
 
+            child.setdefault('equs', None)
+            equs = child['equs']
+            if equs is None:
+                continue
+            equs.setdefault('0', None)
+            if equs['0'] is not None and equs['0']['id'] in (
+                1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1808, 1836, 150012):
+                    res_data['haizi_tiayu'] = 1
+
         res_data['haizi_lv'] = haizi_lv
         res_data['haizi_zizhi'] = haizi_zizhi
         res_data['haizi_wuxue'] = haizi_wuxue
@@ -186,8 +195,8 @@ class HtmlParser(object):
             if equ['5']['id'] in [1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1963, 1967]:
                 res_data['taichu'] = 1
 
-        #print(equ['5'])
-        #print('武器=' + str(equ['5']['id']))
+        # print(equ['5'])
+        # print('武器=' + str(equ['5']['id']))
         # print('副手=' + str(equ['4']['id']))
 
         # 觉醒
@@ -296,7 +305,8 @@ class HtmlParser(object):
                 jiangnan = 1
             if yfid == 210037 or yfid == 210038:
                 haitang = 1
-
+            if yfid == 63669:
+                res_data['vip9'] = 1
         res_data['qinghua'] = qinghua
         res_data['xuansu'] = xuansu
         res_data['guhong'] = guhong

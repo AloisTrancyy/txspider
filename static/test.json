@@ -1,0 +1,504 @@
+{
+  '4': {
+    'avoid': 36,
+    'ntr': 10,
+    'cdur': 318,
+    'nodis': 1,
+    'child_only': 1,
+    'imprint': 1,
+    'cenh': 18,
+    'mhp': 526,
+    'assess2': 0,
+    'hidden_equ_xiuwei': 50,
+    'ep2_enh': 0,
+    'child_inlay_props': {
+      'hidden_count': 2,
+      'child_rule_dei': [],
+      'child_hidden_dei': [],
+      'inlay_count': 0,
+      'child_rule_desc': []
+    },
+    'mdur': 318,
+    '_latchOfCipher': 1380096561,
+    'star': 3,
+    'equ_lv': 92,
+    'nosell': 1,
+    'mdef': 76,
+    'latch_time': 1,
+    'changeback_flag': 1,
+    'sch': [
+      1
+    ],
+    'use_rand_rule': 5472,
+    'max_hidden_prop_num': 3,
+    'suit': 141,
+    'cwrap': 1,
+    'rad10': 0,
+    'hidden_prop_rand_rule': {
+      '4': 3214,
+      '3': 3212
+    },
+    'reqlv': 80,
+    'rpr': 0,
+    'hidden_prop_act': {
+      '4': {
+        'hit': 65
+      },
+      '3': {
+        'ma6': 38,
+        'ma5': 50
+      }
+    },
+    'kechongzhu': 1,
+    'id': 33330,
+    'menh': 20,
+    'latch_cipher': 1,
+    'bargain_visible': 1,
+    'hidden_prop_num': 3,
+    'uutime': 1379243715,
+    'equ_xchange_num': 24
+  },
+  '0': {
+    'assess2': 102,
+    'ma5': 42,
+    'cdur': 367,
+    'keep_look': 1,
+    'imprint': 1,
+    'cenh': 18,
+    'keep_look_item_id': 1616,
+    'bargain_visible': 1,
+    'ep2_enh': 13,
+    'ws_min_enh': 0,
+    'hgt': 3,
+    'kechongzhu': 1,
+    'child_only': 1,
+    'xchange_sch': 1,
+    'cwrap': 1,
+    'dex': 77,
+    'atspd': 0,
+    'twohand': 1,
+    'mmax': 516,
+    'pmin': 544,
+    'range': 0,
+    'reqlv': 75,
+    'rpr': 1976,
+    'star': 4,
+    'menh': 20,
+    'latch_cipher': 1,
+    'exfix': 1,
+    'str': 66,
+    'atype': 5,
+    'pmax': 1084,
+    'con': 64,
+    'keep_look_enh': 18,
+    'enh_ws': 0,
+    'child_inlay_props': {
+      'hidden_count': 0,
+      'pmax': 24,
+      'cri_sub_p': 2.4000000000000004,
+      'aa1': 27,
+      'child_rule_desc': [
+        [
+          1,
+          {
+            'str': 30
+          }
+        ],
+        [
+          10,
+          {
+            'aa1': 27
+          }
+        ],
+        [
+          20,
+          {
+            'pmax': 24
+          }
+        ],
+        [
+          26,
+          {
+            'cri_sub_p': 2.4000000000000004
+          }
+        ]
+      ],
+      'str': 30,
+      'child_rule_dei': [
+        1,
+        10,
+        20,
+        26
+      ],
+      'child_hidden_dei': [],
+      'inlay_count': 4
+    },
+    'mdur': 367,
+    '_latchOfCipher': 1418732985,
+    'cri': 131,
+    'equ_lv': 108,
+    'mmin': 262,
+    'latch_time': 1,
+    'use_rand_rule': 2501,
+    'ws_min_enh_name': 0,
+    'ntr': 10,
+    'id': 1606,
+    'can_inlay': 1,
+    'esid': 0,
+    'uutime': 1377678388,
+    'equ_xchange_num': 25
+  },
+  '5': {
+    'equ_lv': 108,
+    'con': 62,
+    'bargain_visible': 1,
+    'ma5': 70,
+    'id': 3935,
+    'nodis': 1,
+    'child_only': 1,
+    'aatspd': 0,
+    'imprint': 1,
+    'cenh': 18,
+    'menh': 20,
+    'no_regen': 1,
+    'assess2': 47,
+    'ep2_enh': 13,
+    'child_inlay_props': {
+      'aa0': 26,
+      'hidden_count': 0,
+      'pmax': 20,
+      'dex': 28,
+      'child_rule_desc': [
+        [
+          3,
+          {
+            'dex': 28
+          }
+        ],
+        [
+          9,
+          {
+            'aa0': 26
+          }
+        ],
+        [
+          16,
+          {
+            'potential': 24
+          }
+        ],
+        [
+          33,
+          {
+            'pmax': 20
+          }
+        ]
+      ],
+      'child_rule_dei': [
+        3,
+        9,
+        16,
+        33
+      ],
+      'child_hidden_dei': [],
+      'inlay_count': 4,
+      'potential': 24
+    },
+    'ws126': 0,
+    'mdur': 374,
+    '_latchOfCipher': 1379111716,
+    'kechongzhu': 1,
+    'cdur': 374,
+    'ws_min_enh': 0,
+    'uutime': 1376895000,
+    'hit': 154,
+    'latch_time': 1,
+    'nosell': 1,
+    'use_rand_rule': 4384,
+    'ma7': 60,
+    'ws_min_enh_name': 0,
+    'cwrap': 1,
+    'ma6': 68,
+    'reqlv': 78,
+    'ntr': 10,
+    'rand_way': 68,
+    'star': 4,
+    'rpr': 500,
+    'can_inlay': 1,
+    'latch_cipher': 1,
+    'amvspd': 0,
+    'str': 72,
+    'ws53': 0,
+    'mhp': 2172
+  },
+  '3': {
+    'avoid': 36,
+    'ntr': 10,
+    'cdur': 318,
+    'nodis': 1,
+    'child_only': 1,
+    'imprint': 1,
+    'cenh': 18,
+    'menh': 20,
+    'mhp': 546,
+    'hidden_equ_xiuwei': 91,
+    'ep2_enh': 13,
+    'child_inlay_props': {
+      'hidden_count': 0,
+      'potential': 21,
+      'con': 32,
+      'child_rule_desc': [
+        [
+          2,
+          {
+            'con': 32
+          }
+        ],
+        [
+          12,
+          {
+            'aa3': 18
+          }
+        ],
+        [
+          19,
+          {
+            'pmin': 18
+          }
+        ],
+        [
+          28,
+          {
+            'potential': 21
+          }
+        ]
+      ],
+      'child_rule_dei': [
+        2,
+        12,
+        19,
+        28
+      ],
+      'child_hidden_dei': [],
+      'inlay_count': 4,
+      'pmin': 18,
+      'aa3': 18
+    },
+    'mdur': 318,
+    '_latchOfCipher': 1418981579,
+    'star': 3,
+    'equ_lv': 92,
+    'nosell': 1,
+    'hidden_prop_act': {
+      '4': {
+        'hit': 69
+      },
+      '3': {
+        'ma6': 39,
+        'ma5': 57
+      }
+    },
+    'latch_time': 1,
+    'changeback_flag': 1,
+    'sch': [
+      1
+    ],
+    'use_rand_rule': 5472,
+    'max_hidden_prop_num': 3,
+    'suit': 141,
+    'reqlv': 80,
+    'cwrap': 1,
+    'rad10': 0,
+    'hidden_prop_rand_rule': {
+      '4': 3166,
+      '5': 3170,
+      '3': 3164
+    },
+    'pdef': 372,
+    'rpr': 0,
+    'assess2': 0,
+    'kechongzhu': 1,
+    'id': 33326,
+    'can_inlay': 1,
+    'latch_cipher': 1,
+    'bargain_visible': 1,
+    'hidden_prop_num': 3,
+    'uutime': 1378895915,
+    'equ_xchange_num': 20
+  },
+  '1': {
+    'ntr': 10,
+    'cdur': 327,
+    'nodis': 1,
+    'child_only': 1,
+    'imprint': 1,
+    'cenh': 18,
+    'menh': 20,
+    'mhp': 578,
+    'hidden_equ_xiuwei': 44,
+    'mdef': 106,
+    'ep2_enh': 13,
+    'child_inlay_props': {
+      'mdef': 28,
+      'hidden_count': 0,
+      'cri_sub_p': 3.48,
+      'child_rule_desc': [
+        [
+          1,
+          {
+            'str': 36
+          }
+        ],
+        [
+          8,
+          {
+            'mdef': 28
+          }
+        ],
+        [
+          14,
+          {
+            'cri_sub_p': 2.04
+          }
+        ],
+        [
+          26,
+          {
+            'cri_sub_p': 1.44
+          }
+        ]
+      ],
+      'str': 36,
+      'child_rule_dei': [
+        1,
+        8,
+        14,
+        26
+      ],
+      'child_hidden_dei': [],
+      'inlay_count': 4
+    },
+    'mdur': 327,
+    '_latchOfCipher': 1418799691,
+    'star': 3,
+    'equ_lv': 92,
+    'nosell': 1,
+    'hidden_prop_act': {
+      '4': {
+        'hit': 62
+      },
+      '3': {
+        'ma6': 41,
+        'ma5': 60
+      }
+    },
+    'latch_time': 1,
+    'changeback_flag': 1,
+    'sch': [
+      1
+    ],
+    'use_rand_rule': 5472,
+    'max_hidden_prop_num': 3,
+    'suit': 141,
+    'reqlv': 80,
+    'cwrap': 1,
+    'rad10': 0,
+    'hidden_prop_rand_rule': {
+      '4': 3130,
+      '3': 3128
+    },
+    'pdef': 447,
+    'rpr': 0,
+    'assess2': 0,
+    'kechongzhu': 1,
+    'id': 33323,
+    'can_inlay': 1,
+    'latch_cipher': 1,
+    'bargain_visible': 1,
+    'hidden_prop_num': 3,
+    'uutime': 1379147852,
+    'equ_xchange_num': 17
+  },
+  '2': {
+    'avoid': 46,
+    'ntr': 10,
+    'ma5': 99,
+    'cdur': 339,
+    'nodis': 1,
+    'child_only': 1,
+    'imprint': 1,
+    'cenh': 18,
+    'menh': 19,
+    'bargain_visible': 1,
+    'req_xiuwei': 23480,
+    'ep2_enh': 13,
+    'child_inlay_props': {
+      'child_rule_dei': [
+        3,
+        12,
+        14,
+        33
+      ],
+      'hidden_count': 0,
+      'pmax': 29,
+      'cri_sub_p': 1.53,
+      'child_rule_desc': [
+        [
+          3,
+          {
+            'dex': 34
+          }
+        ],
+        [
+          12,
+          {
+            'aa3': 9
+          }
+        ],
+        [
+          14,
+          {
+            'cri_sub_p': 1.53
+          }
+        ],
+        [
+          33,
+          {
+            'pmax': 29
+          }
+        ]
+      ],
+      'dex': 34,
+      'child_hidden_dei': [],
+      'aa3': 9,
+      'inlay_count': 4
+    },
+    'mdur': 339,
+    '_latchOfCipher': 1418800140,
+    'kechongzhu': 1,
+    'equ_lv': 84,
+    'nosell': 1,
+    'mdef': 124,
+    'hit': 41,
+    'latch_time': 1,
+    'sch': [
+      1
+    ],
+    'use_rand_rule': 252,
+    'suit': 58,
+    'reqlv': 70,
+    'cwrap': 1,
+    'ma6': 30,
+    'pdef': 623,
+    'rpr': 0,
+    'assess2': 42,
+    'star': 3,
+    'id': 32413,
+    'can_inlay': 1,
+    'latch_cipher': 1,
+    'exfix': 10,
+    'rad10': 0,
+    'uutime': 1377728244,
+    'mhp': 745
+  }
+}
