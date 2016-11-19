@@ -10,6 +10,8 @@ import pymysql
 import html_downloader
 import html_parser
 import url_manager
+from apscheduler.schedulers.blocking import BlockingScheduler
+
 
 config = configparser.ConfigParser()
 config.read("../config.ini")
@@ -69,9 +71,7 @@ class SpiderMain(object):
                 print(e, traceback.print_exc())
             finally:
                 connection.close()
-
-
-if __name__ == "__main__":
+def my_job():
     obj_spider = SpiderMain()
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
@@ -83,3 +83,11 @@ if __name__ == "__main__":
     cursor.close()
     connection.close()
     obj_spider.craw()
+
+if __name__ == "__main__":
+    sched = BlockingScheduler()
+    sched.add_job(my_job, 'interval', hours=12)
+    sched.start()
+
+
+
