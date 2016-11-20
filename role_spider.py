@@ -7,14 +7,14 @@ import traceback
 import configparser
 
 import pymysql
-import html_downloader
-import html_parser
-import url_manager
+from role import html_downloader
+from role import html_parser
+from role import url_manager
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 
 config = configparser.ConfigParser()
-config.read("../config.ini")
+config.read("config.ini")
 dbconfig = {
     'host': config.get('mysql', 'host'),
     'port': config.getint('mysql', 'port'),

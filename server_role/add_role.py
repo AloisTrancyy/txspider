@@ -5,7 +5,7 @@ import traceback
 import configparser
 
 config = configparser.ConfigParser()
-config.read("../config.ini")
+config.read("config.ini")
 dbconfig = {
     'host': config.get('mysql', 'host'),
     'port': config.getint('mysql', 'port'),

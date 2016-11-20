@@ -234,6 +234,7 @@ class HtmlParser(object):
         xuansu, qinghua, guhong, haitang = 0, 0, 0, 0
         xiangyun, tinglan, canghai, jiangnan = 0, 0, 0, 0
         feitian, tianhu, xianhu = 0, 0, 0
+        bihai, changong, changkong = 0, 0, 0
         formated_role_desc = soup.find('textarea', id="formated_role_desc")
         format_role = formated_role_desc.get_text()
         format_role_json = json.loads(format_role, 'utf-8')
@@ -260,6 +261,12 @@ class HtmlParser(object):
                 tianhu = 1
             if '仙狐' in value['name']:
                 xianhu = 1
+            if '碧海惊涛' in value['name']:
+                bihai = 1
+            if '鹰击长空' in value['name']:
+                changkong = 1
+            if '蟾宫折桂' in value['name']:
+                changong = 1
 
         shizhuang = ['19', '20', '30', '31']
         equ.setdefault('30', None)
@@ -284,6 +291,12 @@ class HtmlParser(object):
                     jiangnan = 1
                 if yfid == 210037 or yfid == 210038:
                     haitang = 1
+                if yfid == 88454 or yfid == 88455 or yfid == 88511:
+                    bihai = 1
+                if yfid == 21449 or yfid == 21450:
+                    changkong = 1
+                if yfid == 21487 or yfid == 21488:
+                    changong = 1
 
         # 包裹
         invs = role_json['inv']
@@ -307,6 +320,13 @@ class HtmlParser(object):
                 haitang = 1
             if yfid == 63669:
                 res_data['vip9'] = 1
+            if yfid == 88454 or yfid == 88455 or yfid == 88511:
+                bihai = 1
+            if yfid == 21449 or yfid == 21450:
+                changkong = 1
+            if yfid == 21487 or yfid == 21488:
+                changong = 1
+
         res_data['qinghua'] = qinghua
         res_data['xuansu'] = xuansu
         res_data['guhong'] = guhong
@@ -318,4 +338,7 @@ class HtmlParser(object):
         res_data['xianhucaijue'] = xianhu
         res_data['canghaisangtian'] = canghai
         res_data['yeyujiangnan'] = jiangnan
+        res_data['bihai'] = bihai
+        res_data['changkong'] = changkong
+        res_data['changong'] = changong
         return res_data

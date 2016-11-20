@@ -2,10 +2,10 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-import server_url_manager
-import server_downloader
-import server_parser
-import add_role
+from server_role import server_url_manager
+from server_role import server_downloader
+from server_role import server_parser
+from server_role import add_role
 import traceback
 import time
 from apscheduler.schedulers.blocking import BlockingScheduler
