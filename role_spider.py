@@ -5,7 +5,7 @@
 import time
 import traceback
 import configparser
-
+import logging
 import pymysql
 from role import html_downloader
 from role import html_parser
@@ -24,7 +24,12 @@ dbconfig = {
     'charset': config.get('mysql', 'charset'),
     'cursorclass': pymysql.cursors.DictCursor
 }
-
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                    datefmt='%a, %d %b %Y %H:%M:%S',
+                    filename='role_spider.log',
+                    filemode='w')
+logger = logging.getLogger('role_spider')
 
 class SpiderMain(object):
     def __init__(self):
@@ -69,6 +74,7 @@ class SpiderMain(object):
                     connection.commit()
             except Exception as e:
                 print(e, traceback.print_exc())
+                logging.exception(e)
             finally:
                 connection.close()
 def my_job():
@@ -86,7 +92,7 @@ def my_job():
 
 if __name__ == "__main__":
     sched = BlockingScheduler()
-    sched.add_job(my_job, 'interval', hours=12)
+    sched.add_job(my_job, 'interval', hours=1)
     sched.start()
 
 
