@@ -9,7 +9,6 @@ from server_role import add_role
 import traceback
 import logging
 import time
-from apscheduler.schedulers.blocking import BlockingScheduler
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S',
