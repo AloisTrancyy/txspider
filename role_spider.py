@@ -68,6 +68,7 @@ class SpiderMain(object):
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
                         print(sql)
+                        logger.error(sql)
                         update_craw = 'update role set  craw = 1 where role_id = ' + str(equip_id)
                         cursor.execute(sql)
                         cursor.execute(update_craw)
@@ -77,7 +78,8 @@ class SpiderMain(object):
                 logging.exception(e)
             finally:
                 connection.close()
-def my_job():
+
+if __name__ == "__main__":
     obj_spider = SpiderMain()
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
@@ -89,11 +91,5 @@ def my_job():
     cursor.close()
     connection.close()
     obj_spider.craw()
-
-if __name__ == "__main__":
-    sched = BlockingScheduler()
-    sched.add_job(my_job, 'interval', hours=1)
-    sched.start()
-
 
 
