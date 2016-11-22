@@ -10,7 +10,6 @@ import requests
 import json
 import pymysql
 import configparser
-from apscheduler.schedulers.blocking import BlockingScheduler
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -34,12 +33,14 @@ dbconfig = {
 class ServerSpider(object):
     new_url = set()
     old_url = set()
+
     def craw(self):
         while self.has_new_url():
+            time.sleep(10)
             try:
                 new_url = self.get_new_url()
-                time.sleep(10)
                 print('craw :' + new_url)
+                logger.info('craw :' + new_url)
                 html_cont = self.download(new_url)
                 new_data = self.parse(html_cont)
                 self.add_role(new_data)
@@ -48,8 +49,8 @@ class ServerSpider(object):
                 logger.exception(e)
 
     def add_role(self, roles):
-        connection = pymysql.connect(**dbconfig)
         try:
+            connection = pymysql.connect(**dbconfig)
             with connection.cursor() as cursor:
                 updatesql = 'update role set yn = 0 where exp_time <=now()'
                 cursor.execute(updatesql)
@@ -143,20 +144,3 @@ class ServerSpider(object):
         url = self.new_url.pop()
         self.old_url.add(url)
         return url
-
-
-def my_job():
-    obj_spider = ServerSpider()
-    for sch in range(11):
-        for page in range(4):
-            url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-                  "&level_max=80&price_min=100000&price_max=30000000&" \
-                  "school=" + str(sch + 1) + "&page=" + str(page + 1)
-            obj_spider.add_new_url(url)
-    obj_spider.craw()
-    logger.error("new task start!")
-
-if __name__ == "__main__":
-    sched = BlockingScheduler()
-    sched.add_job(my_job, 'interval', minutes=1)
-    sched.start()
