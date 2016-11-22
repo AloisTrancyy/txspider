@@ -19,7 +19,12 @@ class HtmlParser(object):
             res_data['server_id'] = role['serverid']
             res_data['price'] = role['price']
             res_data['jiahu'] = role['jiahu']
-            res_data['name'] = str(role['seller_nickname'].encode('utf-8').decode("utf-8"))
+            ## 乄风清灬@西江月@F69990F50B0211DEAA93001EC9B892ED
+            nickname = str(role['seller_nickname'].encode('utf-8').decode("utf-8"))
+            if '@' in nickname:
+                nickname = nickname[0:nickname.find('@')]
+
+            res_data['name'] = nickname
             res_data['url'] = "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail" \
                               "&equip_id=" + str(role['equipid']) + "&serverid=" + str(role['serverid'])
 
