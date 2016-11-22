@@ -2,52 +2,161 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-from server_role import server_url_manager
-from server_role import server_downloader
-from server_role import server_parser
-from server_role import add_role
 import traceback
 import logging
 import time
+import datetime
+import requests
+import json
+import pymysql
+import configparser
 from apscheduler.schedulers.blocking import BlockingScheduler
-logging.basicConfig(level=logging.DEBUG,
+
+logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                    datefmt='%a, %d %b %Y %H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     filename='server_spider.log',
                     filemode='w')
 logger = logging.getLogger('server_spider')
+config = configparser.ConfigParser()
+config.read("config.ini")
+dbconfig = {
+    'host': config.get('mysql', 'host'),
+    'port': config.getint('mysql', 'port'),
+    'user': config.get('mysql', 'user'),
+    'password': config.get('mysql', 'password'),
+    'db': config.get('mysql', 'db'),
+    'charset': config.get('mysql', 'charset'),
+    'cursorclass': pymysql.cursors.DictCursor
+}
+
 
 class ServerSpider(object):
-    def __init__(self):
-        self.urls = server_url_manager.UrlManager()
-        self.downloader = server_downloader.HtmlDownloader()
-        self.parser = server_parser.HtmlParser()
-        self.store = add_role.Role()
-
+    new_url = set()
+    old_url = set()
     def craw(self):
-        while self.urls.has_new_url():
+        while self.has_new_url():
             try:
-                new_url = self.urls.get_new_url()
+                new_url = self.get_new_url()
                 time.sleep(10)
                 print('craw :' + new_url)
-                html_cont = self.downloader.download(new_url)
-                new_data = self.parser.parse(html_cont)
-                self.store.addRoles(new_data)
+                html_cont = self.download(new_url)
+                new_data = self.parse(html_cont)
+                self.add_role(new_data)
             except Exception as e:
                 print(e, traceback.print_exc())
                 logger.exception(e)
 
+    def add_role(self, roles):
+        connection = pymysql.connect(**dbconfig)
+        try:
+            with connection.cursor() as cursor:
+                updatesql = 'update role set yn = 0 where exp_time <=now()'
+                cursor.execute(updatesql)
+                connection.commit()
+
+                for role in roles:
+                    query = 'select count(1) as count from role where role_id=' + str(role['role_id'])
+                    cursor.execute(query)
+                    if cursor.fetchone()['count'] > 0:
+                        continue
+                    sql = 'INSERT INTO role (yn,create_time'
+                    for key, value in role.items():
+                        sql = sql + ',' + key
+                    sql += ' ) values (1,now()'
+                    for key, value in role.items():
+                        if type(value) == int:
+                            sql = sql + ',' + str(value)
+                        else:
+                            sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                    sql += ')'
+                    print(sql)
+                    logger.info(sql)
+                    cursor.execute(sql)
+            connection.commit()
+        except Exception as e:
+            raise Exception(e)
+        finally:
+            connection.close()
+
+    def download(self, url):
+        if url is None:
+            return None
+        headers = {'Content-Type': 'text/plain;charset=UTF-8',
+                   'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 '
+                                 '(KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
+                   'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search',
+                   'Origin': 'http://tx3.cbg.163.com'}
+        requests.adapters.DEFAULT_RETRIES = 3
+        response = requests.get(url, headers=headers, timeout=3)
+        if response.status_code != 200:
+            return None
+        return response.text
+
+    def parse(self, html_cont):
+        if html_cont is None:
+            return
+        data = []
+        json_data = json.loads(html_cont)
+        msg = json_data['msg']
+        for role in msg:
+            res_data = {}
+            res_data['role_id'] = role['equipid']
+            res_data['server_id'] = role['serverid']
+            res_data['price'] = role['price']
+            res_data['jiahu'] = role['jiahu']
+            nickname = str(role['seller_nickname'].encode('utf-8').decode("utf-8"))
+            if '@' in nickname:
+                nickname = nickname[0:nickname.find('@')]
+
+            res_data['name'] = nickname
+            res_data['url'] = "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail" \
+                              "&equip_id=" + str(role['equipid']) + "&serverid=" + str(role['serverid'])
+
+            res_data['exp_time'] = self.get_exp_time(role['expire_time'])
+            data.append(res_data)
+        return data
+
+    def get_exp_time(self, exp_time):
+        day, hour, minute = 0, 0, 0
+        if '天' in exp_time:
+            day = exp_time[0:exp_time.index("天")]
+            hour = exp_time[exp_time.index("天") + 1:exp_time.index('小时')]
+            minute = exp_time[exp_time.index("小时") + 2:exp_time.index('分钟')]
+        else:
+            if '小时' in exp_time:
+                hour = exp_time[0:exp_time.index('小时')]
+                minute = exp_time[exp_time.index("小时") + 2:exp_time.index('分钟')]
+        now = datetime.datetime.now()
+        date = now + datetime.timedelta(days=int(day)) + datetime.timedelta(hours=int(hour)) + datetime.timedelta(
+            minutes=int(minute))
+        return date.strftime('%Y-%m-%d %H:%M:%S')
+
+    def add_new_url(self, url):
+        if url not in self.new_url and url not in self.old_url:
+            self.new_url.add(url)
+
+    def has_new_url(self):
+        return len(self.new_url) != 0
+
+    def get_new_url(self):
+        url = self.new_url.pop()
+        self.old_url.add(url)
+        return url
+
+
 def my_job():
-        obj_spider = ServerSpider()
-        for sch in range(11):
-            for page in range(4):
-                url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-                      "&level_max=80&price_min=100000&price_max=30000000&" \
-                      "school=" + str(sch + 1) + "&page=" + str(page + 1)
-                obj_spider.urls.add_new_url(url)
-        obj_spider.craw()
+    obj_spider = ServerSpider()
+    for sch in range(11):
+        for page in range(4):
+            url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
+                  "&level_max=80&price_min=100000&price_max=30000000&" \
+                  "school=" + str(sch + 1) + "&page=" + str(page + 1)
+            obj_spider.add_new_url(url)
+    obj_spider.craw()
+    logger.error("new task start!")
 
 if __name__ == "__main__":
     sched = BlockingScheduler()
-    sched.add_job(my_job, 'interval', hours=11)
+    sched.add_job(my_job, 'interval', minutes=1)
     sched.start()
