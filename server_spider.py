@@ -56,7 +56,7 @@ class ServerSpider(object):
                     query = 'select count(1) as count from role where yn=1 and role_id=' + str(role['role_id'])
                     cursor.execute(query)
                     if cursor.fetchone()['count'] > 0:
-                        update_sql = 'update role set exp_time =\'' + role['exp_time'] + '\' where yn=1 and role_id=' + str(
+                        update_sql = 'update role set price = ' + str(role['price']) + ',exp_time =\'' + role['exp_time'] + '\' where yn=1 and role_id=' + str(
                             role['role_id'])
                         print(update_sql)
                         logger.info(update_sql)
