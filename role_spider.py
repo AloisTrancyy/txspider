@@ -474,5 +474,5 @@ def server_job():
 if __name__ == "__main__":
     roleScheduler = BlockingScheduler()
     roleScheduler.add_job(server_job, 'cron', hour='12')
-    roleScheduler.add_job(role_job, 'cron', minutes='30')
+    roleScheduler.add_job(role_job, 'cron', minute='60')
     roleScheduler.start()
