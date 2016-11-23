@@ -7,3 +7,4 @@ import role_spider
 
 
 role_spider.server_job()
+role_spider.role_job()
