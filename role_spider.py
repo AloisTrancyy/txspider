@@ -448,6 +448,9 @@ def role_job():
     try:
         connection = pymysql.connect(**dbconfig)
         with connection.cursor() as cursor:
+            update_sql = 'update role set craw = 1 where craw = 0 and role_id in (select role_id from role_data)'
+            cursor.execute(update_sql)
+            connection.commit()
             sql = 'select url from role where yn=1 and craw = 0'
             cursor.execute(sql)
             rows = cursor.fetchall()
