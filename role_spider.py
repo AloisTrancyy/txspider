@@ -40,19 +40,19 @@ class RoleSpider(object):
         while self.has_new_url():
             time.sleep(3)
             url = self.get_new_url()
-            print(url)
             logger.info("craw:" + url)
             for key in url.split('&'):
                 if 'equip_id' in key:
                     equip_id = key[9:len(key)]
-            html_cont = self.download(url)
-            basic_data = self.parse(html_cont, equip_id)
             try:
                 connection = pymysql.connect(**dbconfig)
                 with connection.cursor() as cursor:
                     query = 'select count(1) as count from role_data where role_id=' + str(equip_id)
                     cursor.execute(query)
                     if cursor.fetchone()['count'] == 0:
+                        print('craw:'+url)
+                        html_cont = self.download(url)
+                        basic_data = self.parse(html_cont, equip_id)
                         sql = 'INSERT INTO role_data (role_id'
                         for key, value in basic_data.items():
                             if key == 'role_id' or value is None:
