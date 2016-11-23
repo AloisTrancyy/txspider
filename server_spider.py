@@ -38,10 +38,10 @@ class ServerSpider(object):
         while self.has_new_url():
             time.sleep(10)
             try:
-                new_url = self.get_new_url()
-                print('craw :' + new_url)
-                logger.info('craw :' + new_url)
-                html_cont = self.download(new_url)
+                url = self.get_new_url()
+                print('craw :' + url)
+                logger.info('craw :' + url)
+                html_cont = self.download(url)
                 new_data = self.parse(html_cont)
                 self.add_role(new_data)
             except Exception as e:
