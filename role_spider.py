@@ -517,6 +517,6 @@ def server_job():
 
 if __name__ == "__main__":
     roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(server_job, 'interval', hours=1)
-    roleScheduler.add_job(role_job, 'interval', minutes=30)
+    roleScheduler.add_job(server_job, 'interval', hours=2)
+    roleScheduler.add_job(role_job, 'interval',  hours=1)
     roleScheduler.start()
