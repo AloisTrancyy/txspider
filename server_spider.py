@@ -52,29 +52,34 @@ class ServerSpider(object):
         try:
             connection = pymysql.connect(**dbconfig)
             with connection.cursor() as cursor:
+                for role in roles:
+                    query = 'select count(1) as count from role where yn=1 and role_id=' + str(role['role_id'])
+                    cursor.execute(query)
+                    if cursor.fetchone()['count'] > 0:
+                        update_sql = 'update role set exp_time =\'' + role['exp_time'] + '\' where role_id=' + str(
+                            role['role_id'])
+                        print(update_sql)
+                        logger.info(update_sql)
+                        cursor.execute(update_sql)
+                    else:
+                        sql = 'INSERT INTO role (yn,create_time'
+                        for key, value in role.items():
+                            sql = sql + ',' + key
+                        sql += ' ) values (1,now()'
+                        for key, value in role.items():
+                            if type(value) == int:
+                                sql = sql + ',' + str(value)
+                            else:
+                                sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                        sql += ')'
+                        print(sql)
+                        logger.info(sql)
+                        cursor.execute(sql)
+                connection.commit()
+
                 updatesql = 'update role set yn = 0 where exp_time <=now()'
                 cursor.execute(updatesql)
                 connection.commit()
-
-                for role in roles:
-                    query = 'select count(1) as count from role where role_id=' + str(role['role_id'])
-                    cursor.execute(query)
-                    if cursor.fetchone()['count'] > 0:
-                        continue
-                    sql = 'INSERT INTO role (yn,create_time'
-                    for key, value in role.items():
-                        sql = sql + ',' + key
-                    sql += ' ) values (1,now()'
-                    for key, value in role.items():
-                        if type(value) == int:
-                            sql = sql + ',' + str(value)
-                        else:
-                            sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
-                    sql += ')'
-                    print(sql)
-                    logger.info(sql)
-                    cursor.execute(sql)
-            connection.commit()
         except Exception as e:
             raise Exception(e)
         finally:

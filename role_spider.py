@@ -8,11 +8,11 @@ import configparser
 import logging
 import pymysql
 import json
+import datetime
 import requests
 from apscheduler.schedulers.blocking import BlockingScheduler
 from bs4 import BeautifulSoup
 from server_spider import ServerSpider
-
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -41,7 +41,7 @@ class RoleSpider(object):
             time.sleep(3)
             url = self.get_new_url()
             print(url)
-            logger.info("craw:"+url)
+            logger.info("craw:" + url)
             for key in url.split('&'):
                 if 'equip_id' in key:
                     equip_id = key[9:len(key)]
@@ -75,7 +75,7 @@ class RoleSpider(object):
                     connection.commit()
             except Exception as ex:
                 print(ex, traceback.print_exc())
-                logging.exception(e)
+                logging.exception(ex)
             finally:
                 connection.close()
 
@@ -251,8 +251,8 @@ class RoleSpider(object):
                 continue
             equs.setdefault('0', None)
             if equs['0'] is not None and equs['0']['id'] in (
-                1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1808, 1836, 150012):
-                    res_data['haizi_tiayu'] = 1
+                    1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1808, 1836, 150012):
+                res_data['haizi_tiayu'] = 1
 
         res_data['haizi_lv'] = haizi_lv
         res_data['haizi_zizhi'] = haizi_zizhi
@@ -442,7 +442,7 @@ class RoleSpider(object):
 
 
 def role_job():
-    logger.info("role job start!")
+    logger.info("role job start! time = " + str(datetime.datetime.now()))
     obj_spider = RoleSpider()
     try:
         connection = pymysql.connect(**dbconfig)
@@ -461,19 +461,18 @@ def role_job():
 
 
 def server_job():
-    logger.info("server job start!")
     obj_spider = ServerSpider()
+    logger.info("server job start! time = " + str(datetime.datetime.now()))
     for sch in range(11):
-        for page in range(2):
+        for page in range(4):
             url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-                  "&level_max=80&price_min=100000&price_max=30000000&" \
+                  "&level_max=80&price_min=1000&price_max=300000&" \
                   "school=" + str(sch + 1) + "&page=" + str(page + 1)
             obj_spider.add_new_url(url)
     obj_spider.craw()
 
 if __name__ == "__main__":
     roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(server_job, 'interval', hours=4)
-    roleScheduler.add_job(role_job, 'interval', hours=1)
+    roleScheduler.add_job(server_job, 'cron', hour='12')
+    roleScheduler.add_job(role_job, 'cron', minutes='30')
     roleScheduler.start()
-
