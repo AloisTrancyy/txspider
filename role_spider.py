@@ -69,10 +69,11 @@ class RoleSpider(object):
                         sql += ')'
                         print(sql)
                         logger.info(sql)
-                        update_craw = 'update role set  craw = 1 where role_id = ' + str(equip_id)
                         cursor.execute(sql)
+                        # 设置角色已爬取
+                        update_craw = 'update role set  craw = 1 where role_id = ' + str(equip_id)
                         cursor.execute(update_craw)
-                    connection.commit()
+                        connection.commit()
             except Exception as ex:
                 print(ex, traceback.print_exc())
                 logging.exception(ex)
