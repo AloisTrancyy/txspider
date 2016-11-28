@@ -53,11 +53,13 @@ class ServerSpider(object):
             connection = pymysql.connect(**dbconfig)
             with connection.cursor() as cursor:
                 for role in roles:
-                    query = 'select count(1) as count from role where yn=1 and role_id=' + str(role['role_id'])
+                    query = 'select count(1) as count from role where yn=1 and role_id=' + str(
+                        role['role_id']) + ' and server_id=' + str(role['server_id'])
                     cursor.execute(query)
                     if cursor.fetchone()['count'] > 0:
-                        update_sql = 'update role set price = ' + str(role['price']) + ',exp_time =\'' + role['exp_time'] + '\' where yn=1 and role_id=' + str(
-                            role['role_id'])
+                        update_sql = 'update role set price = ' + str(role['price']) + ',exp_time =\'' + role[
+                            'exp_time'] + '\' where yn=1 and role_id=' + str(role['role_id']) + ' and server_id=' + str(
+                            role['server_id'])
                         print(update_sql)
                         logger.info(update_sql)
                         cursor.execute(update_sql)

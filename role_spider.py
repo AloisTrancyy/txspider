@@ -34,16 +34,12 @@ logger = logging.getLogger('role_spider')
 
 
 class RoleSpider(object):
-    new_url = set()
-
+    rows = set()
     def craw(self):
-        while self.has_new_url():
+        for row in self.rows:
             time.sleep(3)
-            url = self.get_new_url()
-            logger.info("craw:" + url)
-            for key in url.split('&'):
-                if 'equip_id' in key:
-                    equip_id = key[9:len(key)]
+            url = row['url']
+            equip_id = row['id']
             try:
                 connection = pymysql.connect(**dbconfig)
                 with connection.cursor() as cursor:
@@ -58,7 +54,7 @@ class RoleSpider(object):
                             if key == 'role_id' or value is None:
                                 continue
                             sql = sql + ',' + key
-                        sql = sql + ' ) values (' + basic_data['role_id']
+                        sql = sql + ' ) values (' + str(basic_data['role_id'])
                         for key, value in basic_data.items():
                             if key == 'role_id' or value is None:
                                 continue
@@ -71,7 +67,7 @@ class RoleSpider(object):
                         logger.info(sql)
                         cursor.execute(sql)
                         # 设置角色已爬取
-                        update_craw = 'update role set  craw = 1 where role_id = ' + str(equip_id)
+                        update_craw = 'update role set  craw = 1 where id = ' + str(equip_id)
                         cursor.execute(update_craw)
                         connection.commit()
             except Exception as ex:
@@ -448,19 +444,15 @@ def role_job():
     try:
         connection = pymysql.connect(**dbconfig)
         with connection.cursor() as cursor:
-            update_sql = 'update role set craw = 1 where craw = 0 and role_id in (select role_id from role_data)'
-            cursor.execute(update_sql)
-            connection.commit()
-            sql = 'select url from role where yn=1 and craw = 0'
+            sql = 'select id,url from role where yn=1 and craw = 0'
             cursor.execute(sql)
-            rows = cursor.fetchall()
-            for row in rows:
-                obj_spider.add_new_url(row['url'])
+            obj_spider.rows = cursor.fetchall()
         cursor.close()
     except Exception as e:
         print(traceback.print_exc())
     finally:
         connection.close()
+
     obj_spider.craw()
 
 
