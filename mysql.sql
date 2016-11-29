@@ -129,3 +129,40 @@ CREATE TABLE `role_data` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3943 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50520
+Source Host           : localhost:3306
+Source Database       : spider
+
+Target Server Type    : MYSQL
+Target Server Version : 50520
+File Encoding         : 65001
+
+Date: 2016-11-29 23:00:22
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for bang_role
+-- ----------------------------
+DROP TABLE IF EXISTS `bang_role`;
+CREATE TABLE `bang_role` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role_id` varchar(10) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `area` varchar(20) DEFAULT NULL,
+  `server` varchar(20) DEFAULT NULL,
+  `level` tinyint(2) NOT NULL DEFAULT '0',
+  `school` varchar(20) DEFAULT NULL,
+  `family` varchar(30) DEFAULT NULL,
+  `xiuwei` int(6) DEFAULT NULL,
+  `equ_xiuwei` int(6) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
