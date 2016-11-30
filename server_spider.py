@@ -60,7 +60,6 @@ class ServerSpider(object):
                         update_sql = 'update role set price = ' + str(role['price']) + ',exp_time =\'' + role[
                             'exp_time'] + '\' where yn=1 and role_id=' + str(role['role_id']) + ' and server_id=' + str(
                             role['server_id'])
-                        print(update_sql)
                         logger.info(update_sql)
                         cursor.execute(update_sql)
                     else:
@@ -74,7 +73,6 @@ class ServerSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        print(sql)
                         logger.info(sql)
                         cursor.execute(sql)
                 connection.commit()

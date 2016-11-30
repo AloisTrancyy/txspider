@@ -46,7 +46,6 @@ class RoleSpider(object):
                     query = 'select count(1) as count from role_data where role_id=' + str(equip_id)
                     cursor.execute(query)
                     if cursor.fetchone()['count'] == 0:
-                        print('craw:'+url)
                         html_cont = self.download(url)
                         basic_data = self.parse(html_cont, equip_id)
                         sql = 'INSERT INTO role_data (role_id'
@@ -63,7 +62,6 @@ class RoleSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        print(sql)
                         logger.info(sql)
                         cursor.execute(sql)
                         # 设置角色已爬取
