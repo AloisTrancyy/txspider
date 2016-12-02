@@ -454,59 +454,7 @@ def role_job():
     obj_spider.craw()
 
 
-def server_job():
-    obj_spider = ServerSpider()
-    logger.info("server job start! time = " + str(datetime.datetime.now()))
-    # 爬神启
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=80" \
-              "&level_max=80&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=80" \
-              "&level_max=80&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    # 爬79战场
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=75" \
-              "&level_max=79&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=75" \
-              "&level_max=79&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-
-    # 爬74战场
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=70" \
-              "&level_max=74&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=70" \
-              "&level_max=74&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-
-    # 爬69战场
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-              "&level_max=69&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-              "&level_max=69&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    obj_spider.craw()
-
 if __name__ == "__main__":
     roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(server_job, 'interval', hours=2)
     roleScheduler.add_job(role_job, 'interval',  hours=1)
     roleScheduler.start()
