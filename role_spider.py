@@ -12,7 +12,6 @@ import datetime
 import requests
 from apscheduler.schedulers.blocking import BlockingScheduler
 from bs4 import BeautifulSoup
-from server_spider import ServerSpider
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -62,7 +61,6 @@ class RoleSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        logger.info(sql)
                         cursor.execute(sql)
                         # 设置角色已爬取
                         update_craw = 'update role set  craw = 1 where id = ' + str(equip_id)

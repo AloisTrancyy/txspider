@@ -43,7 +43,6 @@ class ServerSpider(object):
         for url in res:
             time.sleep(10)
             try:
-                logger.info('craw :' + url['url'])
                 html_cont = self.download(url['url'])
                 new_data = self.parse(html_cont)
                 self.add_role(new_data)
@@ -63,7 +62,6 @@ class ServerSpider(object):
                         update_sql = 'update role set price = ' + str(role['price']) + ',exp_time =\'' + role[
                             'exp_time'] + '\' where yn=1 and role_id=' + str(role['role_id']) + ' and server_id=' + str(
                             role['server_id'])
-                        logger.info(update_sql)
                         cursor.execute(update_sql)
                     else:
                         sql = 'INSERT INTO role (yn,create_time'
@@ -76,12 +74,10 @@ class ServerSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        logger.info(sql)
                         cursor.execute(sql)
                 connection.commit()
-
-                updatesql = 'update role set yn = 0 where exp_time <=now()'
-                cursor.execute(updatesql)
+                update_sql = 'update role set yn = 0 where exp_time <=now()'
+                cursor.execute(update_sql)
                 connection.commit()
         except Exception as e:
             raise Exception(e)
