@@ -29,8 +29,8 @@ CREATE TABLE `property` (
 -- ----------------------------
 -- Records of property
 -- ----------------------------
-INSERT INTO `property` VALUES ('14', 'mhp', '命');
-INSERT INTO `property` VALUES ('15', 'msp', '技');
+INSERT INTO `property` VALUES ('14', 'mhp', '生命值');
+INSERT INTO `property` VALUES ('15', 'msp', '技力值');
 INSERT INTO `property` VALUES ('16', 'pattack_max', '最大物理攻击力');
 INSERT INTO `property` VALUES ('17', 'mattack_max', '最大法术攻击力');
 INSERT INTO `property` VALUES ('18', 'pattack_min', '最小物理攻击力');
