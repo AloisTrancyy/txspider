@@ -95,11 +95,19 @@ def get_values(text):
         for prop in props:
             for desc, name in prop.items():
                 if desc in value:
-                    replaced = value.replace('cFF8800', '').replace('cBB44BB', '').replace('c7ecef4', '').replace('c8A00FF','')
+                    if desc == '魂' and '天魂' in value:
+                        continue
+                    if desc == '力' and ('定力' in value or '加成力' in value or '抵抗力' in value or '减伤力' in value):
+                        continue
+                    replaced = value.replace('cFF8800', '').replace('cBB44BB', '').replace('c7ecef4', '').replace(
+                        'c8A00FF', '')
                     prop_value = re.findall(r"\d+\.?\d*", replaced)
                     sum_count = 0
                     for n in prop_value:
-                        sum_count += float(n)
+                        if "." in n:
+                            sum_count += float(n)
+                        else:
+                            sum_count += int(n)
                     data[name] = sum_count
         if len(data) > 0:
             values.append(data)

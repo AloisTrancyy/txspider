@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2016-12-06 22:39:59
+Date: 2016-12-06 22:55:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `property` (
   `prop_name` varchar(20) DEFAULT NULL,
   `prop_desc` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of property
@@ -80,3 +80,26 @@ INSERT INTO `property` VALUES ('100', 'def_feng', '御风');
 INSERT INTO `property` VALUES ('101', 'def_du', '御毒');
 INSERT INTO `property` VALUES ('102', 'def_huo', '御火');
 INSERT INTO `property` VALUES ('103', 'def_yuan', '御元');
+INSERT INTO `property` VALUES ('104', 'huxin', '护心');
+INSERT INTO `property` VALUES ('105', 'def_dunci', '钝刺防护');
+INSERT INTO `property` VALUES ('106', 'def_huikan', '挥砍防护');
+INSERT INTO `property` VALUES ('107', 'def_huiyuan', '火元防护');
+INSERT INTO `property` VALUES ('108', 'def_shuifengdu', '水风毒防护');
+INSERT INTO `property` VALUES ('109', 'att_huikan', '挥砍精通');
+INSERT INTO `property` VALUES ('110', 'att_chuanci', '穿刺精通');
+INSERT INTO `property` VALUES ('111', 'att_dunji', '钝击精通');
+INSERT INTO `property` VALUES ('112', 'att_huo', '火系精通');
+INSERT INTO `property` VALUES ('113', 'att_yuan', '元系精通');
+INSERT INTO `property` VALUES ('114', 'att_shui', '水系精通');
+INSERT INTO `property` VALUES ('115', 'att_feng', '风系精通');
+INSERT INTO `property` VALUES ('116', 'att_du', '毒系精通');
+INSERT INTO `property` VALUES ('117', 'mengong', '猛攻');
+INSERT INTO `property` VALUES ('118', 'kuangfa', '狂法');
+INSERT INTO `property` VALUES ('119', 'def_huikan', '挥砍化解');
+INSERT INTO `property` VALUES ('120', 'def_chuanci', '穿刺化解');
+INSERT INTO `property` VALUES ('121', 'def_dunji', '钝击化解');
+INSERT INTO `property` VALUES ('122', 'def_shui', '水系化解');
+INSERT INTO `property` VALUES ('123', 'def_feng', '风系化解');
+INSERT INTO `property` VALUES ('124', 'def_du', '毒系化解');
+INSERT INTO `property` VALUES ('125', 'def_huo', '火系化解');
+INSERT INTO `property` VALUES ('126', 'def_yuan', '元系化解');
