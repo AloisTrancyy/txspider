@@ -73,13 +73,22 @@ servers = [
 
 
 def get_urls():
-    urls = []
-    for server in servers:
-        for page in range(26):
-            url = 'http://bang.tx3.163.com/bang/ranks?order_key=total_xiuwei&server=' + server + '&page=' + str(
-                page + 1)
-            urls.append(url)
-    return urls
+    data = []
+    connection = pymysql.connect(**dbconfig)
+    try:
+        with connection.cursor() as cursor:
+            query = 'select url from bang_url'
+            cursor.execute(query)
+            res = cursor.fetchall()
+            for r in res:
+                data.append(r['url'])
+            connection.commit()
+    except Exception as ex:
+        print(ex, traceback.print_exc())
+        logging.exception(ex)
+    finally:
+        connection.close()
+    return data
 
 
 def get_data(url):
@@ -89,6 +98,7 @@ def get_data(url):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
     requests.adapters.DEFAULT_RETRIES = 3
+    print('craw:' + url)
     res = requests.get(url, headers=headers, timeout=3)
     if res.status_code != 200:
         return data_array
