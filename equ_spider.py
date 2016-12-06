@@ -55,25 +55,57 @@ def get_data(url):
         if equ_type != '通溟':
             data['equ_id'] = equ.parent.parent.parent.parent.find('img', class_='iImg')['src'].split('/')[6].split('.')[
                 0]
+        props = get_values(equ['tx3text'])
+        data['prop'] = props
         print(data)
     return data_array
 
 
 def add_mysql(datas):
-    if datas is None or len(datas) == 0:
-        return
-    connection = pymysql.connect(**dbconfig)
-    try:
-        with connection.cursor() as cursor:
+    return
 
-            connection.commit()
-    except Exception as ex:
-        print(ex, traceback.print_exc())
-        logging.exception(ex)
-    finally:
-        connection.close()
+
+def get_props():
+    data_s = []
+    connection = pymysql.connect(**dbconfig)
+    with connection.cursor() as cursor:
+        sql = "select prop_name,prop_desc from property"
+        cursor.execute(sql)
+        res = cursor.fetchall()
+        for prop in res:
+            item = {}
+            item[prop['prop_desc']] = prop['prop_name']
+            data_s.append(item)
+    connection.commit()
+    connection.close()
+    return data_s
+
+
+def get_values(text):
+    if text is None:
+        return
+    values = []
+    props = get_props()
+    for value in text.split('#'):
+        if value is None or value == '':
+            continue
+        if value.isalpha():
+            continue
+        data = {}
+        for prop in props:
+            for desc, name in prop.items():
+                if desc in value:
+                    replaced = value.replace('cFF8800', '').replace('cBB44BB', '').replace('c7ecef4', '').replace('c8A00FF','')
+                    prop_value = re.findall(r"\d+\.?\d*", replaced)
+                    sum_count = 0
+                    for n in prop_value:
+                        sum_count += float(n)
+                    data[name] = sum_count
+        if len(data) > 0:
+            values.append(data)
+    return values
 
 
 url = "http://bang.tx3.163.com/bang/role/32_57551"
-data_s = get_data(url)
-add_mysql(data_s)
+role_data = get_data(url)
+add_mysql(role_data)
