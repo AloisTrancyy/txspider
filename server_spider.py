@@ -32,16 +32,19 @@ dbconfig = {
 
 
 class ServerSpider(object):
-    new_url = set()
-    old_url = set()
-
     def craw(self):
-        while self.has_new_url():
+        res = []
+        connection = pymysql.connect(**dbconfig)
+        with connection.cursor() as cursor:
+            sql = "select url from search_url"
+            cursor.execute(sql)
+            res = cursor.fetchall()
+        connection.close()
+        for url in res:
             time.sleep(10)
             try:
-                url = self.get_new_url()
-                logger.info('craw :' + url)
-                html_cont = self.download(url)
+                logger.info('craw :' + url['url'])
+                html_cont = self.download(url['url'])
                 new_data = self.parse(html_cont)
                 self.add_role(new_data)
             except Exception as e:
@@ -138,70 +141,13 @@ class ServerSpider(object):
             minutes=int(minute))
         return date.strftime('%Y-%m-%d %H:%M:%S')
 
-    def add_new_url(self, url):
-        if url not in self.new_url and url not in self.old_url:
-            self.new_url.add(url)
-
-    def has_new_url(self):
-        return len(self.new_url) != 0
-
-    def get_new_url(self):
-        url = self.new_url.pop()
-        self.old_url.add(url)
-        return url
 
 def server_job():
     obj_spider = ServerSpider()
     logger.info("server job start! time = " + str(datetime.datetime.now()))
-    # 爬神启
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=80" \
-              "&level_max=80&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=80" \
-              "&level_max=80&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    # 爬79战场
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=75" \
-              "&level_max=79&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=75" \
-              "&level_max=79&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-
-    # 爬74战场
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=70" \
-              "&level_max=74&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=70" \
-              "&level_max=74&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-
-    # 爬69战场
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-              "&level_max=69&price_min=100000&price_max=30000000&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
-    for sch in range(11):
-        url = "http://tx3.cbg.163.com/cgi-bin/overall_search.py?act=overall_search_role&level_min=69" \
-              "&level_max=69&price_min=100000&price_max=30000000&order_by=price DESC&" \
-              "school=" + str(sch + 1) + "&page=1"
-        obj_spider.add_new_url(url)
     obj_spider.craw()
 
 if __name__ == "__main__":
     roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(server_job, 'interval', hours=2)
+    roleScheduler.add_job(server_job, 'interval', hours=4)
     roleScheduler.start()
