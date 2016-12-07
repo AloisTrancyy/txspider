@@ -73,30 +73,28 @@ servers = [
 
 
 def get_urls():
-    data = []
     connection = pymysql.connect(**dbconfig)
     try:
         with connection.cursor() as cursor:
-            query = 'select url from bang_url'
+            query = 'select id,url from bang_url where craw = 0 '
             cursor.execute(query)
             res = cursor.fetchall()
-            for r in res:
-                data.append(r['url'])
             connection.commit()
     except Exception as ex:
         print(ex, traceback.print_exc())
         logging.exception(ex)
     finally:
         connection.close()
-    return data
+    return res
 
 
-def get_data(url):
+def get_data(info):
     data_array = []
-    time.sleep(1)
+    time.sleep(2)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
+    url = info['url']
     requests.adapters.DEFAULT_RETRIES = 3
     print('craw:' + url)
     res = requests.get(url, headers=headers, timeout=3)
@@ -162,10 +160,10 @@ def get_data(url):
                 data['equ_xiuwei'] = td.text
             index += 1
         data_array.append(data)
-    return data_array
+    return data_array, info['id']
 
 
-def add_mysql(datas):
+def add_mysql(datas, id):
     connection = pymysql.connect(**dbconfig)
     try:
         with connection.cursor() as cursor:
@@ -184,8 +182,9 @@ def add_mysql(datas):
                     else:
                         sql = sql + ',\'' + value + '\''
                 sql += ')'
-                logger.info(sql)
                 cursor.execute(sql)
+            update_sql = 'update bang_url set craw = 1 where id = ' + str(id)
+            cursor.execute(update_sql)
             connection.commit()
     except Exception as ex:
         print(ex, traceback.print_exc())
@@ -196,5 +195,5 @@ def add_mysql(datas):
 
 urls = get_urls()
 for url in urls:
-    data_s = get_data(url)
-    add_mysql(data_s)
+    data_s, id = get_data(url)
+    add_mysql(data_s, id)
