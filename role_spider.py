@@ -273,6 +273,14 @@ class RoleSpider(object):
             if equ[index].setdefault('ws138', None) is not None:
                 wanfeng += equ[index]['ws138']
 
+        yifu = ['0', '1', '2', '3', '8', '9', '10', '11']
+        for index in yifu:
+            equ.setdefault(index, None)
+            if equ[index] is None:
+                continue
+            if equ[index].setdefault('ws38', None) is not None:
+                huxin += equ[index]['ws38']
+
         chibangdesc = role_json['wing_inlay_prop']
         if chibangdesc is not None and '护心' in chibangdesc:
             huxin += 3
