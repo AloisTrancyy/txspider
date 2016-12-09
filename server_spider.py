@@ -32,6 +32,36 @@ dbconfig = {
 
 
 class ServerSpider(object):
+    def back_data(self):
+        today = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        logger.info("back data job start! time = " + today)
+        connection = pymysql.connect(**dbconfig)
+        with connection.cursor() as cursor:
+            sql = "select count(1) as count from role where yn =0"
+            cursor.execute(sql)
+            res = cursor.fetchone()
+            if res['count'] > 5000:
+                role_sql = 'select role_id,jiahu,name,server_id,price,url,date_format(exp_time,\'%Y-%c-%d %h:%i:%s\') exp_time from role where yn =0'
+                cursor.execute(role_sql)
+                roles = cursor.fetchall()
+                f_role = open(config.get('mysql', 'back_path') + "role_" + today + ".txt", "w")
+                f_role.write(str(roles))
+
+                role_data_sql = 'select * from role_data where role_id in (select id from role where yn= 0)'
+                cursor.execute(role_data_sql)
+                row_datas = cursor.fetchall()
+
+                f_data = open(config.get('mysql', 'back_path') + "role_data_" + today + ".txt", "w")
+                f_data.write(str(row_datas))
+
+                delete_role_data_sql = 'delete from role_data where role_id in (select id from role where yn= 0)'
+                delete_role_sql = 'delete from role where yn = 0'
+                cursor.execute(delete_role_data_sql)
+                cursor.execute(delete_role_sql)
+            cursor.close()
+            connection.commit()
+        connection.close()
+
     def craw(self):
         res = []
         connection = pymysql.connect(**dbconfig)
@@ -141,7 +171,9 @@ class ServerSpider(object):
 def server_job():
     obj_spider = ServerSpider()
     logger.info("server job start! time = " + str(datetime.datetime.now()))
+    obj_spider.back_data()
     obj_spider.craw()
+
 
 if __name__ == "__main__":
     roleScheduler = BlockingScheduler()

@@ -453,8 +453,8 @@ class RoleSpider(object):
 def role_job():
     logger.info("role job start! time = " + str(datetime.datetime.now()))
     obj_spider = RoleSpider()
+    connection = pymysql.connect(**dbconfig)
     try:
-        connection = pymysql.connect(**dbconfig)
         with connection.cursor() as cursor:
             sql = 'select id,url from role where yn=1 and craw = 0'
             cursor.execute(sql)

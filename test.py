@@ -2,9 +2,12 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-import re
 import configparser
 import pymysql
+import traceback
+import datetime
+import time
+import json
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -17,4 +20,4 @@ dbconfig = {
     'charset': config.get('mysql', 'charset'),
     'cursorclass': pymysql.cursors.DictCursor
 }
-
+print(type(time.strftime('%Y-%m-%d',time.localtime(time.time()))))
