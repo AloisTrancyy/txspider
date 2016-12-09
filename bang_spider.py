@@ -5,10 +5,13 @@
 import traceback
 import configparser
 import logging
+
+import bs4
 import pymysql
 import requests
 import time
-import lxml.etree as etree
+import re
+from bs4 import BeautifulSoup
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -28,48 +31,20 @@ dbconfig = {
     'charset': config.get('mysql', 'charset'),
     'cursorclass': pymysql.cursors.DictCursor
 }
-servers = [
-    '东方明珠',
-    '君临天下',
-    '天生王者',
-    '幻龙诀',
-    '气壮山河',
-    '紫禁之巅',
-    '天府之国',
-    '墨倾天下',
-    '碧海青天',
-    '笑看风云',
-    '逍遥三界',
-    '魔影幽篁',
-    '万里惊涛',
-    '剑啸苍穹',
-    '剑指山河',
-    '天下无双',
-    '天外飞仙',
-    '忘忧海',
-    '情动大荒',
-    '枫丹白露',
-    '烟花三月',
-    '琉璃月',
-    '纵横四海',
-    '致青春',
-    '醉红尘',
-    '齐鲁天下',
-    '剑舞香江',
-    '白云山',
-    '瘦西湖',
-    '逐鹿中原',
-    '三潭印月',
-    '烟雨江南',
-    '黄鹤楼',
-    '洞庭湖',
-    '弱水三千',
-    '武夷九曲',
-    '上善若水',
-    '飞龙在天',
-    '烽火关东',
-    '盛世长安'
-]
+
+school_dict = {
+    '荒火教': 1,
+    '天机营': 2,
+    '翎羽山庄': 3,
+    '魍魉': 4,
+    '太虚观': 5,
+    '云麓仙居': 6,
+    '冰心堂': 7,
+    '弈剑听雨阁': 8,
+    '鬼墨': 9,
+    '龙巫宫': 10,
+    '幽篁国': 11,
+}
 
 
 def get_urls():
@@ -88,79 +63,206 @@ def get_urls():
     return res
 
 
-def get_data(info):
-    data_array = []
-    time.sleep(2)
+def get_data():
+    data = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
-    url = info['url']
+    url = 'http://bang.tx3.163.com/bang/role/40_13014'
     requests.adapters.DEFAULT_RETRIES = 3
-    print('craw:' + url)
     res = requests.get(url, headers=headers, timeout=3)
     if res.status_code != 200:
-        return data_array
+        return data
     html_cont = res.content
-    html = html_cont.decode("utf-8")
-    tree = etree.HTML(html)
+    soup = BeautifulSoup(html_cont, 'html.parser')
+    ################################################################
+    s_level = soup.find('span', class_="sLev")
+    a = 0
+    for lc in s_level.children:
+        if a == 1:
+            data['level'] = lc.get_text()
+        a += 1
 
-    tr1s = "//table/tr[@class='tr1']"
-    trs = tree.xpath(tr1s)
-    for tr in trs:
-        index = 0
-        data = {}
-        for td in tr:
-            if index == 1:
-                childa = td.getchildren()
-                data['name'] = childa[0].text
-                data['role_id'] = childa[0].attrib['href'].split('/')[3]
-            elif index == 2 and td.text is not None:
-                data['area'] = td.text
-            elif index == 3 and td.text is not None:
-                data['server'] = td.text
-            elif index == 4 and td.text is not None:
-                data['level'] = td.text
-            elif index == 5 and td.text is not None:
-                data['school'] = td.text
-            elif index == 6:
-                childf = td.getchildren()
-                if childf[0].text is not None:
-                    data['family'] = childf[0].text
-            elif index == 7 and td.text is not None:
-                data['xiuwei'] = td.text
-            elif index == 8 and td.text is not None:
-                data['equ_xiuwei'] = td.text
-            index += 1
-        data_array.append(data)
-    tr2s = "//table/tr[@class='tr2']"
-    trs = tree.xpath(tr2s)
-    for tr in trs:
-        index = 0
-        data = {}
-        for td in tr:
-            if index == 1:
-                childa = td.getchildren()
-                data['name'] = childa[0].text
-                data['role_id'] = childa[0].attrib['href'].split('/')[3]
-            elif index == 2 and td.text is not None:
-                data['area'] = td.text
-            elif index == 3 and td.text is not None:
-                data['server'] = td.text
-            elif index == 4 and td.text is not None:
-                data['level'] = td.text
-            elif index == 5 and td.text is not None:
-                data['school'] = td.text
-            elif index == 6:
-                childf = td.getchildren()
-                if childf[0].text is not None:
-                    data['family'] = childf[0].text
-            elif index == 7 and td.text is not None:
-                data['xiuwei'] = td.text
-            elif index == 8 and td.text is not None:
-                data['equ_xiuwei'] = td.text
-            index += 1
-        data_array.append(data)
-    return data_array, info['id']
+    s_name = soup.find('span', class_="sTitle")
+    data['name'] = s_name.get_text()
+
+    s_exp = soup.find_all('span', class_="sExp")
+    data['school'] = school_dict[s_exp[0].get_text()]
+    aas = s_exp[1].children
+    i = 0
+    for aa in aas:
+        if isinstance(aa, bs4.element.NavigableString):
+            continue
+        if i == 0:
+            area_server = aa.get_text().split()
+            data['area'] = area_server[0]
+            data['server'] = area_server[1]
+        else:
+            data['family'] = aa.get_text()
+        i += 1
+    ###############################################################
+    equ_xiuwei = soup.find_all('ul', class_="ulList_3")
+    fly_soul_phase = ''
+    fly_soul_lv = ''
+    for equ in equ_xiuwei:
+        for child in equ.children:
+            if isinstance(child, bs4.element.NavigableString):
+                continue
+            equ_text = child.get_text()
+            if '装备评价' in equ_text:
+                data['equ_xiuwei'] = get_data_from_str(equ_text)
+            elif '人物修为' in equ_text:
+                data['xiuwei'] = get_data_from_str(equ_text)
+            elif '神启阶段' in equ_text:
+                fly_soul_phase = equ_text.split(':')[1]
+            elif '神启境界' in equ_text:
+                fly_soul_lv = equ_text.split(':')[1]
+
+    data['level'] = get_level(data['level'], fly_soul_phase, fly_soul_lv)
+    #####################################################################
+    props = soup.find('div', class_="dEquips_1")
+    index = 0
+    for prop in props.children:
+        if isinstance(prop, bs4.element.NavigableString):
+            continue
+        if index == 0:
+            n = 0
+            for li in prop.children:
+                if isinstance(li, bs4.element.NavigableString):
+                    continue
+                if n == 1:
+                    data['mhp'] = li.get_text()
+                elif n == 3:
+                    data['msp'] = li.get_text()
+                elif n == 5:
+                    data['strong'] = li.get_text()
+                elif n == 7:
+                    data['body'] = li.get_text()
+                elif n == 9:
+                    data['quich'] = li.get_text()
+                elif n == 11:
+                    data['dodge'] = li.get_text()
+                elif n == 13:
+                    data['soul'] = li.get_text()
+                elif n == 15:
+                    data['mind'] = li.get_text()
+                n += 1
+        elif index == 1:
+            n = 0
+            for li in prop.children:
+                if isinstance(li, bs4.element.NavigableString):
+                    continue
+                if n == 1:
+                    pats = re.findall(r"\d+\.?\d*", li.get_text())
+                    data['pattack_min'] = pats[0]
+                    data['pattack_max'] = pats[1]
+                elif n == 2:
+                    data['hit'] = get_data_from_str(li.get_text())
+                elif n == 3:
+                    mats = re.findall(r"\d+\.?\d*", li.get_text())
+                    data['mattack_min'] = mats[0]
+                    data['mattack_max'] = mats[1]
+                elif n == 4:
+                    data['modadd'] = get_data_from_str(li.get_text())
+                elif n == 5:
+                    data['critical'] = get_data_from_str(li.get_text())
+                elif n == 6:
+                    data['attadd'] = get_data_from_str(li.get_text())
+                n += 1
+        elif index == 2:
+            n = 0
+            for li in prop.children:
+                if isinstance(li, bs4.element.NavigableString):
+                    continue
+                if n == 1:
+                    data['pdef'] = get_data_from_str(li.get_text())
+                elif n == 2:
+                    data['avoid'] = get_data_from_str(li.get_text())
+                elif n == 3:
+                    data['mdef'] = get_data_from_str(li.get_text())
+                elif n == 4:
+                    data['inprotect'] = get_data_from_str(li.get_text())
+                elif n == 5:
+                    data['attdef'] = get_data_from_str(li.get_text())
+                elif n == 6:
+                    data['defhuman'] = get_data_from_str(li.get_text())
+                n += 1
+        elif index == 3:
+            n = 0
+            for li in prop.children:
+                if isinstance(li, bs4.element.NavigableString):
+                    continue
+                if n == 1:
+                    data['sract'] = get_data_from_str(li.get_text())
+                elif n == 2:
+                    data['srbody'] = get_data_from_str(li.get_text())
+                elif n == 3:
+                    data['srmind'] = get_data_from_str(li.get_text())
+                elif n == 4:
+                    data['cri_add_p'] = get_data_from_str(li.get_text())
+                elif n == 5:
+                    data['cri_sub_p'] = get_data_from_str(li.get_text())
+                elif n == 6:
+                    data['thump_add_p'] = get_data_from_str(li.get_text())
+                elif n == 7:
+                    data['thump_sub_p'] = get_data_from_str(li.get_text())
+                n += 1
+        elif index == 4:
+            n = 0
+            for li in prop.children:
+                if isinstance(li, bs4.element.NavigableString):
+                    continue
+                if n == 1:
+                    data['movespeed'] = get_data_from_str(li.get_text())
+                elif n == 2:
+                    data['attackspeed'] = get_data_from_str(li.get_text())
+                elif n == 3:
+                    data['castspeed'] = get_data_from_str(li.get_text())
+                elif n == 6:
+                    data['attackhuman'] = get_data_from_str(li.get_text())
+                n += 1
+        index += 1
+    print(data)
+    return data
+
+
+def get_data_from_str(equ_text):
+    sum_count = 0
+    prop_value = re.findall(r"\d+\.?\d*", equ_text)
+    for n in prop_value:
+        if "." in n:
+            sum_count += float(n)
+        else:
+            sum_count += int(n)
+    return sum_count
+
+
+def get_level(level, fly_soul_phase, fly_soul_lv):
+    if fly_soul_phase is None or fly_soul_phase == '':
+        return level
+    if fly_soul_phase == '地魂':
+        if '肆天玖境界' in fly_soul_lv:
+            level = 85
+        elif '肆天' in fly_soul_lv:
+            level = 84
+        elif '叁天' in fly_soul_lv:
+            level = 83
+        elif '贰天' in fly_soul_lv:
+            level = 82
+        elif '壹天' in fly_soul_lv:
+            level = 81
+    elif fly_soul_phase == '天魂':
+        if '肆天玖境界' in fly_soul_lv:
+            level = 90
+        elif '肆天' in fly_soul_lv:
+            level = 89
+        elif '叁天' in fly_soul_lv:
+            level = 88
+        elif '贰天' in fly_soul_lv:
+            level = 87
+        elif '壹天' in fly_soul_lv:
+            level = 86
+    return level
 
 
 def add_mysql(datas, id):
@@ -193,7 +295,4 @@ def add_mysql(datas, id):
         connection.close()
 
 
-urls = get_urls()
-for url in urls:
-    data_s, id = get_data(url)
-    add_mysql(data_s, id)
+get_data()
