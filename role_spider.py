@@ -34,6 +34,7 @@ logger = logging.getLogger('role_spider')
 
 class RoleSpider(object):
     rows = set()
+
     def craw(self):
         for row in self.rows:
             time.sleep(3)
@@ -273,13 +274,20 @@ class RoleSpider(object):
             if equ[index].setdefault('ws138', None) is not None:
                 wanfeng += equ[index]['ws138']
 
-        yifu = ['0', '1', '2', '3', '8', '9', '10', '11']
-        for index in yifu:
-            equ.setdefault(index, None)
-            if equ[index] is None:
-                continue
-            if equ[index].setdefault('ws38', None) is not None:
-                huxin += equ[index]['ws38']
+        if role_json['sch'] == 2:
+            yifu = ['0', '1', '2', '3', '8', '9', '10', '11']
+            zhendan = [2266, 2268, 2272, 2269, 2267, 2271, 2270, 2273]
+            zhendan_count = 0
+            for index in yifu:
+                equ.setdefault(index, None)
+                if equ[index] is None:
+                    continue
+                if equ[index]['id'] in zhendan:
+                    zhendan_count += 1
+            if zhendan_count >= 2 and zhendan_count < 4:
+                huxin += 5
+            elif zhendan_count >= 4:
+                huxin += 10
 
         chibangdesc = role_json['wing_inlay_prop']
         if chibangdesc is not None and '护心' in chibangdesc:
@@ -461,6 +469,4 @@ def role_job():
 
 
 if __name__ == "__main__":
-    roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(role_job, 'interval',  hours=1)
-    roleScheduler.start()
+    role_job()
