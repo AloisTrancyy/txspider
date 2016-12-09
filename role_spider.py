@@ -164,7 +164,7 @@ class RoleSpider(object):
         res_data['mattack_max'] = role_json['mattack_max']
         res_data['pattack_min'] = role_json['pattack_min']
         res_data['mattack_min'] = role_json['mattack_min']
-        res_data['hit'] = role_json['critical']
+        res_data['hit'] = role_json['hit']
         res_data['modadd'] = role_json['modadd']
         res_data['attadd'] = role_json['attadd']
         res_data['cri_add_p'] = role_json['cri_add_p']
