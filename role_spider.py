@@ -340,7 +340,7 @@ class RoleSpider(object):
         xuansu, qinghua, guhong, haitang = 0, 0, 0, 0
         xiangyun, tinglan, canghai, jiangnan = 0, 0, 0, 0
         feitian, tianhu, xianhu = 0, 0, 0
-        bihai, changong, changkong = 0, 0, 0
+        bihai, changong, changkong,fengyuzihuang= 0, 0, 0,0
         formated_role_desc = soup.find('textarea', id="formated_role_desc")
         format_role = formated_role_desc.get_text()
         format_role_json = json.loads(format_role, 'utf-8')
@@ -373,6 +373,8 @@ class RoleSpider(object):
                 changkong = 1
             if '蟾宫折桂' in value['name']:
                 changong = 1
+            if '凤羽紫凰' in value['name']:
+                fengyuzihuang = 1
 
         shizhuang = ['19', '20', '30', '31']
         equ.setdefault('30', None)
@@ -403,6 +405,8 @@ class RoleSpider(object):
                     changkong = 1
                 if yfid == 21487 or yfid == 21488:
                     changong = 1
+                if yfid == 21399 or yfid == 21400:
+                    fengyuzihuang = 1
 
         # 包裹
         invs = role_json['inv']
@@ -432,6 +436,8 @@ class RoleSpider(object):
                 changkong = 1
             if yfid == 21487 or yfid == 21488:
                 changong = 1
+            if yfid == 21399 or yfid == 21400:
+                fengyuzihuang = 1
 
         res_data['qinghua'] = qinghua
         res_data['xuansu'] = xuansu
@@ -447,6 +453,7 @@ class RoleSpider(object):
         res_data['bihai'] = bihai
         res_data['changkong'] = changkong
         res_data['changong'] = changong
+        res_data['fengyuzihuang'] = fengyuzihuang
         return res_data
 
 
