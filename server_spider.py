@@ -117,6 +117,7 @@ class ServerSpider(object):
     def download(self, url):
         if url is None:
             return None
+        # print(url)
         headers = {'Content-Type': 'text/plain;charset=UTF-8',
                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 '
                                  '(KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
@@ -135,6 +136,9 @@ class ServerSpider(object):
         json_data = json.loads(html_cont)
         msg = json_data['msg']
         for role in msg:
+            if type(role) == str:
+                logger.info("server_job_error:"+role)
+                continue
             res_data = {}
             res_data['role_id'] = role['equipid']
             res_data['server_id'] = role['serverid']
@@ -176,6 +180,6 @@ def server_job():
 
 
 if __name__ == "__main__":
-    roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(server_job, 'interval', hours=4)
-    roleScheduler.start()
+    serverScheduler = BlockingScheduler()
+    serverScheduler.add_job(server_job, 'interval', hours=4)
+    serverScheduler.start()
