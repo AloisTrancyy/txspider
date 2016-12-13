@@ -34,6 +34,7 @@ dbconfig = {
 def get_data(url):
     data_array = []
     time.sleep(1)
+    print(url)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
@@ -45,23 +46,37 @@ def get_data(url):
     soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='utf8')
     equs = soup.find_all('div', class_='tx3TextBlock')
     for equ in equs:
-        data = {}
         name = equ.get('name')
         if name is None:
             continue
-        data['equ_name'] = equ.parent.find('h3').text
         equ_type = equ.parent.find('span', class_='eq_type').text
-        data['equ_type'] = equ_type
         if equ_type != '通溟':
+            data = {}
             data['equ_id'] = equ.parent.parent.parent.parent.find('img', class_='iImg')['src'].split('/')[6].split('.')[
                 0]
-        props = get_values(equ['tx3text'])
-        data['prop'] = props
-        print(data)
+            data['equ_name'] = equ.parent.find('h3').text
+            data['equ_type'] = equ_type
+        # props = get_values(equ['tx3text'])
+        # data['prop'] = props
+        data_array.append(data)
     return data_array
 
 
 def add_mysql(datas):
+    connection = pymysql.connect(**dbconfig)
+    with connection.cursor() as cursor:
+        for data in datas:
+            insert_sql = 'insert into txs_equ (equ_id,equ_type,equ_name) VALUES ' \
+                         '(\'' + str(data['equ_id']) + '\',\'' + data['equ_type'] + '\',\'' + data['equ_name'] + '\')'
+            sql = "select count(1) as count from txs_equ where equ_id = \'" + str(data['equ_id']) +'\''
+            cursor.execute(sql)
+            res = cursor.fetchone()
+            if res['count'] == 0:
+                print(insert_sql)
+                cursor.execute(insert_sql)
+        cursor.close()
+        connection.commit()
+        connection.close()
     return
 
 
@@ -113,7 +128,23 @@ def get_values(text):
             values.append(data)
     return values
 
+def get_roles():
+    data_s = []
+    connection = pymysql.connect(**dbconfig)
+    with connection.cursor() as cursor:
+        for sch in range(11):
+            sql = "select role_id from bang_role where school="+str(sch+1)+" and level=79 " \
+                  " order by (xiuwei+equ_xiuwei)  desc limit 100,100 "
+            print(sql)
+            cursor.execute(sql)
+            res = cursor.fetchall()
+            for s in res:
+                data_s.append("http://bang.tx3.163.com/bang/role/"+s['role_id'])
+    connection.commit()
+    connection.close()
+    return data_s
 
-url = "http://bang.tx3.163.com/bang/role/32_57551"
-role_data = get_data(url)
-add_mysql(role_data)
+urls = get_roles()
+for url in urls:
+    role_data = get_data(url)
+    add_mysql(role_data)
