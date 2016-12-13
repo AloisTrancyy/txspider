@@ -37,25 +37,26 @@ class ServerSpider(object):
         logger.info("back data job start! time = " + today)
         connection = pymysql.connect(**dbconfig)
         with connection.cursor() as cursor:
-            sql = "select count(1) as count from role where yn =0"
+            sql = "select count(1) as count from cbg_role where yn =0"
             cursor.execute(sql)
             res = cursor.fetchone()
             if res['count'] > 5000:
-                role_sql = 'select role_id,jiahu,name,server_id,price,url,date_format(exp_time,\'%Y-%c-%d %h:%i:%s\') exp_time from role where yn =0'
+                role_sql = 'select role_id,jiahu,name,server_id,price,url,date_format(exp_time,\'%Y-%c-%d %h:%i:%s\') exp_time ' \
+                           'from cbg_role where yn =0'
                 cursor.execute(role_sql)
                 roles = cursor.fetchall()
                 f_role = open(config.get('mysql', 'back_path') + "role_" + today + ".txt", "w")
                 f_role.write(str(roles))
 
-                role_data_sql = 'select * from role_data where role_id in (select id from role where yn= 0)'
+                role_data_sql = 'select * from cbg_data where role_id in (select id from role where yn= 0)'
                 cursor.execute(role_data_sql)
                 row_datas = cursor.fetchall()
 
                 f_data = open(config.get('mysql', 'back_path') + "role_data_" + today + ".txt", "w")
                 f_data.write(str(row_datas))
 
-                delete_role_data_sql = 'delete from role_data where role_id in (select id from role where yn= 0)'
-                delete_role_sql = 'delete from role where yn = 0'
+                delete_role_data_sql = 'delete from cbg_data where role_id in (select id from cbg_role where yn= 0)'
+                delete_role_sql = 'delete from cbg_role where yn = 0'
                 cursor.execute(delete_role_data_sql)
                 cursor.execute(delete_role_sql)
             cursor.close()
@@ -66,7 +67,7 @@ class ServerSpider(object):
         res = []
         connection = pymysql.connect(**dbconfig)
         with connection.cursor() as cursor:
-            sql = "select url from search_url"
+            sql = "select url from cbg_url"
             cursor.execute(sql)
             res = cursor.fetchall()
         connection.close()
@@ -85,16 +86,16 @@ class ServerSpider(object):
             connection = pymysql.connect(**dbconfig)
             with connection.cursor() as cursor:
                 for role in roles:
-                    query = 'select count(1) as count from role where yn=1 and role_id=' + str(
+                    query = 'select count(1) as count from cbg_role where yn=1 and role_id=' + str(
                         role['role_id']) + ' and server_id=' + str(role['server_id'])
                     cursor.execute(query)
                     if cursor.fetchone()['count'] > 0:
-                        update_sql = 'update role set price = ' + str(role['price']) + ',exp_time =\'' + role[
+                        update_sql = 'update cbg_role set price = ' + str(role['price']) + ',exp_time =\'' + role[
                             'exp_time'] + '\' where yn=1 and role_id=' + str(role['role_id']) + ' and server_id=' + str(
                             role['server_id'])
                         cursor.execute(update_sql)
                     else:
-                        sql = 'INSERT INTO role (yn,create_time'
+                        sql = 'INSERT INTO cbg_role (yn,create_time'
                         for key, value in role.items():
                             sql = sql + ',' + key
                         sql += ' ) values (1,now()'
@@ -106,7 +107,7 @@ class ServerSpider(object):
                         sql += ')'
                         cursor.execute(sql)
                 connection.commit()
-                update_sql = 'update role set yn = 0 where exp_time <=now()'
+                update_sql = 'update cbg_role set yn = 0 where exp_time <=now()'
                 cursor.execute(update_sql)
                 connection.commit()
         except Exception as e:

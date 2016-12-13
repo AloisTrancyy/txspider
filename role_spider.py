@@ -43,12 +43,12 @@ class RoleSpider(object):
             try:
                 connection = pymysql.connect(**dbconfig)
                 with connection.cursor() as cursor:
-                    query = 'select count(1) as count from role_data where role_id=' + str(equip_id)
+                    query = 'select count(1) as count from cbg_data where role_id=' + str(equip_id)
                     cursor.execute(query)
                     if cursor.fetchone()['count'] == 0:
                         html_cont = self.download(url)
                         basic_data = self.parse(html_cont, equip_id)
-                        sql = 'INSERT INTO role_data (role_id'
+                        sql = 'INSERT INTO cbg_data (role_id'
                         for key, value in basic_data.items():
                             if key == 'role_id' or value is None:
                                 continue
@@ -64,7 +64,7 @@ class RoleSpider(object):
                         sql += ')'
                         cursor.execute(sql)
                         # 设置角色已爬取
-                        update_craw = 'update role set  craw = 1 where id = ' + str(equip_id)
+                        update_craw = 'update cbg_role set  craw = 1 where id = ' + str(equip_id)
                         cursor.execute(update_craw)
                         connection.commit()
             except Exception as ex:
@@ -463,7 +463,7 @@ def role_job():
     connection = pymysql.connect(**dbconfig)
     try:
         with connection.cursor() as cursor:
-            sql = 'select id,url from role where yn=1 and craw = 0'
+            sql = 'select id,url from cbg_role where yn=1 and craw = 0'
             cursor.execute(sql)
             obj_spider.rows = cursor.fetchall()
         cursor.close()
