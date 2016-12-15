@@ -140,6 +140,12 @@ def get_roles():
             res = cursor.fetchall()
             for s in res:
                 data_s.append(s['role_id'])
+
+        sql = 'select role_id from bang_role where level >=80 order by equ_xiuwei+xiuwei desc limit 2000'
+        cursor.execute(sql)
+        res = cursor.fetchall()
+        for s in res:
+            data_s.append(s['role_id'])
     connection.commit()
     connection.close()
     return data_s
