@@ -136,7 +136,6 @@ def get_roles():
     with connection.cursor() as cursor:
         for level in [69, 74, 79]:
             sql = 'select role_id from bang_role where level =' + str(level) + ' order by equ_xiuwei+xiuwei desc limit 2000'
-            print(sql)
             cursor.execute(sql)
             res = cursor.fetchall()
             for s in res:
