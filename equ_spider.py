@@ -134,18 +134,16 @@ def get_roles():
     data_s = []
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        for level in [69, 74, 79]:
-            sql = 'select role_id from bang_role where level =' + str(level) + ' order by equ_xiuwei+xiuwei desc limit 5000'
-            cursor.execute(sql)
-            res = cursor.fetchall()
-            for s in res:
-                data_s.append(s['role_id'])
-
-        sql = 'select role_id from bang_role where level >=80'
+        sql = 'select role_id from bang_role where level = 74 order by equ_xiuwei+xiuwei desc limit 5000'
         cursor.execute(sql)
         res = cursor.fetchall()
         for s in res:
             data_s.append(s['role_id'])
+        # sql = 'select role_id from bang_role where level >=80'
+        # cursor.execute(sql)
+        # res = cursor.fetchall()
+        # for s in res:
+        #     data_s.append(s['role_id'])
     connection.commit()
     connection.close()
     return data_s
