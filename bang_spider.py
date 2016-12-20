@@ -2,14 +2,14 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-import traceback
+from apscheduler.schedulers.blocking import BlockingScheduler
 import configparser
 import logging
-
+import time
 import bs4
 import pymysql
 import requests
-import time
+import equ_spider
 import re
 from bs4 import BeautifulSoup
 
@@ -47,34 +47,19 @@ school_dict = {
 }
 
 
-def get_urls():
-    connection = pymysql.connect(**dbconfig)
-    try:
-        with connection.cursor() as cursor:
-            query = 'select id,url from bang_url where craw = 0 '
-            cursor.execute(query)
-            res = cursor.fetchall()
-            connection.commit()
-    except Exception as ex:
-        print(ex, traceback.print_exc())
-        logging.exception(ex)
-    finally:
-        connection.close()
-    return res
-
-
-def get_data():
+def get_data(role):
     data = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
-    url = 'http://bang.tx3.163.com/bang/role/40_13014'
+    url = 'http://bang.tx3.163.com/bang/role/' + role
     requests.adapters.DEFAULT_RETRIES = 3
     res = requests.get(url, headers=headers, timeout=3)
     if res.status_code != 200:
         return data
     html_cont = res.content
     soup = BeautifulSoup(html_cont, 'html.parser')
+    data['role_id'] = role
     ################################################################
     s_level = soup.find('span', class_="sLev")
     a = 0
@@ -222,7 +207,6 @@ def get_data():
                     data['attackhuman'] = get_data_from_str(li.get_text())
                 n += 1
         index += 1
-    print(data)
     return data
 
 
@@ -265,34 +249,31 @@ def get_level(level, fly_soul_phase, fly_soul_lv):
     return level
 
 
-def add_mysql(datas, id):
+def update_mysql(data):
     connection = pymysql.connect(**dbconfig)
-    try:
-        with connection.cursor() as cursor:
-            for data in datas:
-                query = 'select count(1) as count from bang_role where role_id = \'' + data['role_id'] + '\''
-                cursor.execute(query)
-                if cursor.fetchone()['count'] > 0:
-                    continue
-                sql = 'INSERT INTO bang_role (create_time'
-                for key, value in data.items():
-                    sql = sql + ',' + key
-                sql += ' ) values ( now() '
-                for key, value in data.items():
-                    if type(value) == int:
-                        sql = sql + ',' + value
-                    else:
-                        sql = sql + ',\'' + value + '\''
-                sql += ')'
-                cursor.execute(sql)
-            update_sql = 'update bang_url set craw = 1 where id = ' + str(id)
-            cursor.execute(update_sql)
-            connection.commit()
-    except Exception as ex:
-        print(ex, traceback.print_exc())
-        logging.exception(ex)
-    finally:
-        connection.close()
+    with connection.cursor() as cursor:
+        update_sql = 'update bang_role set '
+        flag = 1
+        for key, value in data.items():
+            if flag == len(data):
+                update_sql += key + '=\'' + str(value) + '\''
+            else:
+                update_sql += key + '=\'' + str(value) + '\','
+            flag += 1
+        update_sql += ' where role_id = \'' + str(data['role_id']) + '\''
+        cursor.execute(update_sql)
+    connection.commit()
+    connection.close()
 
+def collect_role_data():
+    logger.info("collect_role_data job start ")
+    roles = equ_spider.get_roles()
+    for role in roles:
+        time.sleep(3)
+        role_data = get_data(role)
+        update_mysql(role_data)
 
-get_data()
+if __name__ == '__main__':
+    serverScheduler = BlockingScheduler()
+    serverScheduler.add_job(collect_role_data, 'interval', hours=18)
+    serverScheduler.start()

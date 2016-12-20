@@ -34,6 +34,7 @@ dbconfig = {
 def get_data(url):
     data_array = []
     time.sleep(1)
+    url = "http://bang.tx3.163.com/bang/role/" + url
     print(url)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
@@ -68,7 +69,7 @@ def add_mysql(datas):
         for data in datas:
             insert_sql = 'insert into txs_equ (equ_id,equ_type,equ_name) VALUES ' \
                          '(\'' + str(data['equ_id']) + '\',\'' + data['equ_type'] + '\',\'' + data['equ_name'] + '\')'
-            sql = "select count(1) as count from txs_equ where equ_id = \'" + str(data['equ_id']) +'\''
+            sql = "select count(1) as count from txs_equ where equ_id = \'" + str(data['equ_id']) + '\''
             cursor.execute(sql)
             res = cursor.fetchone()
             if res['count'] == 0:
@@ -128,23 +129,28 @@ def get_values(text):
             values.append(data)
     return values
 
+
 def get_roles():
     data_s = []
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        for sch in range(11):
-            sql = "select role_id from bang_role where school="+str(sch+1)+" and level=79 " \
-                  " order by (xiuwei+equ_xiuwei)  desc limit 100,100 "
-            print(sql)
-            cursor.execute(sql)
-            res = cursor.fetchall()
-            for s in res:
-                data_s.append("http://bang.tx3.163.com/bang/role/"+s['role_id'])
+        sql = 'select role_id from bang_role where level = 74 order by equ_xiuwei+xiuwei desc limit 5000'
+        cursor.execute(sql)
+        res = cursor.fetchall()
+        for s in res:
+            data_s.append(s['role_id'])
+        # sql = 'select role_id from bang_role where level >=80'
+        # cursor.execute(sql)
+        # res = cursor.fetchall()
+        # for s in res:
+        #     data_s.append(s['role_id'])
     connection.commit()
     connection.close()
     return data_s
 
-urls = get_roles()
-for url in urls:
-    role_data = get_data(url)
-    add_mysql(role_data)
+
+if __name__ == '__main__':
+    urls = get_roles()
+    for url in urls:
+        role_data = get_data(url)
+        add_mysql(role_data)
