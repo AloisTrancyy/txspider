@@ -2,14 +2,12 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-from apscheduler.schedulers.blocking import BlockingScheduler
 import configparser
 import logging
 import time
 import bs4
 import pymysql
 import requests
-import equ_spider
 import re
 from bs4 import BeautifulSoup
 
@@ -270,7 +268,7 @@ def update_mysql(data):
 
 def collect_role_data():
     logger.info("collect_role_data job start ")
-    roles = equ_spider.get_roles()
+    roles = get_roles()
     while len(roles) != 0:
         role = roles.pop()
         time.sleep(3)
@@ -278,11 +276,19 @@ def collect_role_data():
         update_mysql(role_data)
 
 
+def get_roles():
+    role_list = []
+    connection = pymysql.connect(**dbconfig)
+    with connection.cursor() as cursor:
+        sql = 'select role_id from bang_role where level = 79 where craw = 0'
+        cursor.execute(sql)
+        rows = cursor.fetchall()
+        for row in rows:
+            role_list.append(row['role_id'])
+    connection.commit()
+    connection.close()
+    return role_list
+
+
 if __name__ == '__main__':
-    # serverScheduler = BlockingScheduler()
-    # serverScheduler.add_job(collect_role_data, 'interval', hours=18)
-    # serverScheduler.start()
-    try:
-        collect_role_data()
-    except Exception as e:
-        logger.exception(e)
+    collect_role_data()
