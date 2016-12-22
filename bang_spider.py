@@ -262,6 +262,7 @@ def update_mysql(data):
                 update_sql += key + '=\'' + str(value) + '\','
             flag += 1
         update_sql += ' where role_id = \'' + str(data['role_id']) + '\''
+        print(update_sql)
         cursor.execute(update_sql)
     connection.commit()
     connection.close()
@@ -270,10 +271,12 @@ def update_mysql(data):
 def collect_role_data():
     logger.info("collect_role_data job start ")
     roles = equ_spider.get_roles()
-    for role in roles:
-        time.sleep(4)
+    while len(roles) != 0:
+        role = roles.pop()
+        time.sleep(3)
         role_data = get_data(role)
         update_mysql(role_data)
+
 
 if __name__ == '__main__':
     # serverScheduler = BlockingScheduler()

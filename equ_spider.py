@@ -134,7 +134,7 @@ def get_roles():
     data_s = []
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        sql = 'select role_id from bang_role where level = 79'
+        sql = 'select role_id from bang_role where level = 79 where craw = 0'
         cursor.execute(sql)
         res = cursor.fetchall()
         for s in res:
