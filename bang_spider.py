@@ -54,6 +54,7 @@ def get_data(role):
     }
     url = 'http://bang.tx3.163.com/bang/role/' + role
     requests.adapters.DEFAULT_RETRIES = 3
+    print(url)
     res = requests.get(url, headers=headers, timeout=3)
     if res.status_code != 200:
         return data
@@ -252,6 +253,7 @@ def get_level(level, fly_soul_phase, fly_soul_lv):
 def update_mysql(data):
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
+        data['craw'] = 1
         update_sql = 'update bang_role set '
         flag = 1
         for key, value in data.items():
@@ -261,6 +263,7 @@ def update_mysql(data):
                 update_sql += key + '=\'' + str(value) + '\','
             flag += 1
         update_sql += ' where role_id = \'' + str(data['role_id']) + '\''
+        print(update_sql)
         cursor.execute(update_sql)
     connection.commit()
     connection.close()
@@ -269,11 +272,12 @@ def collect_role_data():
     logger.info("collect_role_data job start ")
     roles = equ_spider.get_roles()
     for role in roles:
-        time.sleep(3)
+        time.sleep(4)
         role_data = get_data(role)
         update_mysql(role_data)
 
 if __name__ == '__main__':
-    serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(collect_role_data, 'interval', hours=18)
-    serverScheduler.start()
+    # serverScheduler = BlockingScheduler()
+    # serverScheduler.add_job(collect_role_data, 'interval', hours=18)
+    # serverScheduler.start()
+    collect_role_data()
