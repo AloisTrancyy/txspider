@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
-                    filename='spider.log',
+                    filename='bang.log',
                     filemode='w')
 logger = logging.getLogger('bang_spider')
 
@@ -54,7 +54,6 @@ def get_data(role):
     }
     url = 'http://bang.tx3.163.com/bang/role/' + role
     requests.adapters.DEFAULT_RETRIES = 3
-    print(url)
     res = requests.get(url, headers=headers, timeout=3)
     if res.status_code != 200:
         return data
@@ -263,10 +262,10 @@ def update_mysql(data):
                 update_sql += key + '=\'' + str(value) + '\','
             flag += 1
         update_sql += ' where role_id = \'' + str(data['role_id']) + '\''
-        print(update_sql)
         cursor.execute(update_sql)
     connection.commit()
     connection.close()
+
 
 def collect_role_data():
     logger.info("collect_role_data job start ")
@@ -280,4 +279,7 @@ if __name__ == '__main__':
     # serverScheduler = BlockingScheduler()
     # serverScheduler.add_job(collect_role_data, 'interval', hours=18)
     # serverScheduler.start()
-    collect_role_data()
+    try:
+        collect_role_data()
+    except Exception as e:
+        logger.exception(e)
