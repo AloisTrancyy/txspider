@@ -48,7 +48,7 @@ class ServerSpider(object):
                 f_role = open(config.get('mysql', 'back_path') + "role_" + today + ".txt", "w")
                 f_role.write(str(roles))
 
-                role_data_sql = 'select * from cbg_data where role_id in (select id from role where yn= 0)'
+                role_data_sql = 'select * from cbg_data where role_id in (select id from cbg_role where yn= 0)'
                 cursor.execute(role_data_sql)
                 row_datas = cursor.fetchall()
 
