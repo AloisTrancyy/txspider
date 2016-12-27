@@ -182,5 +182,5 @@ def server_job():
 
 if __name__ == "__main__":
     serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(server_job, 'interval', hours=1)
+    serverScheduler.add_job(server_job, 'interval', hours=4)
     serverScheduler.start()
