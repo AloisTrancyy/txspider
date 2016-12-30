@@ -280,7 +280,7 @@ def get_roles():
     role_list = []
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        sql = 'select role_id from bang_role where level = 79 and craw = 0'
+        sql = 'select role_id from bang_role where level = 79 and equ_xiuwei > 70000'
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
