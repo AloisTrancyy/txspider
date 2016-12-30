@@ -271,7 +271,7 @@ def collect_role_data():
     roles = get_roles()
     while len(roles) != 0:
         role = roles.pop()
-        time.sleep(3)
+        time.sleep(5)
         role_data = get_data(role)
         update_mysql(role_data)
 
@@ -280,7 +280,7 @@ def get_roles():
     role_list = []
     connection = pymysql.connect(**dbconfig)
     with connection.cursor() as cursor:
-        sql = 'select role_id from bang_role where level = 79 and craw = 0 and  equ_xiuwei > 70000 order by equ_xiuwei desc'
+        sql = 'select role_id from bang_role where level = 79 and craw = 0 and  equ_xiuwei > 70000  order by equ_xiuwei desc'
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
