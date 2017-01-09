@@ -270,7 +270,7 @@ def collect_role_data():
     logger.info("collect_role_data job start ")
     roles = get_roles()
     for role in roles:
-        time.sleep(5)
+        time.sleep(2)
         role_data = get_data(role)
         update_mysql(role_data)
 
