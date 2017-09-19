@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO,
 logger = logging.getLogger('bang_spider')
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+config.read("product.ini")
 dbconfig = {
     'host': config.get('mysql', 'host'),
     'port': config.getint('mysql', 'port'),

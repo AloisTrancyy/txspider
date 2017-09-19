@@ -3,31 +3,13 @@
 # __create_time__ : 16/11/6 10:41
 
 import traceback
-import configparser
 import logging
 import pymysql
 import requests
 import time
 import lxml.etree as etree
+import config
 
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    filename='spider.log',
-                    filemode='w')
-logger = logging.getLogger('bang_spider')
-
-config = configparser.ConfigParser()
-config.read("config.ini")
-dbconfig = {
-    'host': config.get('mysql', 'host'),
-    'port': config.getint('mysql', 'port'),
-    'user': config.get('mysql', 'user'),
-    'password': config.get('mysql', 'password'),
-    'db': config.get('mysql', 'db'),
-    'charset': config.get('mysql', 'charset'),
-    'cursorclass': pymysql.cursors.DictCursor
-}
 school_dict = {
     '荒火教': 1,
     '天机营': 2,
@@ -43,7 +25,7 @@ school_dict = {
 }
 
 def get_urls():
-    connection = pymysql.connect(**dbconfig)
+    connection = pymysql.connect(**config.dbconfig)
     try:
         with connection.cursor() as cursor:
             query = 'select id,url from bang_url where craw = 0 '
@@ -60,7 +42,7 @@ def get_urls():
 
 def get_data(info):
     data_array = []
-    time.sleep(2)
+    time.sleep(3)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
@@ -134,7 +116,7 @@ def get_data(info):
 
 
 def add_mysql(datas, id):
-    connection = pymysql.connect(**dbconfig)
+    connection = pymysql.connect(**config.dbconfig)
     try:
         with connection.cursor() as cursor:
             for data in datas:
@@ -148,11 +130,12 @@ def add_mysql(datas, id):
                 sql += ' ) values ( now() '
                 for key, value in data.items():
                     if type(value) == int:
-                        sql = sql + ',' + value
+                        sql = sql + ',' + str(value)
                     else:
                         sql = sql + ',\'' + value + '\''
                 sql += ')'
                 cursor.execute(sql)
+                print(sql)
             update_sql = 'update bang_url set craw = 1 where id = ' + str(id)
             cursor.execute(update_sql)
             connection.commit()

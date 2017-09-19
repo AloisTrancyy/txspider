@@ -3,22 +3,12 @@
 # __create_time__ : 2016/12/6 13:45
 
 import traceback
-import configparser
 import pymysql
 
-config = configparser.ConfigParser()
-config.read("config.ini")
-dbconfig = {
-    'host': config.get('mysql', 'host'),
-    'port': config.getint('mysql', 'port'),
-    'user': config.get('mysql', 'user'),
-    'password': config.get('mysql', 'password'),
-    'db': config.get('mysql', 'db'),
-    'charset': config.get('mysql', 'charset'),
-    'cursorclass': pymysql.cursors.DictCursor
-}
+import config
+
 servers = [
-    '东方明珠',
+'东方明珠',
     '君临天下',
     '天生王者',
     '幻龙诀',
@@ -57,7 +47,14 @@ servers = [
     '上善若水',
     '飞龙在天',
     '烽火关东',
-    '盛世长安'
+    '盛世长安',
+    '众星捧月',
+    '飞鸿踏雪',
+    '昆仑变',
+    '踏歌山海',
+    '剑啸昆仑',
+    '暮雪轻歌',
+    '云里江南',
 ]
 
 urls = []
@@ -75,12 +72,12 @@ for server in servers:
                 school + 1) + '&server=' + server + '&page=' + str(page + 1)
             urls.append(url)
 
-connection = pymysql.connect(**dbconfig)
+connection = pymysql.connect(**config.dbconfig)
 try:
     with connection.cursor() as cursor:
         for data in urls:
-            print(data)
-            sql = 'INSERT INTO bang_url values (\'' + data + '\')'
+            sql = 'INSERT INTO bang_url(url) values (\'' + data + '\')'
+            print(sql)
             cursor.execute(sql)
         connection.commit()
 except Exception as ex:

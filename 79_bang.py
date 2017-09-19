@@ -2,8 +2,6 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-import configparser
-import logging
 import time
 import bs4
 import pymysql
@@ -31,11 +29,13 @@ school_dict = {
 
 
 def get_data(role):
+    time.sleep(5)
     data = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
     }
     url = 'http://bang.tx3.163.com/bang/role/' + role
+    print(url)
     requests.adapters.DEFAULT_RETRIES = 3
     res = requests.get(url, headers=headers, timeout=3)
     if res.status_code != 200:
@@ -46,6 +46,8 @@ def get_data(role):
     ################################################################
     s_level = soup.find('span', class_="sLev")
     a = 0
+    if s_level is None or s_level.children is None:
+        return data
     for lc in s_level.children:
         if a == 1:
             data['level'] = lc.get_text()
@@ -218,18 +220,17 @@ def update_mysql(data):
                 update_sql += key + '=\'' + str(value) + '\','
             flag += 1
         update_sql += ' where role_id = \'' + str(data['role_id']) + '\''
-        print(update_sql)
         cursor.execute(update_sql)
+        print(update_sql)
     connection.commit()
     connection.close()
 
 
 def collect_role_data():
-    config.log_info("collect_role_data job start " + str(datetime.datetime.now()))
+    config.log_error("update 79 role job start! time = " + str(datetime.datetime.now()))
     try:
         roles = get_roles()
         for role in roles:
-            time.sleep(2)
             role_data = get_data(role)
             update_mysql(role_data)
     except Exception as e:
@@ -241,7 +242,8 @@ def get_roles():
     role_list = []
     connection = pymysql.connect(**config.dbconfig)
     with connection.cursor() as cursor:
-        sql = 'select role_id from bang_role where level = 79 and equ_xiuwei >= 60000 and xiuwei>=30000 and craw=0  order by equ_xiuwei desc'
+        sql = 'select role_id from bang_role where level <= 79 and equ_xiuwei >= 60000 and xiuwei>=30000 and craw=0  order by equ_xiuwei desc'
+        print(sql)
         cursor.execute(sql)
         rows = cursor.fetchall()
         for row in rows:
@@ -251,5 +253,4 @@ def get_roles():
     return role_list
 
 
-if __name__ == '__main__':
-    collect_role_data()
+collect_role_data()
