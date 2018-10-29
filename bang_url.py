@@ -5,7 +5,7 @@
 import traceback
 import pymysql
 
-import config
+from profile import config
 
 servers = [
 '东方明珠',

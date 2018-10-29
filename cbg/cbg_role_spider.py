@@ -2,32 +2,47 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
+import datetime
+import json
 import time
 import pymysql
-import json
-import datetime
 import requests
 import config
-from apscheduler.schedulers.blocking import BlockingScheduler
 from bs4 import BeautifulSoup
 
 
+def role_job():
+    print("role job start! time = " + str(datetime.datetime.now()))
+    obj_spider = RoleSpider()
+    connection = pymysql.connect(**config.dbconfig)
+    try:
+        with connection.cursor() as cursor:
+            sql = 'select id,role_key,url from cbg_role where yn=1 and craw = 0'
+            cursor.execute(sql)
+            obj_spider.rows = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        config.log_exception(e)
+    finally:
+        connection.close()
+    obj_spider.craw()
+
 class RoleSpider(object):
     rows = set()
-
     def craw(self):
         for row in self.rows:
-            time.sleep(5)
+            time.sleep(1)
             url = row['url']
-            equip_id = row['id']
+            role_key = row['role_key']
+            rold_id = row['id']
             try:
                 connection = pymysql.connect(**config.dbconfig)
                 with connection.cursor() as cursor:
-                    query = 'select count(1) as count from cbg_data where role_id=' + str(equip_id)
+                    query = 'select count(1) as count from cbg_data where role_id=' + str(rold_id)
                     cursor.execute(query)
                     if cursor.fetchone()['count'] == 0:
                         html_cont = self.download_html(url)
-                        basic_data = self.parse_html(html_cont, equip_id)
+                        basic_data = self.parse_html(html_cont, rold_id,role_key)
                         sql = 'INSERT INTO cbg_data (role_id'
                         for key, value in basic_data.items():
                             if key == 'role_id' or key == 'pass_date' or value is None:
@@ -47,16 +62,16 @@ class RoleSpider(object):
                         # 设置角色已爬取
                         pass_date = basic_data.get('pass_date')
                         if pass_date is None:
-                            update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(equip_id)
+                            update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(rold_id)
                             config.log_info(update_craw)
                             cursor.execute(update_craw)
                         else:
                             update_craw = 'update cbg_role set craw = 1,exp_time =\'' + basic_data[
-                                'pass_date'] + '\' where id = ' + str(equip_id)
+                                'pass_date'] + '\' where id = ' + str(rold_id)
                             config.log_info(update_craw)
                             cursor.execute(update_craw)
                     else:
-                        update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(equip_id)
+                        update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(rold_id)
                         config.log_info(update_craw)
                         cursor.execute(update_craw)
                 connection.commit()
@@ -90,23 +105,23 @@ class RoleSpider(object):
         response.encoding = 'utf-8'  # 显式地指定网页编码，一般情况可以不用
         return response.content
 
-    def parse_html(self, html_cont, equip_id):
+    def parse_html(self, html_cont, role_id,role_key):
         soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='gb18030')
-        new_data = self.get_new_data(soup, equip_id)
+        new_data = self.get_new_data(soup, role_id,role_key)
         return new_data
 
-    def get_new_data(self, soup, equip_id):
+    def get_new_data(self, soup, role_id,role_key):
         res_data = {}
-        res_data['role_id'] = equip_id
-
+        res_data['role_id'] = role_id
+        res_data['role_key'] = role_key
         pass_date_td = soup.find_all('span', class_="b")
         for td in pass_date_td:
             if '出售剩余时间' in td.get_text():
-                pass_date = self.get_exp_time(td.parent.get_text().replace('出售剩余时间：', ''))
+                pass_date = get_exp_time(td.parent.get_text().replace('出售剩余时间：', ''))
                 res_data['pass_date'] = pass_date
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
-        role_json = json.loads(role, 'utf-8')
+        role_json = json.loads(role)
         # 基础信息
         role_json.setdefault('fly_soul_phase', None)
         role_json.setdefault('fly_soul_lv', None)
@@ -354,7 +369,7 @@ class RoleSpider(object):
         shuyinghengxie = 0
         formated_role_desc = soup.find('textarea', id="formated_role_desc")
         format_role = formated_role_desc.get_text()
-        format_role_json = json.loads(format_role, 'utf-8')
+        format_role_json = json.loads(format_role)
         for key, value in format_role_json['clothes_info'].items():
             if '青花' in value['name']:
                 qinghua = 1
@@ -539,40 +554,22 @@ class RoleSpider(object):
         res_data['shuyinghengxie'] = shuyinghengxie
         return res_data
 
-    def get_exp_time(self, exp_time):
-        day, hour, minute = 0, 0, 0
-        if '天' in exp_time:
-            day = exp_time[0:exp_time.index("天")]
-            hour = exp_time[exp_time.index("天") + 1:exp_time.index('小时')]
-            minute = exp_time[exp_time.index("小时") + 2:exp_time.index('分钟')]
-        else:
-            if '小时' in exp_time:
-                hour = exp_time[0:exp_time.index('小时')]
-                minute = exp_time[exp_time.index("小时") + 2:exp_time.index('分钟')]
-        now = datetime.datetime.now()
-        date = now + datetime.timedelta(days=int(day)) + datetime.timedelta(hours=int(hour)) + datetime.timedelta(
-            minutes=int(minute))
-        return date.strftime('%Y-%m-%d %H:%M:%S')
+def get_exp_time(exp_time):
+    day, hour, minute = 0, 0, 0
+    if '天' in exp_time:
+        day = exp_time[0:exp_time.index("天")]
+        hour = exp_time[exp_time.index("天") + 1:exp_time.index('时')]
+        minute = 30
+    else:
+        if '时' in exp_time:
+            hour = exp_time[0:exp_time.index('时')]
+            minute = 0
+    now = datetime.datetime.now()
+    date = now + datetime.timedelta(days=int(day)) + datetime.timedelta(hours=int(hour)) + datetime.timedelta(
+        minutes=int(minute))
+    return date.strftime('%Y-%m-%d %H:%M:%S')
 
 
-def role_job():
-    config.log_error("role job start! time = " + str(datetime.datetime.now()))
-    obj_spider = RoleSpider()
-    connection = pymysql.connect(**config.dbconfig)
-    try:
-        with connection.cursor() as cursor:
-            sql = 'select id,url from cbg_role where yn=1 and craw = 0'
-            cursor.execute(sql)
-            obj_spider.rows = cursor.fetchall()
-        cursor.close()
-    except Exception as e:
-        config.log_exception(e)
-    finally:
-        connection.close()
-    obj_spider.craw()
 
-
-if __name__ == "__main__":
-    roleScheduler = BlockingScheduler()
-    roleScheduler.add_job(role_job, 'interval', hours=1)
-    roleScheduler.start()
+#get_exp_time('4天16时')
+role_job()

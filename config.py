@@ -8,7 +8,7 @@ import pymysql
 import traceback
 
 profile_config = configparser.ConfigParser()
-profile_config.read('./profile/product.ini')
+profile_config.read('../profile/test.ini')
 
 dbconfig = {
     'host': profile_config.get('mysql', 'host'),
@@ -45,7 +45,8 @@ exception_logger = logging.getLogger('exception_logger')
 
 def log_info(text):
     if show_sql:
-        info_logger.info(text)
+        print(text)
+        #info_logger.info(text)
 
 
 def log_error(text):

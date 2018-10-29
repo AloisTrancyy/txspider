@@ -5,9 +5,8 @@
 import time
 import datetime
 import requests
-import json
 import pymysql
-import config
+from profile import config
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 

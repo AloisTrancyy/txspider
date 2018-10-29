@@ -2,11 +2,9 @@
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
 
-import time
 import datetime
-import requests
 import pymysql
-import config
+from profile import config
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 

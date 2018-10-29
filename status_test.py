@@ -3,6 +3,6 @@
 # __create_time__ : 16/11/6 10:41
 
 
-import cbg_status_spider
+from cbg import cbg_status_spider
 
 cbg_status_spider.status_job()

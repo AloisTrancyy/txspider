@@ -8,7 +8,7 @@ import pymysql
 import requests
 import time
 import lxml.etree as etree
-import config
+from profile import config
 
 school_dict = {
     '荒火教': 1,

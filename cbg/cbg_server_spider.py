@@ -7,8 +7,7 @@ import datetime
 import requests
 import json
 import pymysql
-import config
-from apscheduler.schedulers.blocking import BlockingScheduler
+from profile import config
 
 
 class ServerSpider(object):
@@ -21,13 +20,13 @@ class ServerSpider(object):
             res = cursor.fetchall()
         connection.close()
         for url in res:
-            time.sleep(10)
+            time.sleep(1)
             try:
                 html_cont = self.download(url['url'])
                 new_data = self.parse(html_cont)
                 self.add_role(new_data)
             except Exception as e:
-                config.log_exception(e)
+                e.with_traceback()
 
     def add_role(self, roles):
         if roles is None or len(roles) == 0:
@@ -36,8 +35,8 @@ class ServerSpider(object):
             connection = pymysql.connect(**config.dbconfig)
             with connection.cursor() as cursor:
                 for role in roles:
-                    query = 'select count(1) as count from cbg_role where yn=1 and role_id=\'' + str(
-                        role['role_id']) + ' \' and server_id=' + str(role['server_id'])
+                    query = 'select count(1) as count from cbg_role where yn=1 and role_key=\'' + str(
+                        role['role_key']) + ' \' and server_id=' + str(role['server_id'])
                     cursor.execute(query)
                     if cursor.fetchone()['count'] == 0:
                         sql = 'INSERT INTO cbg_role (yn,create_time'
@@ -50,7 +49,7 @@ class ServerSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        config.log_info(sql)
+                        print(sql)
                         cursor.execute(sql)
                 connection.commit()
         except Exception as e:
@@ -68,7 +67,7 @@ class ServerSpider(object):
                    'Origin': 'http://tx3.cbg.163.com'}
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
-        config.log_info('craw:'+url)
+        print('craw:'+url)
         if response.status_code != 200:
             return None
         return response.text
@@ -78,12 +77,13 @@ class ServerSpider(object):
             return
         data = []
         json_data = json.loads(html_cont)
+        print(json_data)
         equip_list = json_data['equip_list']
         if equip_list is None or len(equip_list) == 0:
             return
         for role in equip_list:
             res_data = {}
-            res_data['role_id'] = role['game_ordersn']
+            res_data['role_key'] = role['game_ordersn']
             res_data['server_id'] = role['equip_serverid']
             res_data['price'] = role['price_desc'].replace('￥', '')
             res_data['jiahu'] = role['subtitle'].split("加护")[1]
@@ -92,9 +92,9 @@ class ServerSpider(object):
                 nickname = nickname[0:nickname.find('@')]
             res_data['name'] = nickname
             res_data['data_url'] = 'http://tx3-ios2.cbg.163.com/cbg-center/query.py?&act=get_equip_detail&' \
-                                   'serverid=' + str(res_data['server_id']) + '&game_ordersn=' + res_data['role_id']
+                                   'serverid=' + str(res_data['server_id']) + '&game_ordersn=' + res_data['role_key']
             res_data['url'] = 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=buy_show_by_ordersn&' \
-                              'server_id=' + str(res_data['server_id']) + '&ordersn=' + res_data['role_id']
+                              'server_id=' + str(res_data['server_id']) + '&ordersn=' + res_data['role_key']
             data.append(res_data)
         return data
 
@@ -103,8 +103,4 @@ def server_job():
     config.log_error("server job start! time = " + str(datetime.datetime.now()))
     obj_spider.craw()
 
-
-if __name__ == "__main__":
-    serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(server_job, 'interval', hours=2)
-    serverScheduler.start()
+server_job()

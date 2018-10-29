@@ -10,8 +10,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 import traceback
-from apscheduler.schedulers.blocking import BlockingScheduler
-import config
+from profile import config
 
 school_dict = {
     '荒火教': 1,
