@@ -54,10 +54,11 @@
                 <a target="_blank" class="btn" href="http://zxadmin.zhuyux.com/Demo/GetGMIndex">改名查询</a>
                 <a target="_blank" class="btn" href="http://zxadmin.zhuyux.com/Demo/GetZFIndex">转服查询</a>
                 <a target="_blank" class="btn" href="http://zxadmin.zhuyux.com/Demo/GetYHZIndex">幻化排行榜</a>
+                <input type="hidden" value="$!showDelBtn" name="showDelBtn">
     </div>
     <form id="search-form">
         <input type="hidden" value="1" name="pageNo" id="js-bootpag-num">
-        <input type="hidden" value="$!showDelBtn" name="showDelBtn">
+        {% csrf_token %}
         <div class="row top">
             <div class="col-md-1 col-xs-12 title top-title">
                 <label>门 派</label>
