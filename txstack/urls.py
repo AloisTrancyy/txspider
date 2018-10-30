@@ -20,5 +20,6 @@ from cbg import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
-    url(r'^app/', views.json)
+    url(r'^page/', views.cbg_page),
+    url(r'^delete/', views.delete_role)
 ]
