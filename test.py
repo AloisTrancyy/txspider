@@ -20,6 +20,6 @@ import re
 
 
 
-response = requests.get("http://tx3-ios2.cbg.163.com/cbg-center/query.py?&act=get_equip_detail&serverid=176&game_ordersn=e64d45b2-d5fa-11e8-9ebf-ecb1d7a5fc40")
+response = requests.get("http://tx3-ios2.spider.163.com/spider-center/query.py?&act=get_equip_detail&serverid=176&game_ordersn=e64d45b2-d5fa-11e8-9ebf-ecb1d7a5fc40")
 json_data = json.loads(response.text)
 print(json_data)

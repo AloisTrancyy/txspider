@@ -122,8 +122,8 @@ class ServerSpider(object):
         headers = {'Content-Type': 'text/plain;charset=UTF-8',
                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 '
                                  '(KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
-                   'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search',
-                   'Origin': 'http://tx3.cbg.163.com'}
+                   'Referer': 'http://tx3.spider.163.com/cgi-bin/equipquery.py?act=show_overall_search',
+                   'Origin': 'http://tx3.spider.163.com'}
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
         if response.status_code != 200:
@@ -150,7 +150,7 @@ class ServerSpider(object):
                 nickname = nickname[0:nickname.find('@')]
 
             res_data['name'] = nickname
-            res_data['url'] = "http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail" \
+            res_data['url'] = "http://tx3.spider.163.com/cgi-bin/equipquery.py?act=overall_search_show_detail" \
                               "&equip_id=" + str(role['equipid']) + "&serverid=" + str(role['serverid'])
 
             res_data['exp_time'] = self.get_exp_time(role['expire_time'])

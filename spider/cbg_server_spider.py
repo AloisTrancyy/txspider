@@ -63,8 +63,8 @@ class ServerSpider(object):
         headers = {'Content-Type': 'text/plain;charset=UTF-8',
                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 '
                                  '(KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
-                   'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search',
-                   'Origin': 'http://tx3.cbg.163.com'}
+                   'Referer': 'http://tx3.spider.163.com/cgi-bin/equipquery.py?act=show_overall_search',
+                   'Origin': 'http://tx3.spider.163.com'}
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
         print('craw:'+url)
@@ -91,9 +91,9 @@ class ServerSpider(object):
             if '@' in nickname:
                 nickname = nickname[0:nickname.find('@')]
             res_data['name'] = nickname
-            res_data['data_url'] = 'http://tx3-ios2.cbg.163.com/cbg-center/query.py?&act=get_equip_detail&' \
+            res_data['data_url'] = 'http://tx3-ios2.spider.163.com/spider-center/query.py?&act=get_equip_detail&' \
                                    'serverid=' + str(res_data['server_id']) + '&game_ordersn=' + res_data['role_key']
-            res_data['url'] = 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=buy_show_by_ordersn&' \
+            res_data['url'] = 'http://tx3.spider.163.com/cgi-bin/equipquery.py?act=buy_show_by_ordersn&' \
                               'server_id=' + str(res_data['server_id']) + '&ordersn=' + res_data['role_key']
             data.append(res_data)
         return data

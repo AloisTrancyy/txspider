@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+
+label {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #b7b7b7;
+    line-height: 30px;
+}
+
+header a {
+    color: #3f3f3f;
+    cursor: pointer;
+}
+
+.logo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.header-divider {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #3f3f3f;
+}
+
+.top {
+    background-color: #f0fbfe;
+    line-height: 40px;
+    border: 1px solid #009abf;
+    border-top: 2px solid #009abf;
+    color: #009abf;
+}
+
+.title {
+    padding: 0;
+    text-align: center;
+    background-color: #f7fdfe;
+    color: #009abf;
+}
+
+.cell .cell-title {
+    margin-top: -1px;
+    padding: 0;
+    line-height: 40px;
+    border: 1px solid #009abf;
+    border-right: none;
+}
+
+.cell-labels {
+    border: 1px solid #009abf;
+    border-top: none;
+    color: #464f47;
+}
+
+.cell-labels label {
+    line-height: 40px;
+}
+
+.cell-labels label input[type='number'] {
+    width: 65px;
+    height: 24px;
+    border: 1px solid #464f47;
+    border-radius: 5px;
+    margin: 0 15px 0 5px;
+    text-align: center;
+}
+
+input[type='checkbox'], input[type='radio'] {
+    display: none;  
+}
+
+.cell-labels-checkbox input:checked + i{
+    background: url(../images/check2.png);
+}
+
+.cell-labels-radio input:checked + i{
+    background: url(../images/radio2.png);
+}
+
+.cell-labels-checkbox, .cell-labels-radio {
+    position: relative;
+    width: 100px;
+    text-align: left;
+}
+
+.top-labels .cell-labels-checkbox {
+    width: 70px;
+}
+
+.cell-labels-checkbox i{
+    display: inline-block;
+    background: url(../images/check1.png);
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.cell-labels-radio i{
+    display: inline-block;
+    background: url(../images/radio1.png);
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.cell-labels-right {
+    display: inline-block;
+    border-left: 1px solid #009abf;
+    padding-left: 10px;
+}
+
+.table {
+    text-align: center;
+    color: #464f47;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table td {
+    vertical-align: middle!important;
+}
+
+.table td p{
+    line-height: 1.1;
+}
+
+.table thead tr {
+    border-top: 2px solid #969696;
+}
+
+.btn-go {
+    background-color: #e4e4e4;
+    width: 90px;
+    color: #009abf;
+    border-bottom: 2px solid #bebebe;
+}
+
+.btn-search {
+    margin: 10px 0;
+    background-color: #59bfe0;
+    width: 90px;
+    color: #fff;
+    border-bottom: 2px solid #bebebe;
+}
+
+
+.red {
+    color : #e64784;
+}
+
+.blue {
+    color: #009abf;
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 100%;
+    }
+    .cell-labels-right {
+        display: inline-block;
+        padding: 0;    
+        border: 0;
+    }
+    .cell-labels {
+        border-left: none;
+        border-right: none;
+    }
+    .cell .cell-title {
+        border-left: none;
+    }
+    .top {
+        border-left: none;
+        border-right: none;
+    }
+    .top .top-title {
+        border-bottom: 1px solid #009abf;
+    }
+    .row-table {
+        overflow: auto;
+    }
+    .row-table table {
+        width: 1000px;
+    }
+    .row-search {
+        text-align: center;
+    }
+    .logo {
+        text-align: center;
+    }
+    header {
+        padding: 0 10px;
+    }
+}

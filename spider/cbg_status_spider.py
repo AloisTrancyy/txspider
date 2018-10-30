@@ -61,8 +61,8 @@ class StatusSpider(object):
         headers = {'Content-Type': 'text/plain;charset=UTF-8',
                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 '
                                  '(KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
-                   'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search',
-                   'Origin': 'http://tx3.cbg.163.com'}
+                   'Referer': 'http://tx3.spider.163.com/cgi-bin/equipquery.py?act=show_overall_search',
+                   'Origin': 'http://tx3.spider.163.com'}
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
         config.log_info('craw:' + url)
