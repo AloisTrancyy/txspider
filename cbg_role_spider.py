@@ -1,78 +1,111 @@
-# -*- coding: utf-8 -*-
-import scrapy
-import json
+# -*- coding:utf-8
+# __author__ : funny
+# __create_time__ : 16/11/6 10:41
+
 import datetime
-from urllib.parse import urlparse
-from urllib.parse import parse_qs
+import json
+import time
+
+import pymysql
+import requests
+from apscheduler.schedulers.blocking import BlockingScheduler
 from bs4 import BeautifulSoup
 
+import config
 
-class CbgSpider(scrapy.Spider):
-    name = 'cbg'
-    allowed_domains = ['tx3-ios2.cbg.163.com']
-    start_urls = [
-        'http://tx3-ios2.cbg.163.com/cbg-center/search.py?num_per_page=15&products=tx2&act=basic_search_role&order_refer=8&price_min=50000&price_max=29999900&level_min=69&level_max=69&school=1&page=1']
 
-    def parse(self, response):
-        base_url = 'http://tx3-ios2.cbg.163.com/cbg-center/search.py?num_per_page=15&products=tx2&act=basic_search_role&order_refer=8&price_min=50000&price_max=29999900&level_min=69&level_max=69'
-        old_url = response.url
-        url_parsed = urlparse(old_url)
-        page = parse_qs(url_parsed.query)["page"][0]
-        school = parse_qs(url_parsed.query)["school"][0]
-        result = json.loads(response.body)  # 将Json格式数据处理为字典类型
-        roles = result.get("equip_list")
-        is_last_page = result.get("is_last_page")
-        next_url = base_url
-        if is_last_page:
-            school += 1
-            if school <= 11:
-                next_url = base_url + "&school=" + school + "&page=1"
-        else:
-            page = int(page) + 1
-            next_url = base_url + "&school=" + school + "&page=" + str(page)
+class RoleSpider(object):
+    rows = set()
 
-        if roles is None or len(roles) == 0:
-            pass
+    def craw(self):
+        for row in self.rows:
+            time.sleep(3)
+            url = row['url']
+            role_id = row['id']
+            try:
+                connection = pymysql.connect(**config.dbconfig)
+                with connection.cursor() as cursor:
+                    query = 'select count(1) as count from cbg_data where role_id=' + str(role_id)
+                    cursor.execute(query)
+                    if cursor.fetchone()['count'] == 0:
+                        html_cont = self.download_html(url)
+                        basic_data = self.parse_html(html_cont, role_id)
+                        sql = 'INSERT INTO cbg_data (role_id'
+                        for key, value in basic_data.items():
+                            if key == 'role_id' or key == 'pass_date' or value is None:
+                                continue
+                            sql = sql + ',' + key
+                        sql = sql + ' ) values (' + str(basic_data['role_id'])
+                        for key, value in basic_data.items():
+                            if key == 'role_id' or key == 'pass_date' or value is None:
+                                continue
+                            if type(value) == int or type(value) == float:
+                                sql = sql + ',' + str(value)
+                            else:
+                                sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
+                        sql += ')'
+                        print(sql)
+                        cursor.execute(sql)
+                        # 设置角色已爬取
+                        pass_date = basic_data.get('pass_date')
+                        if pass_date is None:
+                            update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(role_id)
+                            print(update_craw)
+                            cursor.execute(update_craw)
+                        else:
+                            update_craw = 'update cbg_role set craw = 1,exp_time =\'' + basic_data[
+                                'pass_date'] + '\' where id = ' + str(role_id)
+                            print(update_craw)
+                            cursor.execute(update_craw)
+                    else:
+                        update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(role_id)
+                        print(update_craw)
+                        cursor.execute(update_craw)
+                connection.commit()
+            except Exception as ex:
+                pass
+            finally:
+                connection.close()
 
-        for role in roles:
-            detail_url = 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=buy_show_by_ordersn&' \
-                         'server_id=' + str(role['equip_serverid']) + '&ordersn=' + str(role['game_ordersn'])
-            yield scrapy.FormRequest(
-                url=detail_url,
-                callback=self.detail_parse,
-                meta={"role": role},
-                dont_filter=True
-            )
+    def has_new_url(self):
+        return len(self.new_url) != 0
 
-        # yield scrapy.FormRequest(
-        #     url=next_url,
-        #     callback=self.parse,
-        #     dont_filter=True
-        # )
+    def add_new_url(self, url):
+        if url not in self.new_url:
+            self.new_url.add(url)
 
-    def detail_parse(self, response):
-        print(response.meta["role"])
-        html_cont = response.text
-        origin_url = response.url
+    def get_new_url(self):
+        return self.new_url.pop()
+
+    def download_html(self, url):
+        if url is None:
+            return None
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
+            'Referer': 'http://tx3.cbg.163.com/cgi-bin/equipquery.py?act=show_overall_search'
+        }
+        requests.adapters.DEFAULT_RETRIES = 3
+        response = requests.get(url, headers=headers, timeout=3)
+        print('craw:' + url)
+        if response.status_code != 200:
+            return None
+        response.encoding = 'utf-8'  # 显式地指定网页编码，一般情况可以不用
+        return response.content
+
+    def parse_html(self, html_cont, equip_id):
         soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='gb18030')
-        new_data = self.get_new_data(soup, origin_url)
-
+        new_data = self.get_new_data(soup, equip_id)
         return new_data
 
-    def get_new_data(self, soup, origin_url):
+    def get_new_data(self, soup, role_id):
         res_data = {}
-
-        url_parsed = urlparse(origin_url)
-        server_id = parse_qs(url_parsed.query)["server_id"][0]
-        role_key = parse_qs(url_parsed.query)["ordersn"][0]
-        res_data['role_key'] = role_key
+        res_data['role_id'] = role_id
 
         pass_date_td = soup.find_all('span', class_="b")
         for td in pass_date_td:
             if '出售剩余时间' in td.get_text():
                 pass_date = get_exp_time(td.parent.get_text().replace('出售剩余时间：', ''))
                 res_data['pass_date'] = pass_date
-
         role_desc = soup.find('textarea', id="role_desc")
         role = role_desc.get_text()
         role_json = json.loads(role)
@@ -367,54 +400,54 @@ class CbgSpider(scrapy.Spider):
             if equ[index] is not None:
                 equ[index].setdefault('id', None)
                 yfid = equ[index]['id']
-                if yfid == 21121 or yfid == 21122 or yfid == 21123 or yfid == 21124 or yfid == 21326 or yfid == 21327 \
+                if yfid == 21121 or yfid == 21122 or yfid == 21123 or yfid == 21124 or yfid == 21326 or yfid == 21327\
                         or yfid == 88326 or yfid == 88327:
-                    # 21121,21122,21123,21124,21326,21327,88326,88327
+                    #21121,21122,21123,21124,21326,21327,88326,88327
                     xuansu = 1
-                if yfid == 21189 or yfid == 21190 or yfid == 21202 or yfid == 21203 or yfid == 121533 or yfid == 121534 \
+                if yfid == 21189 or yfid == 21190 or yfid == 21202 or yfid == 21203 or yfid == 121533 or yfid == 121534\
                         or yfid == 121572 or yfid == 121573:
-                    # 21189,21190,21202,21203,121533,121534,121572,121573
+                    #21189,21190,21202,21203,121533,121534,121572,121573
                     qinghua = 1
                 if yfid == 21293 or yfid == 21294 or yfid == 21323 or yfid == 21324 or yfid == 121576 or yfid == 121577:
-                    # 21293,21294,21323,21324,121576,121577
+                    #21293,21294,21323,21324,121576,121577
                     guhong = 1
                 if yfid == 21335 or yfid == 21336 or yfid == 121529 or yfid == 121530:
-                    # 21335,21336,121529,121530
+                    #21335,21336,121529,121530
                     tinglan = 1
                 if yfid == 21339 or yfid == 21340 or yfid == 121531 or yfid == 121532:
                     # 21339, 21340, 121531, 121532
                     xiangyun = 1
                 if yfid == 210000 or yfid == 210001 or yfid == 210002 or yfid == 210003 or yfid == 210004 or yfid == 210005:
-                    # 210000,210001,210002,210003,210004,210005
+                    #210000,210001,210002,210003,210004,210005
                     canghai = 1
                 if yfid == 210168 or yfid == 210169:
                     jiangnan = 1
                 if yfid == 121705 or yfid == 121706 or yfid == 210037 or yfid == 210039 or yfid == 210040 \
                         or yfid == 210073 or yfid == 210074:
-                    # 121705,121706,210037,210038,210039,210040,210073,210074
+                    #121705,121706,210037,210038,210039,210040,210073,210074
                     haitang = 1
 
                 if yfid == 210046 or yfid == 210047 or yfid == 210146 or yfid == 210147:
                     feitian = 1
                 if yfid == 210148 or yfid == 210149 or yfid == 210210 or yfid == 210211:
-                    # 210148,210149,210210,210211
+                    #210148,210149,210210,210211
                     tianhu = 1
                 if yfid == 210144 or yfid == 210145 or yfid == 210206 or yfid == 210207:
-                    # 210144,210145,210206,210207
+                    #210144,210145,210206,210207
                     xianhu = 1
                 if yfid == 88454 or yfid == 88455 or yfid == 88511:
                     bihai = 1
                 if yfid == 21449 or yfid == 21450:
                     changkong = 1
                 if yfid == 21487 or yfid == 21488 or yfid == 121515 or yfid == 121516 or yfid == 121580 or yfid == 121581:
-                    # 21487,21488,121515,121516,121580,121581
+                    #21487,21488,121515,121516,121580,121581
                     changong = 1
                 if yfid == 21399 or yfid == 21400:
-                    # 21399,21400,88331,88332
+                    #21399,21400,88331,88332
                     fengyuzihuang = 1
                 if yfid == 121745 or yfid == 121746 or yfid == 121747 or yfid == 121748 or \
                                 yfid == 121749 or yfid == 121750 or yfid == 121751 or yfid == 121752:
-                    # 121745,121746,121747,121748,121749,121750,121751,121752
+                    #121745,121746,121747,121748,121749,121750,121751,121752
                     shuyinghengxie = 1
 
         # 包裹
@@ -426,13 +459,13 @@ class CbgSpider(scrapy.Spider):
             if yfid == 170087 or yfid == 170041:
                 res_data['qianyang'] = 1
             elif yfid == 170079 or yfid == 170033:
-                res_data['moyinli'] = 1
+                    res_data['moyinli'] = 1
             elif yfid == 170078 or yfid == 170032:
-                res_data['mudanyuan'] = 1
+                    res_data['mudanyuan'] = 1
             elif yfid == 170081 or yfid == 170035:
-                res_data['yinglongya'] = 1
+                    res_data['yinglongya'] = 1
             elif yfid == 170080 or yfid == 170034:
-                res_data['xuelongya'] = 1
+                    res_data['xuelongya'] = 1
 
             if yfid == 24165:
                 res_data['honglian'] = value['cwrap']
@@ -508,7 +541,6 @@ class CbgSpider(scrapy.Spider):
         res_data['shuyinghengxie'] = shuyinghengxie
         return res_data
 
-
 def get_exp_time(exp_time):
     day, hour, minute = 0, 0, 0
     if '天' in exp_time:
@@ -523,3 +555,27 @@ def get_exp_time(exp_time):
     date = now + datetime.timedelta(days=int(day)) + datetime.timedelta(hours=int(hour)) + datetime.timedelta(
         minutes=int(minute))
     return date.strftime('%Y-%m-%d %H:%M:%S')
+
+
+def role_job():
+    print("role job start! time = " + str(datetime.datetime.now()))
+    obj_spider = RoleSpider()
+    connection = pymysql.connect(**config.dbconfig)
+    try:
+        with connection.cursor() as cursor:
+            sql = 'select id,url from cbg_role where yn=1 and craw = 0'
+            cursor.execute(sql)
+            obj_spider.rows = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        print(e)
+        pass
+    finally:
+        connection.close()
+    obj_spider.craw()
+
+if __name__ == "__main__":
+    serverScheduler = BlockingScheduler()
+    serverScheduler.add_job(role_job, 'interval', hours=2)
+    serverScheduler.start()
+    # role_job()
