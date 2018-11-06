@@ -5,4 +5,4 @@
 
 import cbg_data_spider
 
-cbg_data_spider.role_job()
+cbg_data_spider.data_job()

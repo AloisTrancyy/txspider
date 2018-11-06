@@ -557,7 +557,7 @@ def get_exp_time(exp_time):
     return date.strftime('%Y-%m-%d %H:%M:%S')
 
 
-def role_job():
+def data_job():
     print("role job start! time = " + str(datetime.datetime.now()))
     obj_spider = RoleSpider()
     connection = pymysql.connect(**config.dbconfig)
@@ -576,6 +576,6 @@ def role_job():
 
 if __name__ == "__main__":
     serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(role_job, 'interval', hours=2)
+    serverScheduler.add_job(data_job, 'interval', hours=2)
     serverScheduler.start()
     # role_job()

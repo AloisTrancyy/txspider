@@ -110,13 +110,13 @@ class ServerSpider(object):
             data.append(res_data)
         return data
 
-def server_job():
+def role_job():
     obj_spider = ServerSpider()
     obj_spider.craw()
 
 
 if __name__ == "__main__":
     serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(server_job, 'interval', hours=2)
+    serverScheduler.add_job(role_job, 'interval', hours=2)
     serverScheduler.start()
     # server_job()
