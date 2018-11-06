@@ -10,16 +10,21 @@ import pymysql
 import config
 from apscheduler.schedulers.blocking import BlockingScheduler
 
+from logger import Logger
+
 
 class ServerSpider(object):
+    log = Logger('role.log', level='info')
     def craw(self):
         res = []
         connection = pymysql.connect(**config.dbconfig)
         with connection.cursor() as cursor:
             delete_sql = "delete from cbg_role where yn = 0 "
+            self.log.logger.info(delete_sql)
             cursor.execute(delete_sql)
 
             sql = "select url from cbg_url order by id desc "
+            self.log.logger.info(sql)
             cursor.execute(sql)
 
             res = cursor.fetchall()
@@ -31,7 +36,9 @@ class ServerSpider(object):
                 new_data = self.parse(html_cont)
                 self.add_role(new_data)
             except Exception as e:
-                e.with_traceback()
+                pass
+                self.log.logger.exception(e)
+
 
     def add_role(self, roles):
         if roles is None or len(roles) == 0:
@@ -54,7 +61,7 @@ class ServerSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        print(sql)
+                        self.log.logger.info(sql)
                         cursor.execute(sql)
                 connection.commit()
         except Exception as e:
@@ -73,7 +80,7 @@ class ServerSpider(object):
                    'Origin': 'http://tx3.cbg.163.com'}
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
-        print('craw:'+url)
+        self.log.logger.info('craw:'+url)
         if response.status_code != 200:
             return None
         return response.text
@@ -105,7 +112,6 @@ class ServerSpider(object):
 
 def server_job():
     obj_spider = ServerSpider()
-    print("server job start! time = " + str(datetime.datetime.now()))
     obj_spider.craw()
 
 

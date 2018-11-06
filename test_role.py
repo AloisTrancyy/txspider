@@ -3,6 +3,6 @@
 # __create_time__ : 16/11/6 10:41
 
 
-import cbg_server_spider
+import cbg_rol1e_spider
 
-cbg_server_spider.server_job()
+cbg_rol1e_spider.server_job()

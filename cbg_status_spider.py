@@ -9,11 +9,13 @@ import pymysql
 import config
 from apscheduler.schedulers.blocking import BlockingScheduler
 
+from logger import Logger
+
 
 class StatusSpider(object):
+    log = Logger('data.log', level='info')
     def back_data(self):
         today = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        print("back data job start! time = " + today)
         connection = pymysql.connect(**config.dbconfig)
         with connection.cursor() as cursor:
             sql = "select count(1) as count from cbg_role where yn =0"
@@ -37,8 +39,10 @@ class StatusSpider(object):
 
                 delete_role_data_sql = 'delete from cbg_data where role_id in (select id from cbg_role where yn= 0)'
                 delete_role_sql = 'delete from cbg_role where yn = 0'
-                config.log_info(delete_role_data_sql)
-                config.log_info(delete_role_sql)
+
+                self.log.logger.info(delete_role_data_sql)
+                self.log.logger.info(delete_role_sql)
+
                 cursor.execute(delete_role_data_sql)
                 cursor.execute(delete_role_sql)
             cursor.close()
@@ -49,7 +53,7 @@ class StatusSpider(object):
         connection = pymysql.connect(**config.dbconfig)
         with connection.cursor() as cursor:
             update_sql = 'update cbg_role set yn = 0 where exp_time <=now()'
-            print(update_sql)
+            self.log.logger.info(update_sql)
             cursor.execute(update_sql)
             cursor.close()
         connection.commit()
@@ -65,7 +69,7 @@ class StatusSpider(object):
                    'Origin': 'http://tx3.cbg.163.com'}
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
-        config.log_info('craw:' + url)
+        self.log.logger.info('craw:' + url)
         if response.status_code != 200:
             return None
         return response.text
@@ -73,7 +77,6 @@ class StatusSpider(object):
 
 def status_job():
     obj_spider = StatusSpider()
-    print("status job start! time = " + str(datetime.datetime.now()))
     obj_spider.back_data()
     obj_spider.update_status()
 
