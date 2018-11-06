@@ -13,7 +13,7 @@ from logger import Logger
 
 
 class StatusSpider(object):
-    log = Logger('data.log', level='info')
+    log = Logger('status.log', level='info')
     def back_data(self):
         today = time.strftime('%Y-%m-%d', time.localtime(time.time()))
         connection = pymysql.connect(**config.dbconfig)

@@ -13,7 +13,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from logger import Logger
 
 
-class ServerSpider(object):
+class RoleSpider(object):
     log = Logger('role.log', level='info')
     def craw(self):
         res = []
@@ -111,7 +111,7 @@ class ServerSpider(object):
         return data
 
 def role_job():
-    obj_spider = ServerSpider()
+    obj_spider = RoleSpider()
     obj_spider.craw()
 
 

@@ -12,11 +12,12 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from bs4 import BeautifulSoup
 
 import config
+from logger import Logger
 
 
-class RoleSpider(object):
+class DataSpider(object):
     rows = set()
-
+    log = Logger('data.log', level='info')
     def craw(self):
         for row in self.rows:
             time.sleep(3)
@@ -44,25 +45,26 @@ class RoleSpider(object):
                             else:
                                 sql = sql + ',\'' + str(value.encode('utf-8').decode("utf-8")) + '\''
                         sql += ')'
-                        print(sql)
+                        self.log.logger.info(sql)
                         cursor.execute(sql)
                         # 设置角色已爬取
                         pass_date = basic_data.get('pass_date')
                         if pass_date is None:
                             update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(role_id)
-                            print(update_craw)
+                            self.log.logger.info(update_craw)
                             cursor.execute(update_craw)
                         else:
                             update_craw = 'update cbg_role set craw = 1,exp_time =\'' + basic_data[
                                 'pass_date'] + '\' where id = ' + str(role_id)
-                            print(update_craw)
+                            self.log.logger.info(update_craw)
                             cursor.execute(update_craw)
                     else:
                         update_craw = 'update cbg_role set craw = 1,yn=0 where id = ' + str(role_id)
-                        print(update_craw)
+                        self.log.logger.info(update_craw)
                         cursor.execute(update_craw)
                 connection.commit()
             except Exception as ex:
+                self.log.logger.exception(ex)
                 pass
             finally:
                 connection.close()
@@ -86,7 +88,7 @@ class RoleSpider(object):
         }
         requests.adapters.DEFAULT_RETRIES = 3
         response = requests.get(url, headers=headers, timeout=3)
-        print('craw:' + url)
+        self.log.logger.info('craw:' + url)
         if response.status_code != 200:
             return None
         response.encoding = 'utf-8'  # 显式地指定网页编码，一般情况可以不用
@@ -558,8 +560,8 @@ def get_exp_time(exp_time):
 
 
 def data_job():
-    print("role job start! time = " + str(datetime.datetime.now()))
-    obj_spider = RoleSpider()
+    print("data job start! time = " + str(datetime.datetime.now()))
+    obj_spider = DataSpider()
     connection = pymysql.connect(**config.dbconfig)
     try:
         with connection.cursor() as cursor:
@@ -568,7 +570,6 @@ def data_job():
             obj_spider.rows = cursor.fetchall()
         cursor.close()
     except Exception as e:
-        print(e)
         pass
     finally:
         connection.close()
