@@ -7,7 +7,7 @@ import configparser
 import pymysql
 
 profile_config = configparser.ConfigParser()
-profile_config.read('./profile/product.ini')
+profile_config.read('./profile/test.ini')
 
 dbconfig = {
     'host': profile_config.get('mysql', 'host'),

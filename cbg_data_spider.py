@@ -1,16 +1,12 @@
 # -*- coding:utf-8
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
-
 import datetime
 import json
 import time
-
 import pymysql
 import requests
-from apscheduler.schedulers.blocking import BlockingScheduler
 from bs4 import BeautifulSoup
-
 import config
 from logger import Logger
 
@@ -176,6 +172,10 @@ class DataSpider(object):
         res_data['soul'] = attr['int']
         res_data['mind'] = attr['mind']
 
+        pve = role_json.get("pve",None)
+        if pve is not None:
+            res_data['pve_lv'] = pve['pve_lv']
+            res_data['pve_talent_point'] = pve['pve_talent_point']
         # 门派轻功
         role_json.setdefault('school_qinggong', None)
         lingskills = role_json['school_qinggong']
@@ -575,8 +575,5 @@ def data_job():
         connection.close()
     obj_spider.craw()
 
-if __name__ == "__main__":
-    serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(data_job, 'interval', hours=2)
-    serverScheduler.start()
-    # role_job()
+def data_test():
+    print("this is data_test" , datetime.datetime.now())

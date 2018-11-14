@@ -1,15 +1,12 @@
 # -*- coding:utf-8
 # __author__ : funny
 # __create_time__ : 16/11/6 10:41
-
-import time
 import datetime
+import time
 import requests
 import json
 import pymysql
 import config
-from apscheduler.schedulers.blocking import BlockingScheduler
-
 from logger import Logger
 
 
@@ -115,8 +112,5 @@ def role_job():
     obj_spider.craw()
 
 
-if __name__ == "__main__":
-    serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(role_job, 'interval', hours=1)
-    serverScheduler.start()
-    # server_job()
+def role_test():
+    print("this is role_test" , datetime.datetime.now())
