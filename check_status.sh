@@ -1,5 +1,3 @@
 #! /bin/bash
 
-cd /usr/local/txspider
-rm -f test.txt
-touch test.txt
+echo "test" >> /usr/local/txspider/test.txt
