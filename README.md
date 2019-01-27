@@ -109,8 +109,7 @@ pve_lv 35 启慧等级
 
 启动脚本
 
+crontab –e 
 0 */1 * * * /usr/local/txspider/start_role.sh
-
 30 */1 * * * /usr/local/txspider/start_role.sh
-
 0 */2 * * * /usr/local/txspider/start_status.sh
