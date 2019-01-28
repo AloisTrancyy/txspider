@@ -7,7 +7,6 @@ import datetime
 import requests
 import pymysql
 import config
-from apscheduler.schedulers.blocking import BlockingScheduler
 
 from logger import Logger
 
@@ -80,8 +79,3 @@ def status_job():
     obj_spider.back_data()
     obj_spider.update_status()
 
-
-if __name__ == "__main__":
-    serverScheduler = BlockingScheduler()
-    serverScheduler.add_job(status_job, 'interval', hours=1)
-    serverScheduler.start()
