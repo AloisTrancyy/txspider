@@ -3,7 +3,6 @@
 # __create_time__ : 16/11/6 10:41
 
 import time
-import datetime
 import requests
 import pymysql
 import config
@@ -23,7 +22,6 @@ class StatusSpider(object):
             if res['count'] > 5000:
                 role_sql = 'select role_id,jiahu,name,server_id,price,url,date_format(exp_time,\'%Y-%c-%d %h:%i:%s\') exp_time ' \
                            'from cbg_role where yn =0'
-                config.log_info(role_sql)
                 cursor.execute(role_sql)
                 roles = cursor.fetchall()
                 f_role = open(config.profile_config.get('mysql', 'back_path') + "role_" + today + ".txt", "w")
