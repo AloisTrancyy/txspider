@@ -104,3 +104,12 @@ prototype
 --------------------------------------
 pve_talent_point 447, 天灵点
 pve_lv 35 启慧等级
+
+------------------------------------------
+
+启动脚本
+
+crontab –e 
+0 */1 * * * sh /usr/local/txspider/start_role.sh >> /var/log/spider.log 2>&1
+30 */1 * * * sh /usr/local/txspider/start_role.sh >> /var/log/spider.log 2>&1
+0 */2 * * * sh /usr/local/txspider/start_status.sh >> /var/log/spider.log 2>&1
