@@ -1,4 +1,4 @@
 #! /bin/bash
 
 cd /usr/local/txspider
-python test_data.py &
+python3 test_data.py &
